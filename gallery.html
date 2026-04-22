@@ -115,6 +115,64 @@
     .tab-panel{display:none;}
     .tab-panel.active{display:block;}
 
+    /* ── UNDERWATER WORLD SECTION ── */
+    .uw-section{background:var(--bg);}
+    .uw-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:2.2rem;margin-bottom:2.2rem;}
+    .uw-filter{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.55rem 1.1rem;border-radius:40px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit;}
+    .uw-filter:hover{border-color:var(--accent);color:var(--accent);}
+    .uw-filter.active{background:var(--accent);border-color:var(--accent);color:#04080f;}
+    .uw-count{text-align:center;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--text3);margin-bottom:1.5rem;}
+    .uw-count strong{color:var(--accent);font-weight:600;}
+    .uw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    @media(max-width:900px){.uw-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:640px){.uw-grid{grid-template-columns:repeat(2,1fr);gap:.7rem;}}
+    .uw-card{position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:var(--bg2);transition:transform .5s ease,border-color .3s,box-shadow .4s;}
+    .uw-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 40px -14px rgba(77,194,232,.35);}
+    .uw-card-imgwrap{position:relative;width:100%;height:100%;}
+    .uw-card-imgwrap img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s,opacity .8s ease;opacity:0;}
+    .uw-card-imgwrap img.active{opacity:1;}
+    .uw-card:hover .uw-card-imgwrap img.active{transform:scale(1.08);filter:brightness(.6);}
+    .uw-card-label{position:absolute;left:0;right:0;bottom:0;padding:1rem .9rem .85rem;background:linear-gradient(to top,rgba(4,8,15,.92) 0%,rgba(4,8,15,.5) 60%,transparent 100%);color:#fff;pointer-events:none;z-index:2;}
+    .uw-card-name{font-family:'Playfair Display',serif;font-size:.98rem;font-weight:500;line-height:1.15;letter-spacing:.01em;margin-bottom:.2rem;}
+    .uw-card-sci{font-size:.62rem;letter-spacing:.08em;font-style:italic;color:rgba(255,255,255,.7);}
+    .uw-card-cat{position:absolute;top:.7rem;left:.7rem;background:rgba(4,8,15,.8);backdrop-filter:blur(6px);color:rgba(255,255,255,.85);padding:.22rem .55rem;border-radius:40px;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;z-index:2;}
+    .uw-card-rarity{position:absolute;top:.7rem;right:.7rem;background:rgba(4,8,15,.8);backdrop-filter:blur(6px);border:1px solid rgba(77,194,232,.35);color:var(--accent);padding:.22rem .55rem;border-radius:40px;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;z-index:2;}
+    .uw-card-rarity.rare{border-color:rgba(232,197,106,.55);color:var(--gold);}
+    .uw-card-rarity.common{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8);}
+    .uw-card-multi{position:absolute;bottom:.7rem;right:.7rem;display:flex;align-items:center;gap:.3rem;background:rgba(4,8,15,.85);backdrop-filter:blur(6px);padding:.28rem .55rem;border-radius:40px;font-size:.55rem;letter-spacing:.08em;color:rgba(255,255,255,.9);font-weight:600;z-index:2;}
+    .uw-card-multi svg{width:11px;height:11px;}
+
+    /* UW modal */
+    .uw-modal{position:fixed;inset:0;background:rgba(4,8,15,.9);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;z-index:9999;padding:1.5rem;opacity:0;transition:opacity .3s ease;}
+    .uw-modal.open{display:flex;opacity:1;}
+    .uw-modal-inner{background:var(--bg);border:1px solid var(--border);border-radius:10px;max-width:1020px;width:100%;max-height:92vh;overflow:hidden;display:grid;grid-template-columns:1.15fr 1fr;transform:translateY(14px);transition:transform .45s cubic-bezier(.2,.8,.2,1);}
+    .uw-modal.open .uw-modal-inner{transform:translateY(0);}
+    @media(max-width:860px){.uw-modal-inner{grid-template-columns:1fr;max-height:94vh;overflow-y:auto;}}
+    .uw-modal-photo{position:relative;background:#04080f;min-height:360px;overflow:hidden;}
+    .uw-modal-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .9s ease;}
+    .uw-modal-photo img.active{opacity:1;}
+    @media(max-width:860px){.uw-modal-photo{aspect-ratio:4/3;min-height:0;}}
+    .uw-modal-dots{position:absolute;left:0;right:0;bottom:1rem;display:flex;justify-content:center;gap:.45rem;z-index:3;}
+    .uw-modal-dot{width:8px;height:8px;border-radius:50%;background:rgba(255,255,255,.35);border:none;padding:0;cursor:pointer;transition:all .3s;}
+    .uw-modal-dot.active{background:var(--accent);width:24px;border-radius:4px;}
+    .uw-modal-counter{position:absolute;top:1rem;left:1rem;background:rgba(4,8,15,.8);backdrop-filter:blur(6px);color:#fff;padding:.3rem .65rem;border-radius:40px;font-size:.6rem;letter-spacing:.12em;font-weight:600;z-index:3;}
+    .uw-modal-nav{position:absolute;top:50%;transform:translateY(-50%);width:40px;height:40px;display:flex;align-items:center;justify-content:center;background:rgba(4,8,15,.65);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.12);border-radius:50%;color:#fff;cursor:pointer;transition:all .25s;z-index:3;}
+    .uw-modal-nav:hover{background:var(--accent);color:#04080f;border-color:var(--accent);}
+    .uw-modal-prev{left:1rem;}
+    .uw-modal-next{right:1rem;}
+    .uw-modal-body{padding:2.3rem 2rem;overflow-y:auto;max-height:92vh;}
+    @media(max-width:860px){.uw-modal-body{padding:1.7rem 1.4rem;max-height:none;}}
+    .uw-modal-cat{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.7rem;}
+    .uw-modal-name{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;line-height:1.1;color:var(--text);margin-bottom:.35rem;}
+    .uw-modal-sci{font-size:.8rem;font-style:italic;color:var(--text3);margin-bottom:1.4rem;}
+    .uw-modal-desc{font-size:.9rem;line-height:1.75;color:var(--text2);margin-bottom:1.6rem;}
+    .uw-modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:.95rem 1.4rem;padding-top:1.3rem;border-top:1px solid var(--border);}
+    .uw-spec{display:flex;flex-direction:column;gap:.25rem;}
+    .uw-spec-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);font-weight:600;}
+    .uw-spec-val{font-size:.82rem;color:var(--text);font-weight:500;}
+    .uw-modal-close{position:absolute;top:1rem;right:1rem;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:rgba(4,8,15,.8);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:50%;color:#fff;cursor:pointer;font-size:1.3rem;line-height:1;transition:all .25s;z-index:4;}
+    .uw-modal-close:hover{background:var(--accent);color:#04080f;border-color:var(--accent);transform:rotate(90deg);}
+
     /* ── FACEBOOK SECTION ── */
     .fb-section{background:var(--bg);}
     .fb-posts-grid{columns:3 280px;column-gap:10px;margin-bottom:2.5rem;}
@@ -325,6 +383,10 @@
     <button class="tab-btn" data-tab="videos" role="tab" aria-selected="false">
       <svg fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
       Videos
+    </button>
+    <button class="tab-btn" data-tab="underwater" role="tab" aria-selected="false">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><path d="M2 16c2-1 4-1 6 0s4 1 6 0 4-1 6 0 4 1 4 0"/><path d="M2 12c2-1 4-1 6 0s4 1 6 0 4-1 6 0 4 1 4 0"/><path d="M2 8c2-1 4-1 6 0s4 1 6 0 4-1 6 0 4 1 4 0"/></svg>
+      Underwater World
     </button>
   </div>
 
@@ -700,6 +762,53 @@
     </div>
   </div>
 
+  <!-- ══════ UNDERWATER WORLD ══════ -->
+  <div class="tab-panel uw-section" id="tab-underwater">
+    <div class="c" style="max-width:1280px;margin:0 auto;padding:2.5rem 4rem 5rem;">
+      <div class="uw-filters" role="tablist" aria-label="Marine life filters">
+        <button class="uw-filter active" data-uw="all">All Creatures</button>
+        <button class="uw-filter" data-uw="nudi">Nudibranchs</button>
+        <button class="uw-filter" data-uw="reef">Reef Fish</button>
+        <button class="uw-filter" data-uw="macro">Macro &amp; Cephalopods</button>
+        <button class="uw-filter" data-uw="coral">Corals &amp; Anemones</button>
+        <button class="uw-filter" data-uw="turtle">Turtles &amp; More</button>
+        <button class="uw-filter" data-uw="scenes">Dive Scenes</button>
+      </div>
+      <div class="uw-count"><strong id="uwCount">0</strong> SPECIES &middot; <strong id="uwTotal">0</strong> PHOTOS</div>
+      <div class="uw-grid" id="uwGrid"></div>
+    </div>
+  </div>
+
+  <!-- Underwater modal -->
+  <div class="uw-modal" id="uwModal" role="dialog" aria-modal="true" aria-labelledby="uwModalName">
+    <div class="uw-modal-inner">
+      <div class="uw-modal-photo" id="uwModalPhoto">
+        <div class="uw-modal-counter" id="uwModalCounter">1 / 1</div>
+        <button class="uw-modal-close" id="uwModalClose" aria-label="Close">&times;</button>
+        <button class="uw-modal-nav uw-modal-prev" id="uwModalPrev" aria-label="Previous">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>
+        </button>
+        <button class="uw-modal-nav uw-modal-next" id="uwModalNext" aria-label="Next">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg>
+        </button>
+        <div class="uw-modal-dots" id="uwModalDots"></div>
+      </div>
+      <div class="uw-modal-body">
+        <div class="uw-modal-cat" id="uwModalCat">CATEGORY</div>
+        <div class="uw-modal-name" id="uwModalName">Name</div>
+        <div class="uw-modal-sci" id="uwModalSci">Scientific</div>
+        <p class="uw-modal-desc" id="uwModalDesc">Description</p>
+        <div class="uw-modal-specs">
+          <div class="uw-spec"><div class="uw-spec-lbl">Size</div><div class="uw-spec-val" id="uwSpecSize">—</div></div>
+          <div class="uw-spec"><div class="uw-spec-lbl">Depth</div><div class="uw-spec-val" id="uwSpecDepth">—</div></div>
+          <div class="uw-spec"><div class="uw-spec-lbl">Best Season</div><div class="uw-spec-val" id="uwSpecSeason">—</div></div>
+          <div class="uw-spec"><div class="uw-spec-lbl">Rarity</div><div class="uw-spec-val" id="uwSpecRarity">—</div></div>
+          <div class="uw-spec" style="grid-column:span 2;"><div class="uw-spec-lbl">Where to Spot</div><div class="uw-spec-val" id="uwSpecWhere">—</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- SOCIAL CTA -->
   <section class="g-cta rv">
     <h2>Stay Connected</h2>
@@ -824,6 +933,316 @@
       if (target === 'facebook' && window.FB) {
         FB.XFBML.parse(document.getElementById('tab-facebook'));
       }
+      // first time underwater is opened, render the grid
+      if (target === 'underwater' && !window._uwRendered) {
+        renderUnderwaterGrid('all');
+        window._uwRendered = true;
+      }
+    });
+  });
+
+  /* ══════════════════════════════════════════════
+     UNDERWATER WORLD — data, carousel & modal
+     ══════════════════════════════════════════════ */
+  const NF = 'images/Nature Folder/';
+  const creatures = [
+    { id:'peacock-mantis', cat:'macro', catLabel:'Macro Critter',
+      name:'Peacock Mantis Shrimp', sci:'Odontodactylus scyllarus',
+      desc:"Meet the ocean's tiny rainbow boxer! This teeny kaleidoscope cutie packs the fastest punch in the sea — strong enough to crack a clam in one go. Utterly adorable from a polite distance, with eyes that see colors we humans can only dream of.",
+      size:'4–7 in (10–18 cm)', depth:'5–40 m', season:'Year-round', rarity:'Common', where:'Secret Bay, Basura, Mainit Point',
+      images:[ '37869156_1686457108143173_4087668938521968640_n.jpg','37921405_1686455154810035_595977448768667648_n.jpg','37926797_1686445608144323_8364132566223028224_n.jpg','37930885_1686456648143219_2391275509368487936_n.jpg','37933235_1686455108143373_7731111501267730432_n.jpg','37938964_1686446674810883_8204846608764895232_n.jpg','37940925_1686446078144276_4021402278954008576_n.jpg','37947369_1686455001476717_6522408013687422976_n.jpg' ] },
+    { id:'pikachu-nudi', cat:'nudi', catLabel:'Nudibranch',
+      name:'Pikachu Nudibranch', sci:'Thecacera pacifica',
+      desc:"The internet's favorite sea slug! Puffy little cheeks, tiny bouncy antennae and a yellow-and-black fashion sense straight out of Pokémon — this squishy cutie has zero threat level and 100% charm.",
+      size:'0.8–1.6 in (2–4 cm)', depth:'8–25 m', season:'November–April', rarity:'Uncommon', where:'Secret Bay, Twin Rocks',
+      images:[ '37916855_1686446191477598_6408790993243471872_n.jpg','37955999_1686456891476528_4734608424820539392_n.jpg','37962517_1686456971476520_5361114367985188864_n.jpg','37971878_1686456401476577_1770070848632258560_n.jpg' ] },
+    { id:'warty-frogfish', cat:'macro', catLabel:'Macro Critter',
+      name:'Warty Frogfish', sci:'Antennarius maculatus',
+      desc:"A grumpy little blob that waddle-walks across the reef on its fin-feet! It dangles a fluffy lure above its head like a fishing rod and puffs up when surprised. Master of disguise, expert of sulky faces — absolutely beloved by macro photographers.",
+      size:'3–6 in (8–15 cm)', depth:'3–20 m', season:'Year-round', rarity:'Uncommon', where:'Basura, Secret Bay, Anilao Pier',
+      images:[ '38019141_1689574391164778_8449096996546936832_n.jpg','38020034_1686456268143257_3309570724485660672_n.jpg','38020785_1689578737831010_6971364651695079424_n.jpg','38046236_1689578721164345_6516888843273109504_n.jpg','38054433_1689579564497594_2509750902328393728_n.jpg','38120037_1689574844498066_8514312548768546816_n.jpg','38122094_1689578731164344_2886739311682650112_n.jpg','38122855_1689579554497595_8179267321148211200_n.jpg','38133383_1689574147831469_3410622873939738624_n.jpg','38136080_1689574251164792_5790908511185534976_n.jpg' ] },
+    { id:'wunderpus', cat:'macro', catLabel:'Cephalopod',
+      name:'Wunderpus Octopus', sci:'Wunderpus photogenicus',
+      desc:"A wiggly ribbon of surprise! This slender cutie with bold white stripes is basically an underwater ballerina — curious, clever, and a dedicated fashion model for every diver's camera (it's literally named 'photogenic').",
+      size:'up to 20 in arm span', depth:'3–20 m (sand)', season:'Year-round', rarity:'Rare', where:'Secret Bay, Mainit sand flats',
+      images:[ '38246207_1692640934191457_3677413602278506496_n.jpg','38292809_1692640747524809_7415993981302996992_n.jpg' ] },
+    { id:'soft-coral-garden', cat:'coral', catLabel:'Coral Garden',
+      name:'Soft Coral Garden', sci:'Dendronephthya spp.',
+      desc:"Imagine a fluffy pink cloud that lives underwater and sways to its own slow song. That's Anilao's soft coral garden — tiny polyps holding tiny hands, creating a pastel dreamland alive with anthias confetti.",
+      size:'colonies to 3 ft', depth:'8–25 m', season:'Year-round', rarity:'Common', where:'Mainit Point, Bahura, Arthur\u2019s Rock',
+      images:[ '39017541_1711435215645362_7101341468857466880_n.jpg','39026787_1711435385645345_4262976408189403136_n.jpg','39032110_1711435552311995_4210776088638390272_n.jpg','39044705_1711434758978741_2395522609253974016_n.jpg','39053833_1711434368978780_3831029300962787328_n.jpg','39056425_1711435708978646_6009304441386172416_n.jpg','39077916_1711435992311951_5881361480217001984_n.jpg','39079239_1711434555645428_9204936190384406528_n.jpg','39085277_1711434988978718_2224312216264376320_n.jpg','39145579_1711436228978594_6080008596739850240_n.jpg' ] },
+    { id:'coral-bommie', cat:'coral', catLabel:'Coral Bommie',
+      name:'Coral Bommie', sci:'Acropora &amp; friends',
+      desc:"A little coral city rising off the sand — a busy apartment building for tiny fish, cleaner shrimp and sleepy gobies. Every bommie has its own personality (and its own resident hermit crab mayor).",
+      size:'1–3 m wide', depth:'6–18 m', season:'Year-round', rarity:'Common', where:'Twin Rocks, Cathedral',
+      images:[ '39522546_1720007068121510_2346925754379403264_n.jpg' ] },
+    { id:'anemone-city', cat:'coral', catLabel:'Anemone',
+      name:'Magnificent Sea Anemone', sci:'Heteractis magnifica',
+      desc:"A giant squishy beanbag of tentacles where clownfish families make their home! It sways like a living lava lamp and gives the best hugs — if you're a fish. For divers, it's a perfect shaggy carpet of color.",
+      size:'up to 3 ft across', depth:'5–25 m', season:'Year-round', rarity:'Common', where:'Cathedral, Twin Rocks, Arthur\u2019s Rock',
+      images:[ '39933166_1729978037124413_2726567285291483136_n.jpg','39940229_1729978490457701_11175668112949248_n.jpg','39940986_1729977783791105_9171860153316671488_n.jpg','39944367_1729977680457782_6376795054551334912_n.jpg','39947210_1729978113791072_3701781442829746176_n.jpg','39982826_1729978930457657_1687100958170939392_n.jpg','40008510_1729978647124352_1594846486582001664_n.jpg','40038789_1729978783791005_1334870973693820928_n.jpg' ] },
+    { id:'moray-den', cat:'reef', catLabel:'Reef Fish',
+      name:'Fimbriated Moray', sci:'Gymnothorax fimbriatus',
+      desc:"A noodle that lives in a hole and opens and closes its mouth like it's chewing bubblegum! It looks grumpy but is just breathing. Peek inside reef crevices and you might meet this freckled sweetheart.",
+      size:'2–3 ft (60–90 cm)', depth:'5–30 m', season:'Year-round', rarity:'Common', where:'Twin Rocks, Kirby\u2019s Rock',
+      images:[ '40573183_1742040909251459_9032150983211220992_n.jpg','40661146_1742040879251462_3392453517305184256_n.jpg','40764149_1742040925918124_4286391556274913280_n.jpg' ] },
+    { id:'reef-anthias', cat:'reef', catLabel:'Reef Fish',
+      name:'Reef Anthias Swarm', sci:'Pseudanthias squamipinnis',
+      desc:"A glittering pink-orange confetti explosion! These tiny fairies swirl above coral heads like they're permanently at a disco, flashing their fins whenever a current tickles by.",
+      size:'3–5 in (7–13 cm)', depth:'10–25 m', season:'Year-round', rarity:'Common', where:'Mainit Point, Sombrero Island',
+      images:[ '43950666_1791394634316086_4449140906641063936_n.jpg','45291723_1817593001696249_1946927560248000512_n.jpg' ] },
+    { id:'chromodoris-willani', cat:'nudi', catLabel:'Nudibranch',
+      name:'Chromodoris Willani', sci:'Chromodoris willani',
+      desc:"A blue-on-blue beauty with a fancy shawl of gills and two little lollipop antennae. It glides across sponges like it's walking a very slow runway — a true Anilao supermodel.",
+      size:'1–2.4 in (2.5–6 cm)', depth:'5–35 m', season:'November–April', rarity:'Common', where:'Secret Bay, Mainit Point',
+      images:[ '541471419_1320055306793797_4411489496363337447_n.jpg','542218726_1320055313460463_8788918903468326751_n.jpg','543175596_1320055310127130_6484463467171841313_n.jpg' ] },
+    { id:'halgerda-batangas', cat:'nudi', catLabel:'Nudibranch',
+      name:'Halgerda Batangas', sci:'Halgerda batangas',
+      desc:"Named for our own Batangas! This lace-trimmed nudi wears a white gown with gold trim and orange polka dots — the official fashionista of Anilao. Small, slow, and impossibly elegant.",
+      size:'1–1.5 in (2.5–4 cm)', depth:'10–30 m', season:'November–April', rarity:'Uncommon', where:'Secret Bay, Koala, Twin Rocks',
+      images:[ '49192789_1898144646974417_4296390046866472960_n.jpg','49566314_1901341753321373_4775956757878931456_n.jpg','49599630_1908344545954427_3079107250443255808_n.jpg' ] },
+    { id:'clownfish-family', cat:'reef', catLabel:'Reef Fish',
+      name:'Anemonefish Family', sci:'Amphiprion spp.',
+      desc:"The original 'Finding Nemo' family! These chubby orange bundles bob around their anemone home, squeaking and headbutting divers who float too close. 100% sass, 100% snuggle.",
+      size:'3–4 in (8–11 cm)', depth:'3–15 m', season:'Year-round', rarity:'Common', where:'Cathedral, Twin Rocks, Anilao Pier',
+      images:[ '499989542_1232883835510945_6140028305473236699_n.jpg','500003047_1232883842177611_6691909587477851746_n.jpg','500087688_1232883838844278_5722951569642988923_n.jpg' ] },
+    { id:'tomato-anemonefish', cat:'reef', catLabel:'Reef Fish',
+      name:'Tomato Anemonefish', sci:'Amphiprion frenatus',
+      desc:"A plump little tomato with fins! Shy boys and bossy girls — the biggest fish in the anemone is always the mama. Expect a gentle nip on the finger if you admire too close.",
+      size:'3–5 in (8–13 cm)', depth:'3–12 m', season:'Year-round', rarity:'Common', where:'Anilao Pier, Kirby\u2019s Rock',
+      images:[ '50549146_1935168269938721_9142552060992946176_n.jpg' ] },
+    { id:'giant-clam', cat:'macro', catLabel:'Invertebrate',
+      name:'Giant Clam', sci:'Tridacna gigas',
+      desc:"A squishy neon smile stuck to the reef! These wavy-edged beauties come in turquoise, electric blue and emerald. Wave at one and it slowly winks shut — shy, glamorous, and surprisingly old.",
+      size:'up to 4 ft (120 cm)', depth:'5–20 m', season:'Year-round', rarity:'Uncommon', where:'Cathedral, Arthur\u2019s Rock',
+      images:[ '54279643_2008335762621971_4302938673696997376_n.jpg' ] },
+    { id:'reef-scene', cat:'scenes', catLabel:'Dive Scene',
+      name:'Batangas Bay Reef', sci:'Coral reef panorama',
+      desc:"A whole world in one frame — hard corals, soft corals, shimmering bait balls and curious fish all sharing the same little paradise. This is what divers chase: the happy chaos of a healthy reef.",
+      size:'Wide-angle', depth:'5–25 m', season:'Year-round', rarity:'Common', where:'All Anilao sites',
+      images:[ '59252926_2072166099572270_942451279420981248_n.jpg' ] },
+    { id:'sea-turtle', cat:'turtle', catLabel:'Sea Turtle',
+      name:'Hawksbill Sea Turtle', sci:'Eretmochelys imbricata',
+      desc:"The reef's kind elder! Puffy cheeks, slow blinking eyes, and a patterned shell like a stained-glass window. Glides by munching sponges — if you swim politely beside it, you'll feel like you've made a lifelong friend.",
+      size:'2–3 ft shell (60–90 cm)', depth:'5–30 m', season:'Year-round', rarity:'Uncommon', where:'Sepok, Mainit Point, Cathedral',
+      images:[ '67501215_2224284374360441_670918228582596608_n.jpg','67637572_2224284411027104_3591809436575858688_n.jpg','67642249_2224284354360443_7814394335931138048_n.jpg' ] },
+    { id:'jellyfish', cat:'turtle', catLabel:'Drifter',
+      name:'Crown Jellyfish', sci:'Netrostoma setouchianum',
+      desc:"A fluffy umbrella-cake drifting through the blue, pulsing in the softest slow-motion ever. No rush, no worries — just vibes and a crown of frilly tentacles.",
+      size:'6–10 in (15–25 cm)', depth:'Surface–30 m', season:'Seasonal blooms', rarity:'Uncommon', where:'Open water, Sepok drift',
+      images:[ '69513257_2286958498093028_4663307526710755328_n.jpg' ] },
+    { id:'cuttlefish', cat:'macro', catLabel:'Cephalopod',
+      name:'Broadclub Cuttlefish', sci:'Sepia latimanus',
+      desc:"A little hypnotist in a rippling pajama suit! It flashes colors across its skin like a living TV screen to say hi, flirt, or politely ask you to back up. W-shaped pupils = extra charming.",
+      size:'up to 20 in (50 cm)', depth:'5–20 m', season:'Year-round', rarity:'Uncommon', where:'Secret Bay, Twin Rocks, Kirby\u2019s',
+      images:[ '69634089_2284968864958658_2961602047645843456_n.jpg','69695887_2284968568292021_4440344143603957760_n.jpg','69702687_2284968558292022_2868398006032400384_n.jpg','69722429_2284968711625340_543173325535313920_n.jpg','69770661_2284968734958671_5183755969829535744_n.jpg','69779698_2284968638292014_941145892830838784_n.jpg','69875775_2284968624958682_4440755292233269248_n.jpg','70389553_2284968691625342_9103406431977078784_n.jpg' ] },
+    { id:'batfish', cat:'reef', catLabel:'Reef Fish',
+      name:'Batfish School', sci:'Platax teira',
+      desc:"Graceful silver dinner-plates floating in formation like a shy airshow. They glide in a polite circle to inspect divers, big eyes blinking, then drift off into the blue together.",
+      size:'18–24 in (45–60 cm)', depth:'10–30 m', season:'Year-round', rarity:'Common', where:'Mainit Point, Sombrero Island',
+      images:[ '71699721_2333361713452706_8329912903918419968_n.jpg','71753283_2333361870119357_5939686569160998912_n.jpg','71881554_2333361816786029_538385094130270208_n.jpg' ] },
+    { id:'anilao-creatures', cat:'macro', catLabel:'Mixed Macro',
+      name:'Anilao Macro Medley', sci:'Various critters',
+      desc:"A little grab-bag of Anilao's tiny superstars — shrimps hiding in corals, gobies peeking from holes, juvenile fish no bigger than a fingernail. The magic of macro: every square inch is a fairytale.",
+      size:'0.2–3 in', depth:'3–25 m', season:'Year-round', rarity:'Common', where:'Secret Bay, Basura, Anilao Pier',
+      images:[ '491923419_1209162477883081_4885199553472169746_n.jpg','492004382_1209162457883083_2762580224715484868_n.jpg','492082330_1209162347883094_6201186129914485447_n.jpg','492103100_1209162354549760_3985122564207404025_n.jpg','492111061_1209162474549748_1905845639214674003_n.jpg','492206652_1209162364549759_3074548578786780637_n.jpg','492206652_1209162364549759_3074548578786780637_n121.jpg','492382164_1210640647735264_769572036673636860_n.jpg','492587549_1210643067735022_4766111182579600702_n.jpg','493928132_1210642941068368_7161623637611222482_n.jpg','495192486_1220540010078661_6836158552012053257_n.jpg' ] },
+    { id:'dive-classics', cat:'scenes', catLabel:'Dive Scene',
+      name:'Classic Anilao Views', sci:'Anilao dive portraits',
+      desc:"A timeless mini-album of Anilao's greatest hits — sun rays stabbing through turquoise water, schools cruising by, corals in every shade of pastel. Pure 'why we dive' energy.",
+      size:'Wide-angle', depth:'5–30 m', season:'Year-round', rarity:'Common', where:'Across all Anilao sites',
+      images:[ '10.jpg','11.jpg','12.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','20.jpg' ] },
+    { id:'dive-session', cat:'scenes', catLabel:'Dive Scene',
+      name:'A Day Beneath Anilao', sci:'Deep dive chronicles',
+      desc:"A whole dive day told in photos — from the first giant stride off the boat to the last bubbles rising at safety stop. Turtles, schools, coral gardens, and blue water forever. Come see it for yourself!",
+      size:'Wide-angle', depth:'6–30 m', season:'Year-round', rarity:'Common', where:'Full day excursion sites',
+      images:[ '72644123_2368897529899124_4042089714784665600_n.jpg','72672447_2368897166565827_3663908107681005568_n.jpg','72701651_2368897123232498_1300162084549427200_n.jpg','72771988_2368897243232486_5048340461350027264_n.jpg','72848457_2368897723232438_2825498356556496896_n.jpg','72982865_2368897419899135_4816604912483827712_n.jpg','72985418_2368897856565758_2027935333554847744_n.jpg','73026717_2368897963232414_1087992284969959424_n.jpg','73169321_2368897006565843_7439422314938105856_n.jpg','73214906_2368897219899155_878684720316022784_n.jpg','74581408_2368897383232472_4538571961218891776_n.jpg','74632408_2368897253232485_5136713820101672960_n.jpg','74666322_2368897783232432_8341708447481331712_n.jpg','75029113_2368897149899162_6331180010786783232_n.jpg','75233796_2368896983232512_6557923051013406720_n.jpg' ] }
+  ];
+
+  // Prepend folder path to all image filenames
+  creatures.forEach(c => { c.images = c.images.map(f => NF + f); });
+
+  const uwGrid        = document.getElementById('uwGrid');
+  const uwCountEl     = document.getElementById('uwCount');
+  const uwTotalEl     = document.getElementById('uwTotal');
+  const uwFilters     = document.querySelectorAll('.uw-filter');
+  const uwModal       = document.getElementById('uwModal');
+  const uwModalPhoto  = document.getElementById('uwModalPhoto');
+  const uwModalDots   = document.getElementById('uwModalDots');
+  const uwModalCounter= document.getElementById('uwModalCounter');
+  const uwModalCat    = document.getElementById('uwModalCat');
+  const uwModalName   = document.getElementById('uwModalName');
+  const uwModalSci    = document.getElementById('uwModalSci');
+  const uwModalDesc   = document.getElementById('uwModalDesc');
+  const uwSpecSize    = document.getElementById('uwSpecSize');
+  const uwSpecDepth   = document.getElementById('uwSpecDepth');
+  const uwSpecSeason  = document.getElementById('uwSpecSeason');
+  const uwSpecRarity  = document.getElementById('uwSpecRarity');
+  const uwSpecWhere   = document.getElementById('uwSpecWhere');
+
+  const cardTimers = new Map(); // card element → interval id
+  let modalTimer = null;
+  let modalCreature = null;
+  let modalIdx = 0;
+
+  function clearCardTimers(){
+    cardTimers.forEach(id => clearInterval(id));
+    cardTimers.clear();
+  }
+
+  function renderUnderwaterGrid(filter){
+    clearCardTimers();
+    uwGrid.innerHTML = '';
+    const list = filter === 'all' ? creatures : creatures.filter(c => c.cat === filter);
+    let totalPhotos = 0;
+    list.forEach(c => {
+      totalPhotos += c.images.length;
+      const card = document.createElement('button');
+      card.className = 'uw-card';
+      card.setAttribute('aria-label', c.name);
+      card.dataset.id = c.id;
+
+      const imgwrap = document.createElement('div');
+      imgwrap.className = 'uw-card-imgwrap';
+      c.images.forEach((src, i) => {
+        const img = document.createElement('img');
+        img.src = src;
+        img.alt = c.name + (c.images.length > 1 ? ' photo ' + (i+1) : '');
+        img.loading = 'lazy';
+        if (i === 0) img.classList.add('active');
+        imgwrap.appendChild(img);
+      });
+      card.appendChild(imgwrap);
+
+      const catPill = document.createElement('div');
+      catPill.className = 'uw-card-cat';
+      catPill.textContent = c.catLabel;
+      card.appendChild(catPill);
+
+      const rarity = document.createElement('div');
+      rarity.className = 'uw-card-rarity ' + (c.rarity.toLowerCase());
+      rarity.textContent = c.rarity;
+      card.appendChild(rarity);
+
+      const label = document.createElement('div');
+      label.className = 'uw-card-label';
+      label.innerHTML = '<div class="uw-card-name">' + c.name + '</div><div class="uw-card-sci">' + c.sci + '</div>';
+      card.appendChild(label);
+
+      if (c.images.length > 1) {
+        const multi = document.createElement('div');
+        multi.className = 'uw-card-multi';
+        multi.innerHTML = '<svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="3" y="3" width="13" height="13" rx="2"/><path d="M21 8v11a2 2 0 0 1-2 2H8"/></svg>' + c.images.length;
+        card.appendChild(multi);
+
+        // carousel rotation every 5s
+        const imgs = imgwrap.querySelectorAll('img');
+        let cur = 0;
+        const id = setInterval(() => {
+          imgs[cur].classList.remove('active');
+          cur = (cur + 1) % imgs.length;
+          imgs[cur].classList.add('active');
+        }, 5000);
+        cardTimers.set(card, id);
+      }
+
+      card.addEventListener('click', () => openUwModal(c.id));
+      uwGrid.appendChild(card);
+    });
+    uwCountEl.textContent = list.length;
+    uwTotalEl.textContent = totalPhotos;
+  }
+
+  function buildModalImages(c){
+    // clear previous imgs (keep nav buttons & dots container)
+    uwModalPhoto.querySelectorAll('img').forEach(n => n.remove());
+    c.images.forEach((src, i) => {
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = c.name + ' photo ' + (i+1);
+      if (i === 0) img.classList.add('active');
+      uwModalPhoto.insertBefore(img, uwModalPhoto.firstChild);
+    });
+    uwModalDots.innerHTML = '';
+    if (c.images.length > 1) {
+      c.images.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'uw-modal-dot' + (i === 0 ? ' active' : '');
+        d.setAttribute('aria-label', 'Photo ' + (i+1));
+        d.addEventListener('click', e => { e.stopPropagation(); setModalIdx(i); });
+        uwModalDots.appendChild(d);
+      });
+    }
+    document.getElementById('uwModalPrev').style.display = c.images.length > 1 ? 'flex' : 'none';
+    document.getElementById('uwModalNext').style.display = c.images.length > 1 ? 'flex' : 'none';
+    document.getElementById('uwModalCounter').style.display = c.images.length > 1 ? 'block' : 'none';
+    uwModalDots.style.display = c.images.length > 1 ? 'flex' : 'none';
+  }
+
+  function setModalIdx(i){
+    if (!modalCreature) return;
+    const imgs = uwModalPhoto.querySelectorAll('img');
+    const dots = uwModalDots.querySelectorAll('.uw-modal-dot');
+    imgs.forEach(x => x.classList.remove('active'));
+    dots.forEach(x => x.classList.remove('active'));
+    modalIdx = (i + imgs.length) % imgs.length;
+    imgs[modalIdx].classList.add('active');
+    if (dots[modalIdx]) dots[modalIdx].classList.add('active');
+    uwModalCounter.textContent = (modalIdx + 1) + ' / ' + modalCreature.images.length;
+  }
+
+  function startModalTimer(){
+    clearInterval(modalTimer);
+    if (!modalCreature || modalCreature.images.length < 2) return;
+    modalTimer = setInterval(() => setModalIdx(modalIdx + 1), 5000);
+  }
+
+  function openUwModal(id){
+    const c = creatures.find(x => x.id === id);
+    if (!c) return;
+    modalCreature = c;
+    modalIdx = 0;
+    uwModalCat.textContent = c.catLabel;
+    uwModalName.innerHTML = c.name;
+    uwModalSci.textContent = c.sci.replace(/&amp;/g,'&');
+    uwModalDesc.textContent = c.desc;
+    uwSpecSize.textContent  = c.size;
+    uwSpecDepth.textContent = c.depth;
+    uwSpecSeason.textContent= c.season;
+    uwSpecRarity.textContent= c.rarity;
+    uwSpecWhere.textContent = c.where;
+    buildModalImages(c);
+    uwModalCounter.textContent = '1 / ' + c.images.length;
+    uwModal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    startModalTimer();
+  }
+
+  function closeUwModal(){
+    uwModal.classList.remove('open');
+    document.body.style.overflow = '';
+    clearInterval(modalTimer);
+    modalCreature = null;
+  }
+
+  document.getElementById('uwModalClose').addEventListener('click', closeUwModal);
+  document.getElementById('uwModalPrev').addEventListener('click', () => { setModalIdx(modalIdx - 1); startModalTimer(); });
+  document.getElementById('uwModalNext').addEventListener('click', () => { setModalIdx(modalIdx + 1); startModalTimer(); });
+  uwModal.addEventListener('click', e => { if (e.target === uwModal) closeUwModal(); });
+  document.addEventListener('keydown', e => {
+    if (!uwModal.classList.contains('open')) return;
+    if (e.key === 'Escape') closeUwModal();
+    else if (e.key === 'ArrowLeft')  { setModalIdx(modalIdx - 1); startModalTimer(); }
+    else if (e.key === 'ArrowRight') { setModalIdx(modalIdx + 1); startModalTimer(); }
+  });
+  // pause rotation on hover over modal image
+  uwModalPhoto.addEventListener('mouseenter', () => clearInterval(modalTimer));
+  uwModalPhoto.addEventListener('mouseleave', startModalTimer);
+
+  uwFilters.forEach(btn => {
+    btn.addEventListener('click', () => {
+      uwFilters.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderUnderwaterGrid(btn.dataset.uw);
     });
   });
 
