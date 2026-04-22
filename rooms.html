@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rooms & Suites — Casa Escondida Anilao Resort & Dive Center</title>
+  <link rel="canonical" href="https://casaescondidaanilao.com/rooms.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
+  <meta name="description" content="31 ocean-side rooms and suites at Casa Escondida Anilao — standard doubles to spacious ocean suites and family rooms. All rates include breakfast." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ── */
+    [data-theme="night"]{
+      --bg:rgba(4,8,15,0.85);--bg2:rgba(7,14,26,0.88);--bg3:rgba(10,21,37,0.90);
+      --card:rgba(255,255,255,0.04);--card2:rgba(255,255,255,0.07);
+      --border:rgba(255,255,255,0.09);--border2:rgba(255,255,255,0.14);
+      --text:#f0f4f8;--text2:#94aab8;--text3:rgba(148,170,184,0.6);
+      --accent:#4dc2e8;--accent-d:#2e9fc4;--accent-g:rgba(77,194,232,0.14);
+      --gold:#e8c56a;--nav-bg:rgba(4,8,15,0.92);
+      background-image:linear-gradient(rgba(4,8,15,0.82),rgba(4,8,15,0.82)),url('images/background/594413266_1405022098297117_5892045775093709556_n.jpg');
+      background-size:cover;background-attachment:fixed;background-position:center;
+      background-color:#04080f;
+    }
+    [data-theme="night"] body{background:transparent;}
+    [data-theme="day"]{
+      --bg:#f5f0ea;--bg2:#eae3d8;--bg3:#ddd5c8;
+      --card:rgba(255,255,255,0.75);--card2:rgba(255,255,255,0.9);
+      --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+      --text:#0d1e2e;--text2:#3a5568;--text3:rgba(58,85,104,0.65);
+      --accent:#1a6b98;--accent-d:#155880;--accent-g:rgba(26,107,152,0.1);
+      --gold:#b8862a;--nav-bg:rgba(245,240,234,0.95);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);transition:background .5s,color .5s;min-height:100vh;}
+
+    /* ── NAV ── */
+    #nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.75rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);transition:all .4s;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-img{height:44px;width:auto;flex-shrink:0;display:block;}
+    [data-theme="day"] .nav-logo-night{display:none;}
+    [data-theme="night"] .nav-logo-day{display:none;}
+    .nav-links{display:flex;gap:2.2rem;list-style:none;}
+    .nav-links a{color:var(--text2);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:color .35s;position:relative;padding-bottom:2px;}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s ease;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .theme-toggle{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:30px;padding:.3rem .8rem;cursor:pointer;transition:all .35s;font-size:.72rem;letter-spacing:.08em;color:var(--text2);white-space:nowrap;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .toggle-track{width:34px;height:18px;background:var(--accent-g);border:1px solid var(--border2);border-radius:9px;position:relative;transition:background .4s;flex-shrink:0;}
+    .toggle-thumb{position:absolute;top:2px;left:2px;width:12px;height:12px;background:var(--accent);border-radius:50%;transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .4s;}
+    [data-theme="day"] .toggle-thumb{transform:translateX(16px);background:var(--gold);}
+    [data-theme="day"] .toggle-track{background:rgba(232,197,106,.2);border-color:var(--gold);}
+    .toggle-icon{font-size:.85rem;line-height:1;}
+    .btn-book{background:var(--accent);color:#fff;padding:.55rem 1.5rem;border-radius:2px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;}
+    .btn-book:hover{background:var(--accent-d);transform:translateY(-1px);}
+
+    /* ── Hamburger + Mobile Nav Drawer ── */
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:201;margin-left:.5rem;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--text);transition:transform .3s ease,opacity .3s ease;}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;transition:opacity .3s ease;}
+    .mobile-nav.open{opacity:1;}
+    .mobile-nav a{font-family:'Playfair Display',serif;font-size:2rem;font-weight:300;color:var(--text);text-decoration:none;letter-spacing:.02em;transition:color .3s;}
+    .mobile-nav a:hover,.mobile-nav a.active{color:var(--accent);}
+    .mobile-nav-cta{margin-top:1rem;background:var(--accent);color:#fff !important;padding:.8rem 2.5rem;border-radius:2px;font-family:'DM Sans',sans-serif !important;font-size:.85rem !important;letter-spacing:.12em;text-transform:uppercase;}
+    .mobile-nav-divider{width:40px;height:1px;background:var(--border);margin:.3rem 0;}
+
+    @media(max-width:768px){
+      #nav{padding:1rem 1.5rem;}
+      .nav-links,.nav-right .btn-book{display:none;}
+      .nav-hamburger{display:flex;}
+    }
+
+    /* ── HERO ── */
+    .r-hero{padding:9rem 4rem 3.5rem;text-align:center;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border);}
+    .r-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+    .r-eyebrow::before,.r-eyebrow::after{content:'';width:24px;height:1px;background:var(--accent);opacity:.5;}
+    .r-h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,4.5vw,3.6rem);font-weight:400;line-height:1.1;margin-bottom:1rem;}
+    .r-h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent) 30%,var(--gold) 55%,var(--accent) 70%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:glint 4s ease-in-out infinite;}
+    @keyframes glint{0%,90%,100%{background-position:200% center;}40%{background-position:-100% center;}}
+    .r-sub{color:var(--text2);font-size:.95rem;max-width:520px;margin:0 auto 2rem;line-height:1.7;}
+    .r-stats{display:flex;justify-content:center;gap:3rem;margin-top:2rem;flex-wrap:wrap;}
+    .r-stat{text-align:center;}
+    .r-stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:300;color:var(--accent);}
+    .r-stat-l{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-top:.2rem;}
+
+    /* ── FILTER BAR ── */
+    .filter-bar{position:sticky;top:65px;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:0 2rem;display:flex;justify-content:center;align-items:stretch;gap:.5rem;overflow-x:auto;transition:background .5s;}
+    .filter-btn{padding:1rem 1.6rem;border:none;border-bottom:2px solid transparent;background:none;color:var(--text2);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;white-space:nowrap;font-family:'DM Sans',sans-serif;}
+    .filter-btn:hover{color:var(--accent);}
+    .filter-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+    @media(max-width:768px){.filter-bar{padding:0 1rem;}}
+
+    /* ── SECTION ── */
+    .sec-wrap{max-width:1300px;margin:0 auto;padding:4rem 2.5rem 5rem;}
+    @media(max-width:768px){.sec-wrap{padding:3rem 1rem 4rem;}}
+    .sec-header{text-align:center;margin-bottom:3rem;}
+    .sec-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+    .sec-eyebrow::before,.sec-eyebrow::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.5;}
+    .sec-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3vw,2.4rem);font-weight:400;margin-bottom:.6rem;}
+    .sec-h2 em{font-style:italic;color:var(--accent);}
+    .sec-sub{color:var(--text2);font-size:.9rem;max-width:500px;margin:0 auto;}
+
+    /* ── ROOM CARDS ── */
+    .rooms-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2rem;}
+    @media(max-width:900px){.rooms-grid{grid-template-columns:1fr;}}
+
+    .room-card{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .35s,box-shadow .35s,border-color .35s;display:flex;flex-direction:column;}
+    .room-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,.28);border-color:var(--border2);}
+    .room-card.featured{border-color:rgba(232,197,106,.3);}
+    .room-card.featured:hover{border-color:rgba(232,197,106,.6);box-shadow:0 20px 60px rgba(0,0,0,.28),0 0 0 1px rgba(232,197,106,.2);}
+
+    .rm-photo{position:relative;height:280px;overflow:hidden;flex-shrink:0;}
+    .rm-photo img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease;}
+    .room-card:hover .rm-photo img{transform:scale(1.05);}
+
+    .rm-badge-wrap{position:absolute;top:1rem;left:1rem;display:flex;gap:.5rem;flex-wrap:wrap;}
+    .rm-badge{background:rgba(4,8,15,.7);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.15);padding:.28rem .7rem;border-radius:2px;font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.9);}
+    .rm-badge.gold{border-color:rgba(232,197,106,.45);color:var(--gold);}
+    .rm-badge.popular{background:rgba(77,194,232,.2);border-color:rgba(77,194,232,.4);color:var(--accent);}
+
+    .rm-price-tag{position:absolute;bottom:1rem;right:1rem;background:var(--accent);padding:.35rem 1rem;border-radius:2px;display:flex;align-items:baseline;gap:.3rem;}
+    .rm-price-tag.inquire{background:rgba(232,197,106,.85);}
+    .rm-price-amount{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;font-weight:400;}
+    .rm-price-per{font-size:.6rem;color:rgba(255,255,255,.8);letter-spacing:.06em;}
+
+    /* ── Room photo gallery ── */
+    .rm-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .4s ease;opacity:0;pointer-events:none;}
+    .rm-slide.active{opacity:1;pointer-events:auto;}
+    .rm-gallery-btn{position:absolute;top:50%;transform:translateY(-50%);background:rgba(0,0,0,.45);border:none;color:#fff;width:30px;height:30px;border-radius:50%;cursor:pointer;font-size:1rem;line-height:1;display:flex;align-items:center;justify-content:center;z-index:5;transition:background .2s;}
+    .rm-gallery-btn:hover{background:rgba(0,0,0,.7);}
+    .rm-prev{left:.6rem;}.rm-next{right:.6rem;}
+    .rm-dots{position:absolute;bottom:.55rem;left:50%;transform:translateX(-50%);display:flex;gap:.35rem;z-index:5;}
+    .rm-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.45);cursor:pointer;transition:background .25s;}
+    .rm-dot.active{background:#fff;}
+
+    .rm-body{padding:1.8rem 2rem 2rem;display:flex;flex-direction:column;flex:1;}
+    .rm-name{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;margin-bottom:.5rem;color:var(--text);}
+    .rm-name em{font-style:italic;color:var(--accent);}
+    .rm-name.gold-name em{color:var(--gold);}
+    .rm-desc{font-size:.85rem;color:var(--text2);line-height:1.75;margin-bottom:1.4rem;}
+
+    .rm-meta{display:flex;gap:1.5rem;flex-wrap:wrap;margin-bottom:1.4rem;padding-bottom:1.4rem;border-bottom:1px solid var(--border);}
+    .rm-meta-item{display:flex;align-items:center;gap:.45rem;font-size:.75rem;color:var(--text2);}
+    .rm-meta-item svg{width:14px;height:14px;opacity:.6;flex-shrink:0;}
+
+    .rm-feats-label{font-size:.62rem;letter-spacing:.14em;text-transform:uppercase;color:var(--text3);margin-bottom:.7rem;}
+    .rm-feats{display:flex;flex-wrap:wrap;gap:.4rem;margin-bottom:1.6rem;}
+    .rm-feat{background:var(--accent-g);border:1px solid rgba(77,194,232,.25);color:var(--accent);padding:.22rem .65rem;border-radius:20px;font-size:.67rem;letter-spacing:.04em;}
+    .room-card.featured .rm-feat{background:rgba(232,197,106,.1);border-color:rgba(232,197,106,.25);color:var(--gold);}
+
+    .rm-actions{display:flex;gap:.8rem;margin-top:auto;}
+    .rm-btn-primary{flex:1;text-align:center;background:var(--accent);color:#fff;padding:.7rem 1rem;border-radius:2px;text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;transition:background .3s;}
+    .rm-btn-primary:hover{background:var(--accent-d);}
+    .room-card.featured .rm-btn-primary{background:var(--gold);color:#1a1204;}
+    .room-card.featured .rm-btn-primary:hover{background:#d4a832;}
+    .rm-btn-ghost{padding:.7rem 1rem;border:1px solid var(--border);border-radius:2px;text-decoration:none;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text2);transition:all .3s;white-space:nowrap;}
+    .rm-btn-ghost:hover{border-color:var(--accent);color:var(--accent);}
+
+    /* hidden for filter */
+    .room-card.hidden{display:none;}
+
+    /* ── INCLUSIONS STRIP ── */
+    .inclusions{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+    .inc-grid{max-width:1300px;margin:0 auto;padding:3rem 2.5rem;display:grid;grid-template-columns:repeat(4,1fr);gap:2rem;}
+    @media(max-width:900px){.inc-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:500px){.inc-grid{grid-template-columns:1fr;}}
+    .inc-item{display:flex;align-items:flex-start;gap:1rem;}
+    .inc-icon{width:40px;height:40px;border-radius:50%;background:var(--accent-g);border:1px solid rgba(77,194,232,.25);display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .inc-icon svg{width:18px;height:18px;fill:none;stroke:var(--accent);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;}
+    .inc-text h4{font-size:.82rem;font-weight:500;color:var(--text);margin-bottom:.25rem;}
+    .inc-text p{font-size:.75rem;color:var(--text2);line-height:1.6;}
+
+    /* ── POLICIES ── */
+    .policies{background:var(--bg);}
+    .pol-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
+    @media(max-width:800px){.pol-grid{grid-template-columns:1fr 1fr;}}
+    @media(max-width:500px){.pol-grid{grid-template-columns:1fr;}}
+    .pol-card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:1.6rem 1.8rem;}
+    .pol-title{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:.8rem;display:flex;align-items:center;gap:.5rem;}
+    .pol-title svg{width:14px;height:14px;stroke:var(--accent);fill:none;stroke-width:1.8;stroke-linecap:round;}
+    .pol-list{list-style:none;display:flex;flex-direction:column;gap:.45rem;}
+    .pol-list li{font-size:.8rem;color:var(--text2);display:flex;align-items:flex-start;gap:.5rem;line-height:1.55;}
+    .pol-list li::before{content:'·';color:var(--accent);margin-top:.05rem;flex-shrink:0;}
+
+    /* ── BOOKING CTA ── */
+    .r-cta{text-align:center;padding:5rem 2rem;background:var(--bg2);border-top:1px solid var(--border);}
+    .r-cta h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:.8rem;}
+    .r-cta h2 em{font-style:italic;color:var(--accent);}
+    .r-cta p{color:var(--text2);margin-bottom:2rem;font-size:.9rem;}
+    .cta-btns{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+    .cta-btn-main{background:var(--accent);color:#fff;padding:.8rem 2.4rem;border-radius:2px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s;}
+    .cta-btn-main:hover{background:var(--accent-d);}
+    .cta-btn-outline{border:1px solid var(--border2);color:var(--text);padding:.8rem 2.4rem;border-radius:2px;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:all .3s;}
+    .cta-btn-outline:hover{border-color:var(--accent);color:var(--accent);}
+
+    /* ── FOOTER ── */
+    .r-footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--text3);}
+    @media(max-width:600px){.r-footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem;}}
+
+    /* ── Scroll reveal ── */
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+    .rv.on{opacity:1;transform:none;}
+    .rv-d1{transition-delay:.1s;}.rv-d2{transition-delay:.2s;}.rv-d3{transition-delay:.3s;}
+  
+    /* ══════ UNIFIED FOOTER ══════ */
+    footer.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:5rem 0 2.5rem;margin-top:0;}
+    .site-footer .c{max-width:1300px;margin:0 auto;padding:0 4rem;}
+    .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:4rem;}
+    .foot-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:300;color:var(--text);text-decoration:none;display:block;margin-bottom:1rem;}
+    .foot-logo span{color:var(--accent);}
+    .foot-desc{font-size:.82rem;color:var(--text3);line-height:1.75;max-width:260px;margin-bottom:1.5rem;}
+    .foot-socials{display:flex;gap:.6rem;}
+    .soc{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text3);transition:all .3s;}
+    .soc svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;}
+    .soc svg.fill-icon{fill:currentColor;stroke:none;}
+    .soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 18px rgba(77,194,232,.18);}
+    .foot-h{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;}
+    .foot-links{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+    .foot-links a{font-size:.82rem;color:var(--text3);text-decoration:none;transition:color .3s;}
+    .foot-links a:hover{color:var(--text);}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);max-width:1300px;margin:0 auto;padding-left:4rem;padding-right:4rem;}
+    .foot-copy{font-size:.72rem;color:var(--text3);}
+    .foot-legal{display:flex;gap:1.5rem;}
+    .foot-legal a{font-size:.72rem;color:var(--text3);text-decoration:none;transition:color .3s;}
+    .foot-legal a:hover{color:var(--text);}
+    @media(max-width:900px){
+      .foot-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+      .site-footer .c,.foot-bottom{padding-left:1.5rem;padding-right:1.5rem;}
+      .foot-bottom{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+    @media(max-width:560px){
+      .foot-grid{grid-template-columns:1fr;gap:2rem;}
+    }
+
+    /* ── Night ambient orbs ── */
+    .orb-layer{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden;}
+    [data-theme="day"] .orb-layer{display:none;}
+    .orb{position:absolute;border-radius:50%;mix-blend-mode:screen;}
+    .orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(77,194,232,.22) 0%,rgba(77,194,232,.06) 40%,transparent 65%);animation:orbA 24s ease-in-out infinite;}
+    .orb-2{width:420px;height:420px;background:radial-gradient(circle,rgba(77,194,232,.16) 0%,rgba(30,120,200,.04) 40%,transparent 65%);animation:orbB 32s ease-in-out infinite;}
+    .orb-3{width:480px;height:480px;background:radial-gradient(circle,rgba(100,200,255,.14) 0%,rgba(50,150,220,.04) 40%,transparent 65%);animation:orbC 28s ease-in-out infinite;}
+    .orb-4{width:300px;height:300px;background:radial-gradient(circle,rgba(77,194,232,.28) 0%,rgba(77,194,232,.08) 35%,transparent 60%);animation:orbD 19s ease-in-out infinite;}
+    .orb-5{width:660px;height:660px;background:radial-gradient(circle,rgba(20,80,160,.16) 0%,rgba(10,40,100,.04) 40%,transparent 65%);animation:orbE 40s ease-in-out infinite;}
+    @keyframes orbA{0%{transform:translate(-5vw,-5vh);}25%{transform:translate(55vw,15vh);}50%{transform:translate(45vw,65vh);}75%{transform:translate(5vw,45vh);}100%{transform:translate(-5vw,-5vh);}}
+    @keyframes orbB{0%{transform:translate(75vw,55vh);}25%{transform:translate(15vw,75vh);}50%{transform:translate(-5vw,25vh);}75%{transform:translate(45vw,5vh);}100%{transform:translate(75vw,55vh);}}
+    @keyframes orbC{0%{transform:translate(25vw,75vh);}33%{transform:translate(65vw,5vh);}66%{transform:translate(-5vw,45vh);}100%{transform:translate(25vw,75vh);}}
+    @keyframes orbD{0%{transform:translate(45vw,0vh);}20%{transform:translate(80vw,35vh);}40%{transform:translate(55vw,70vh);}60%{transform:translate(10vw,55vh);}80%{transform:translate(0vw,15vh);}100%{transform:translate(45vw,0vh);}}
+    @keyframes orbE{0%{transform:translate(-15vw,35vh);}50%{transform:translate(55vw,-10vh);}100%{transform:translate(-15vw,35vh);}}
+  </style>
+</head>
+<body>
+
+  <!-- Night mode ambient orbs -->
+  <div class="orb-layer" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Casa Escondida — Home">
+      <img class="nav-logo-img nav-logo-night" src="images/Logo/Untitled_design__3_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+      <img class="nav-logo-img nav-logo-day" src="images/Logo/Untitled_design__2_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="rooms.html" class="active">Rooms</a></li>
+      <li><a href="dive.html">Dive</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="location.html">Location</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+        <span class="toggle-icon" id="themeIcon">
+          <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+        <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
+      </button>
+      <a href="index.html#booking" class="btn-book">Book Now</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="index.html#about"    class="mob-link">About</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="rooms.html"          class="mob-link active">Rooms</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="gallery.html"        class="mob-link">Gallery</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="location.html" class="mob-link">Location</a>
+    <a href="index.html#booking"  class="mob-link mobile-nav-cta">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="r-hero">
+    <div class="r-eyebrow">Accommodation</div>
+    <h1 class="r-h1">Rest &amp; <em>Recharge</em></h1>
+    <p class="r-sub">24 ocean-side rooms designed for the diving traveler — fall asleep to the sound of waves, wake up ready to dive.</p>
+    <div class="r-stats rv">
+      <div class="r-stat"><div class="r-stat-n">24</div><div class="r-stat-l">Rooms &amp; Suites</div></div>
+      <div class="r-stat"><div class="r-stat-n">4.4★</div><div class="r-stat-l">Room Rating</div></div>
+      <div class="r-stat"><div class="r-stat-n">Incl.</div><div class="r-stat-l">Breakfast</div></div>
+    </div>
+  </header>
+
+  <!-- FILTER BAR -->
+  <div class="filter-bar" role="tablist" aria-label="Room type filter">
+    <button class="filter-btn active" data-filter="all">All Rooms</button>
+    <button class="filter-btn" data-filter="standard">Standard</button>
+    <button class="filter-btn" data-filter="deluxe">Deluxe</button>
+  </div>
+
+  <!-- INCLUSIONS STRIP -->
+  <div class="inclusions">
+    <div class="inc-grid">
+      <div class="inc-item rv">
+        <div class="inc-icon">
+          <svg viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </div>
+        <div class="inc-text">
+          <h4>Breakfast Included</h4>
+          <p>All rates include a full Filipino breakfast for all guests.</p>
+        </div>
+      </div>
+      <div class="inc-item rv rv-d1">
+        <div class="inc-icon">
+          <svg viewBox="0 0 24 24"><path d="M1 6v16l7-4 8 4 7-4V2l-7 4-8-4-7 4z"/><path d="M8 2v16M16 6v16"/></svg>
+        </div>
+        <div class="inc-text">
+          <h4>Free WiFi</h4>
+          <p>High-speed Wi-Fi throughout the resort — including rooms and dive center.</p>
+        </div>
+      </div>
+      <div class="inc-item rv rv-d2">
+        <div class="inc-icon">
+          <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+        </div>
+        <div class="inc-text">
+          <h4>Dive Gear Storage</h4>
+          <p>Dedicated rinse tanks and gear-drying racks included for all guests.</p>
+        </div>
+      </div>
+      <div class="inc-item rv rv-d3">
+        <div class="inc-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <div class="inc-text">
+          <h4>24/7 Front Desk</h4>
+          <p>Round-the-clock assistance for check-ins, dive bookings, and queries.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROOMS LIST -->
+  <section style="background:var(--bg);">
+    <div class="sec-wrap">
+      <div class="sec-header rv">
+        <div class="sec-eyebrow">Choose Your Room</div>
+        <h2 class="sec-h2">Find Your <em>Perfect Stay</em></h2>
+        <p class="sec-sub">From cozy standard rooms to spacious ocean suites — every room includes breakfast and is steps from the water.</p>
+      </div>
+
+      <div class="rooms-grid" id="roomsGrid">
+
+        <!-- STANDARD ROOM — TWIN (2 single beds) -->
+        <div class="room-card rv rv-d1" data-type="standard">
+          <div class="rm-photo rm-gallery">
+            <img src="images/rooms/standard-twin/1.jpg" class="rm-slide active" alt="Standard Twin — Room view" loading="lazy" />
+            <img src="images/rooms/standard-twin/2.jpg" class="rm-slide" alt="Standard Twin — Wide view" loading="lazy" />
+            <img src="images/rooms/standard-twin/3.jpg" class="rm-slide" alt="Standard Twin — Bathroom" loading="lazy" />
+            <img src="images/rooms/standard-twin/4.jpg" class="rm-slide" alt="Standard Twin — Panoramic" loading="lazy" />
+            <button class="rm-gallery-btn rm-prev" aria-label="Previous photo">&#8249;</button>
+            <button class="rm-gallery-btn rm-next" aria-label="Next photo">&#8250;</button>
+            <div class="rm-dots">
+              <span class="rm-dot active"></span><span class="rm-dot"></span><span class="rm-dot"></span><span class="rm-dot"></span>
+            </div>
+            <div class="rm-badge-wrap">
+              <span class="rm-badge">Standard</span>
+            </div>
+          </div>
+          <div class="rm-body">
+            <div class="rm-name">Standard <em>Twin</em></div>
+            <p class="rm-desc">Ideal for two divers — 2 separate single beds with marine-life artwork, LED cove lighting, wooden desk, flat-screen TV, and a glass-enclosed shower. Clean, minimal, and ready when you are.</p>
+            <div class="rm-meta">
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                18 sqm
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20v-3a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v3"/><circle cx="12" cy="7" r="4"/></svg>
+                Up to 2 guests
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4v16M22 4v16M2 12h20"/></svg>
+                2 Single Beds
+              </div>
+            </div>
+            <div class="rm-feats-label">Room Features</div>
+            <div class="rm-feats">
+              <span class="rm-feat">Air Conditioning</span>
+              <span class="rm-feat">Private Bathroom</span>
+              <span class="rm-feat">Rain Shower</span>
+              <span class="rm-feat">Bidet</span>
+              <span class="rm-feat">Free Toiletries</span>
+              <span class="rm-feat">Flat-Screen TV</span>
+              <span class="rm-feat">Desk</span>
+              <span class="rm-feat">Free WiFi</span>
+              <span class="rm-feat">No Smoking</span>
+            </div>
+            <div class="rm-actions">
+              <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="rm-btn-primary">Book on Booking.com</a>
+              <a href="index.html#booking" class="rm-btn-ghost">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- STANDARD ROOM — DOUBLE (1 double bed) -->
+        <div class="room-card rv rv-d2" data-type="standard">
+          <div class="rm-photo rm-gallery">
+            <img src="images/rooms/standard-double/2.jpg" class="rm-slide active" alt="Standard Double — Bed" loading="lazy" />
+            <img src="images/rooms/standard-double/1.jpg" class="rm-slide" alt="Standard Double — Room view" loading="lazy" />
+            <img src="images/rooms/standard-double/3.jpg" class="rm-slide" alt="Standard Double — Bathroom" loading="lazy" />
+            <button class="rm-gallery-btn rm-prev" aria-label="Previous photo">&#8249;</button>
+            <button class="rm-gallery-btn rm-next" aria-label="Next photo">&#8250;</button>
+            <div class="rm-dots">
+              <span class="rm-dot active"></span><span class="rm-dot"></span><span class="rm-dot"></span>
+            </div>
+            <div class="rm-badge-wrap">
+              <span class="rm-badge">Standard</span>
+            </div>
+          </div>
+          <div class="rm-body">
+            <div class="rm-name">Standard <em>Double</em></div>
+            <p class="rm-desc">A cozy 18 sqm room with one double bed — perfect for couples. Same clean white interiors, marine-life artwork, LED cove lighting, glass-enclosed bathroom, and all the essentials for a comfortable dive stay.</p>
+            <div class="rm-meta">
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                18 sqm
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20v-3a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v3"/><circle cx="12" cy="7" r="4"/></svg>
+                Up to 2 guests
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4v16M22 4v16M2 12h20"/></svg>
+                1 Double Bed
+              </div>
+            </div>
+            <div class="rm-feats-label">Room Features</div>
+            <div class="rm-feats">
+              <span class="rm-feat">Air Conditioning</span>
+              <span class="rm-feat">Private Bathroom</span>
+              <span class="rm-feat">Rain Shower</span>
+              <span class="rm-feat">Bidet</span>
+              <span class="rm-feat">Free Toiletries</span>
+              <span class="rm-feat">Flat-Screen TV</span>
+              <span class="rm-feat">Desk</span>
+              <span class="rm-feat">Free WiFi</span>
+              <span class="rm-feat">No Smoking</span>
+            </div>
+            <div class="rm-actions">
+              <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="rm-btn-primary">Book on Booking.com</a>
+              <a href="index.html#booking" class="rm-btn-ghost">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- BEACH DELUXE ROOM — featured -->
+        <div class="room-card featured rv rv-d1" data-type="deluxe" style="grid-column:1/-1;max-width:640px;margin:0 auto;width:100%;">
+          <div class="rm-photo rm-gallery">
+            <img src="images/rooms/beach-deluxe/1.jpg" class="rm-slide active" alt="Beach Deluxe — Sea view" loading="lazy" />
+            <img src="images/rooms/beach-deluxe/2.jpg" class="rm-slide" alt="Beach Deluxe — Beds" loading="lazy" />
+            <img src="images/rooms/beach-deluxe/3.jpg" class="rm-slide" alt="Beach Deluxe — Bathroom" loading="lazy" />
+            <img src="images/rooms/beach-deluxe/4.jpg" class="rm-slide" alt="Beach Deluxe — Vanity" loading="lazy" />
+            <button class="rm-gallery-btn rm-prev" aria-label="Previous photo">&#8249;</button>
+            <button class="rm-gallery-btn rm-next" aria-label="Next photo">&#8250;</button>
+            <div class="rm-dots">
+              <span class="rm-dot active"></span><span class="rm-dot"></span><span class="rm-dot"></span><span class="rm-dot"></span>
+            </div>
+            <div class="rm-badge-wrap">
+              <span class="rm-badge gold">Deluxe</span>
+              <span class="rm-badge gold">Most Popular ★</span>
+            </div>
+          </div>
+          <div class="rm-body">
+            <div class="rm-name gold-name">Beach <em>Deluxe</em></div>
+            <p class="rm-desc">Step straight from your room onto the beach deck — floor-to-ceiling glass sliding doors open directly to the resort's seafront terrace and Batangas Bay. 40 sqm with 2 double beds, marble bathroom, rain shower, and unobstructed sea views.</p>
+            <div class="rm-meta">
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                40 sqm
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 20v-3a4 4 0 0 1 4-4h12a4 4 0 0 1 4 4v3"/><circle cx="12" cy="7" r="4"/></svg>
+                Up to 4 guests
+              </div>
+              <div class="rm-meta-item">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M2 4v16M22 4v16M2 12h20"/></svg>
+                2 Double Beds
+              </div>
+            </div>
+            <div class="rm-feats-label">Room Features</div>
+            <div class="rm-feats">
+              <span class="rm-feat">Direct Beach Deck Access</span>
+              <span class="rm-feat">Sea View</span>
+              <span class="rm-feat">Floor-to-Ceiling Glass</span>
+              <span class="rm-feat">Air Conditioning</span>
+              <span class="rm-feat">Private Bathroom</span>
+              <span class="rm-feat">Rain Shower</span>
+              <span class="rm-feat">Marble Vanity</span>
+              <span class="rm-feat">Bidet</span>
+              <span class="rm-feat">Free Toiletries</span>
+              <span class="rm-feat">Flat-Screen TV</span>
+              <span class="rm-feat">Wardrobe</span>
+              <span class="rm-feat">Desk</span>
+              <span class="rm-feat">Free WiFi</span>
+            </div>
+            <div class="rm-actions">
+              <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="rm-btn-primary">Book on Booking.com</a>
+              <a href="index.html#booking" class="rm-btn-ghost">Inquire</a>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+
+      <p class="rv" style="text-align:center;margin-top:2.5rem;font-size:.8rem;color:var(--text3)">
+        All rates include breakfast for all registered guests &nbsp;·&nbsp; Non-smoking rooms available &nbsp;·&nbsp;
+        <a href="index.html#booking" style="color:var(--accent);text-decoration:none">Ask about our Dive &amp; Stay packages →</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- POLICIES -->
+  <section class="policies">
+    <div class="sec-wrap">
+      <div class="sec-header rv">
+        <div class="sec-eyebrow">Before You Book</div>
+        <h2 class="sec-h2">Resort <em>Policies</em></h2>
+      </div>
+      <div class="pol-grid">
+        <div class="pol-card rv rv-d1">
+          <div class="pol-title">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Check-In / Check-Out
+          </div>
+          <ul class="pol-list">
+            <li>Check-in from 2:00 PM</li>
+            <li>Check-out by 12:00 noon</li>
+            <li>Early check-in subject to availability</li>
+            <li>Late check-out may be arranged (additional fee)</li>
+          </ul>
+        </div>
+        <div class="pol-card rv rv-d2">
+          <div class="pol-title">
+            <svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            Inclusions
+          </div>
+          <ul class="pol-list">
+            <li>Full Filipino breakfast for all guests</li>
+            <li>Free Wi-Fi in rooms and common areas</li>
+            <li>Use of swimming pool and resort facilities</li>
+            <li>Dive gear rinse tanks and drying racks</li>
+          </ul>
+        </div>
+        <div class="pol-card rv rv-d3">
+          <div class="pol-title">
+            <svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            House Rules
+          </div>
+          <ul class="pol-list">
+            <li>Non-smoking rooms — designated outdoor areas available</li>
+            <li>Pets not permitted in guest rooms</li>
+            <li>Quiet hours from 10:00 PM</li>
+            <li>Dive gear must be rinsed before entering rooms</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOOKING CTA -->
+  <section class="r-cta rv">
+    <h2>Ready to <em>Book?</em></h2>
+    <p>Contact us directly for the best rates, dive &amp; stay packages, and group bookings.</p>
+    <div class="cta-btns">
+      <a href="index.html#booking" class="cta-btn-main">Book Your Room</a>
+      <a href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" class="cta-btn-outline">Message on Facebook</a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="c">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="foot-logo">Casa <span>Escondida</span></a>
+          <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
+          <div class="foot-socials">
+            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook">
+              <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </a>
+            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="foot-h">Explore</div>
+          <ul class="foot-links">
+            <li><a href="index.html#about">About the Resort</a></li>
+            <li><a href="index.html#dive">Dive Center</a></li>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="index.html#dining">Restaurant &amp; Bar</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="foot-h">Dive Packages</div>
+          <ul class="foot-links">
+            <li><a href="index.html#dive">PADI Open Water</a></li>
+            <li><a href="index.html#dive">Advanced OW Course</a></li>
+            <li><a href="index.html#dive">Rescue Diver</a></li>
+            <li><a href="index.html#dive">Guided Dive Trips</a></li>
+            <li><a href="index.html#dive">Night Dives</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="foot-h">Location</div>
+          <ul class="foot-links">
+            <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
+            <li><a href="location.html">Batangas Province 4202</a></li>
+            <li><a href="location.html">Philippines</a></li>
+            <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
+            <li><a href="index.html#booking">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
+        <div class="foot-legal">
+          <a href="mailto:casaescondidaanilao@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
+          <a href="mailto:casaescondidaanilao@gmail.com?subject=Terms%20Inquiry">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Theme toggle ── */
+  const html = document.documentElement;
+  const syncThemeUI = () => {
+    const n = html.getAttribute('data-theme') === 'night';
+    document.getElementById('icon-moon').style.display = n ? 'block' : 'none';
+    document.getElementById('icon-sun').style.display  = n ? 'none'  : 'block';
+    document.getElementById('themeLabel').textContent = n ? 'Night' : 'Day';
+  };
+  syncThemeUI();
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const night = html.getAttribute('data-theme') === 'night';
+    const next = night ? 'day' : 'night';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('ce-theme', next);
+    syncThemeUI();
+  });
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('ce-theme')) { html.setAttribute('data-theme', e.matches ? 'night' : 'day'); syncThemeUI(); }
+  });
+
+  /* ── Room filter ── */
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const roomCards  = document.querySelectorAll('.room-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+      roomCards.forEach(card => {
+        const match = filter === 'all' || card.dataset.type === filter;
+        card.classList.toggle('hidden', !match);
+      });
+    });
+  });
+
+  /* ── Room photo gallery ── */
+  document.querySelectorAll('.rm-gallery').forEach(function(gallery) {
+    var slides = gallery.querySelectorAll('.rm-slide');
+    var dots   = gallery.querySelectorAll('.rm-dot');
+    var cur = 0;
+    function goTo(n) {
+      slides[cur].classList.remove('active');
+      dots[cur].classList.remove('active');
+      cur = (n + slides.length) % slides.length;
+      slides[cur].classList.add('active');
+      dots[cur].classList.add('active');
+    }
+    gallery.querySelector('.rm-prev').addEventListener('click', function(e){ e.stopPropagation(); goTo(cur-1); });
+    gallery.querySelector('.rm-next').addEventListener('click', function(e){ e.stopPropagation(); goTo(cur+1); });
+    dots.forEach(function(dot, i){ dot.addEventListener('click', function(e){ e.stopPropagation(); goTo(i); }); });
+  });
+
+  /* ── Scroll reveal ── */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('on');
+      else e.target.classList.remove('on');
+    });
+  }, { threshold: 0.08 });
+  document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+  /* ── Mobile hamburger toggle ── */
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  function openMobileNav(){
+    mobileNav.style.display='flex';
+    requestAnimationFrame(()=>mobileNav.classList.add('open'));
+    hamburger.setAttribute('aria-expanded','true');
+    mobileNav.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    setTimeout(()=>{mobileNav.style.display='none';},300);
+  }
+  hamburger.addEventListener('click',()=>{
+    hamburger.getAttribute('aria-expanded')==='true' ? closeMobileNav() : openMobileNav();
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileNav));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileNav();});
+  </script>
+
+  <script>
+  /* ── Ripple & Cursor Trail ── */
+  (function(){
+    const cvs = document.createElement('canvas');
+    cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;mix-blend-mode:screen;';
+    document.body.appendChild(cvs);
+    const ctx = cvs.getContext('2d');
+    let W, H;
+    const resize = () => { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const ripples = [], particles = [];
+    let mx = -999, my = -999;
+
+    window.addEventListener('click', e => {
+      const x = e.clientX, y = e.clientY;
+      ripples.push({ x, y, r:0, maxR:12, alpha:1, speed:7, type:'flash', delay:0 });
+      [{maxR:60,speed:3.2,alpha:.9,delay:0},{maxR:105,speed:5,alpha:.7,delay:4},{maxR:155,speed:7,alpha:.5,delay:9},{maxR:220,speed:9,alpha:.3,delay:15}]
+        .forEach(cfg => ripples.push({ x, y, r:0, type:'ring', ...cfg }));
+      for (let i=0;i<18;i++){
+        const ang=(i/18)*Math.PI*2, spd=2+Math.random()*4;
+        particles.push({x,y,vx:Math.cos(ang)*spd,vy:Math.sin(ang)*spd,r:2+Math.random()*2,life:1,decay:.022+Math.random()*.018,trail:false});
+      }
+      for (let i=0;i<8;i++) particles.push({x,y,vx:(Math.random()-.5)*2,vy:(Math.random()-.5)*2-1,r:1.5,life:1,decay:.05+Math.random()*.04,trail:false});
+    });
+
+    window.addEventListener('mousemove', e => {
+      const dx=e.clientX-mx, dy=e.clientY-my;
+      if (dx*dx+dy*dy>50){ mx=e.clientX; my=e.clientY;
+        for(let i=0;i<4;i++) particles.push({x:mx+(Math.random()-.5)*6,y:my+(Math.random()-.5)*6,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5-.5,r:1+Math.random()*2.5,life:1,decay:.045+Math.random()*.03,trail:true});
+      }
+    });
+
+    function loop(){
+      ctx.clearRect(0,0,W,H);
+      for(let i=ripples.length-1;i>=0;i--){
+        const rp=ripples[i];
+        if(rp.delay>0){rp.delay--;continue;}
+        rp.r+=rp.speed;
+        const prog=rp.r/rp.maxR;
+        if(prog>=1){ripples.splice(i,1);continue;}
+        if(rp.type==='flash'){
+          const a=rp.alpha*(1-prog);
+          const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);
+          grd.addColorStop(0,`rgba(180,240,255,${a})`);grd.addColorStop(.5,`rgba(77,194,232,${a*.6})`);grd.addColorStop(1,`rgba(77,194,232,0)`);
+          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
+        } else {
+          const ease=1-prog*prog, a=rp.alpha*ease;
+          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);
+          ctx.strokeStyle=`rgba(77,194,232,${a})`;ctx.lineWidth=Math.max(2.5*(1-prog*.7),.5);ctx.stroke();
+          if(rp.r>20){ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r*.65,0,Math.PI*2);ctx.strokeStyle=`rgba(140,220,248,${a*.35})`;ctx.lineWidth=1;ctx.stroke();}
+          if(prog<.3){const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);grd.addColorStop(0,'rgba(77,194,232,0)');grd.addColorStop(.75,'rgba(77,194,232,0)');grd.addColorStop(1,`rgba(77,194,232,${a*.18})`);ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}
+        }
+      }
+      for(let i=particles.length-1;i>=0;i--){
+        const p=particles[i];
+        p.x+=p.vx;p.y+=p.vy;
+        if(!p.trail)p.vy+=.06;
+        p.life-=p.decay;
+        if(p.life<=0){particles.splice(i,1);continue;}
+        const a=p.life*(p.trail?.55:.85), r=Math.max(p.r*p.life,.3);
+        const grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*2.5);
+        grd.addColorStop(0,`rgba(190,245,255,${a})`);grd.addColorStop(.4,`rgba(77,194,232,${a*.7})`);grd.addColorStop(1,'rgba(77,194,232,0)');
+        ctx.beginPath();ctx.arc(p.x,p.y,r*2.5,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
+      }
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+  </script>
+</body>
+</html>

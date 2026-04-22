@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 200" aria-label="Casa Escondida">
+  <polygon fill="white" points="126,3 249,150 219,150 126,40 33,150 3,150"/>
+  <text fill="white" x="257" y="108" font-family="'DM Sans',Arial,sans-serif" font-weight="700" font-size="85">CASA</text>
+  <text fill="white" x="3" y="196" font-family="'DM Sans',Arial,sans-serif" font-weight="700" font-size="85" letter-spacing="2">ESCONDIDA</text>
+</svg>

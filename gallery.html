@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery — Casa Escondida Anilao Resort & Dive Center</title>
+  <link rel="canonical" href="https://casaescondidaanilao.com/gallery.html" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
+  <meta name="description" content="Photo & video gallery of Casa Escondida Anilao — live from Facebook and Instagram, featuring real guest shots, diving, resort life and Batangas Bay." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Tokens ── */
+    [data-theme="night"]{
+      --bg:rgba(4,8,15,0.85);--bg2:rgba(7,14,26,0.88);--bg3:rgba(10,21,37,0.90);
+      --card:rgba(255,255,255,0.04);--card2:rgba(255,255,255,0.07);
+      --border:rgba(255,255,255,0.09);--border2:rgba(255,255,255,0.14);
+      --text:#f0f4f8;--text2:#94aab8;--text3:rgba(148,170,184,0.6);
+      --accent:#4dc2e8;--accent-d:#2e9fc4;--accent-g:rgba(77,194,232,0.14);
+      --gold:#e8c56a;--nav-bg:rgba(4,8,15,0.92);
+      --pill-bg:rgba(255,255,255,0.06);--pill-on:rgba(77,194,232,0.15);
+      background-image:linear-gradient(rgba(4,8,15,0.82),rgba(4,8,15,0.82)),url('images/background/594413266_1405022098297117_5892045775093709556_n.jpg');
+      background-size:cover;background-attachment:fixed;background-position:center;
+      background-color:#04080f;
+    }
+    [data-theme="night"] body{background:transparent;}
+    [data-theme="day"]{
+      --bg:#f5f0ea;--bg2:#eae3d8;--bg3:#ddd5c8;
+      --card:rgba(255,255,255,0.75);--card2:rgba(255,255,255,0.9);
+      --border:rgba(0,0,0,0.08);--border2:rgba(0,0,0,0.14);
+      --text:#0d1e2e;--text2:#3a5568;--text3:rgba(58,85,104,0.65);
+      --accent:#1a6b98;--accent-d:#155880;--accent-g:rgba(26,107,152,0.1);
+      --gold:#b8862a;--nav-bg:rgba(245,240,234,0.95);
+      --pill-bg:rgba(0,0,0,0.06);--pill-on:rgba(26,107,152,0.12);
+    }
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);transition:background .5s,color .5s;min-height:100vh;}
+
+    /* ── NAV ── */
+    #nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.75rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);transition:all .4s;}
+    .nav-logo{display:flex;align-items:center;gap:.55rem;text-decoration:none;flex-shrink:0;}
+    .nav-logo-img{height:44px;width:auto;flex-shrink:0;display:block;}
+    [data-theme="day"] .nav-logo-night{display:none;}
+    [data-theme="night"] .nav-logo-day{display:none;}
+    .nav-links{display:flex;gap:2.2rem;list-style:none;}
+    .nav-links a{color:var(--text2);text-decoration:none;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;font-weight:400;transition:color .35s;position:relative;padding-bottom:2px;}
+    .nav-links a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:1px;background:var(--accent);transition:width .35s ease;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .nav-links a:hover::after,.nav-links a.active::after{width:100%;}
+    .nav-right{display:flex;align-items:center;gap:1rem;}
+    .theme-toggle{display:flex;align-items:center;gap:.5rem;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:30px;padding:.3rem .8rem;cursor:pointer;transition:all .35s;font-size:.72rem;letter-spacing:.08em;color:var(--text2);white-space:nowrap;}
+    .theme-toggle:hover{border-color:var(--accent);color:var(--accent);}
+    .toggle-track{width:34px;height:18px;background:var(--accent-g);border:1px solid var(--border2);border-radius:9px;position:relative;transition:background .4s;flex-shrink:0;}
+    .toggle-thumb{position:absolute;top:2px;left:2px;width:12px;height:12px;background:var(--accent);border-radius:50%;transition:transform .35s cubic-bezier(.34,1.56,.64,1),background .4s;}
+    [data-theme="day"] .toggle-thumb{transform:translateX(16px);background:var(--gold);}
+    [data-theme="day"] .toggle-track{background:rgba(232,197,106,.2);border-color:var(--gold);}
+    .toggle-icon{font-size:.85rem;line-height:1;}
+    .btn-book{background:var(--accent);color:#fff;padding:.55rem 1.5rem;border-radius:2px;font-size:.75rem;letter-spacing:.12em;text-transform:uppercase;text-decoration:none;transition:background .3s,transform .2s;}
+    .btn-book:hover{background:var(--accent-d);transform:translateY(-1px);}
+
+    /* ── Hamburger + Mobile Nav Drawer ── */
+    .nav-hamburger{display:none;flex-direction:column;justify-content:center;gap:5px;background:none;border:none;cursor:pointer;padding:6px;z-index:201;margin-left:.5rem;}
+    .nav-hamburger span{display:block;width:22px;height:1.5px;background:var(--text);transition:transform .3s ease,opacity .3s ease;}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
+    .nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    .mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;transition:opacity .3s ease;}
+    .mobile-nav.open{opacity:1;}
+    .mobile-nav a{font-family:'Playfair Display',serif;font-size:2rem;font-weight:300;color:var(--text);text-decoration:none;letter-spacing:.02em;transition:color .3s;}
+    .mobile-nav a:hover,.mobile-nav a.active{color:var(--accent);}
+    .mobile-nav-cta{margin-top:1rem;background:var(--accent);color:#fff !important;padding:.8rem 2.5rem;border-radius:2px;font-family:'DM Sans',sans-serif !important;font-size:.85rem !important;letter-spacing:.12em;text-transform:uppercase;}
+    .mobile-nav-divider{width:40px;height:1px;background:var(--border);margin:.3rem 0;}
+
+    @media(max-width:768px){
+      #nav{padding:1rem 1.5rem;}
+      .nav-links,.nav-right .btn-book{display:none;}
+      .nav-hamburger{display:flex;}
+    }
+
+    /* ── HERO ── */
+    .g-hero{padding:9rem 4rem 3rem;text-align:center;background:linear-gradient(180deg,var(--bg2) 0%,var(--bg) 100%);border-bottom:1px solid var(--border);}
+    .g-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
+    .g-eyebrow::before,.g-eyebrow::after{content:'';width:24px;height:1px;background:var(--accent);opacity:.5;}
+    .g-h1{font-family:'Playfair Display',serif;font-size:clamp(2.4rem,5vw,4rem);font-weight:400;line-height:1.1;margin-bottom:1rem;}
+    .g-h1 em{font-style:italic;background:linear-gradient(90deg,var(--accent) 30%,var(--gold) 55%,var(--accent) 70%);background-size:300% auto;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:glint 4s ease-in-out infinite;}
+    @keyframes glint{0%,90%,100%{background-position:200% center;}40%{background-position:-100% center;}}
+    .g-sub{color:var(--text2);font-size:.95rem;max-width:560px;margin:0 auto 2rem;line-height:1.7;}
+    .g-stats{display:flex;justify-content:center;gap:3rem;margin-top:2.5rem;flex-wrap:wrap;}
+    .g-stat{text-align:center;}
+    .g-stat-n{font-family:'Playfair Display',serif;font-size:1.8rem;font-weight:300;color:var(--accent);}
+    .g-stat-l{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text3);margin-top:.2rem;}
+
+    /* ── TAB NAV ── */
+    .tab-bar{position:sticky;top:65px;z-index:100;background:var(--bg);border-bottom:1px solid var(--border);padding:0 4rem;display:flex;align-items:stretch;justify-content:center;gap:0;overflow-x:auto;transition:background .5s;}
+    .tab-btn{padding:1rem 1.6rem;border:none;border-bottom:2px solid transparent;background:none;color:var(--text2);font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .3s;white-space:nowrap;font-family:'DM Sans',sans-serif;display:flex;align-items:center;gap:.5rem;}
+    .tab-btn svg{width:14px;height:14px;opacity:.7;}
+    .tab-btn:hover{color:var(--accent);}
+    .tab-btn.active{color:var(--accent);border-bottom-color:var(--accent);}
+    @media(max-width:768px){.tab-bar{padding:0 1rem;}}
+
+    /* ── SECTION COMMON ── */
+    .sec-wrap{max-width:1300px;margin:0 auto;padding:4rem 2.5rem 5rem;}
+    @media(max-width:768px){.sec-wrap{padding:3rem 1rem 4rem;}}
+    .sec-header{text-align:center;margin-bottom:3rem;}
+    .sec-eyebrow{display:inline-flex;align-items:center;gap:.6rem;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);margin-bottom:.7rem;}
+    .sec-eyebrow::before,.sec-eyebrow::after{content:'';width:20px;height:1px;background:var(--accent);opacity:.5;}
+    .sec-h2{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,3.5vw,2.6rem);font-weight:400;margin-bottom:.6rem;}
+    .sec-h2 em{font-style:italic;color:var(--accent);}
+    .sec-sub{color:var(--text2);font-size:.9rem;max-width:500px;margin:0 auto;}
+
+    /* ── TAB PANELS ── */
+    .tab-panel{display:none;}
+    .tab-panel.active{display:block;}
+
+    /* ── FACEBOOK SECTION ── */
+    .fb-section{background:var(--bg);}
+    .fb-posts-grid{columns:3 280px;column-gap:10px;margin-bottom:2.5rem;}
+    @media(max-width:900px){.fb-posts-grid{columns:2;}}
+    @media(max-width:560px){.fb-posts-grid{columns:1;}}
+    .fb-post-frame{break-inside:avoid;margin-bottom:10px;border-radius:8px;overflow:hidden;background:var(--bg3);position:relative;}
+    .fb-post-frame iframe{display:block;border:none;width:100%;height:500px;}
+    .fb-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:.7rem;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 45%);text-decoration:none;opacity:0;transition:opacity .3s;}
+    .fb-post-frame:hover .fb-overlay{opacity:1;}
+    .fb-overlay-label{color:#fff;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.35rem;}
+    /* Local photo card replacement for unavailable FB posts */
+    .fb-photo-card{display:block;position:relative;height:500px;overflow:hidden;text-decoration:none;border-radius:8px;}
+    .fb-photo-card img{width:100%;height:100%;object-fit:cover;transition:transform .7s ease,filter .5s;}
+    .fb-photo-card:hover img{transform:scale(1.05);filter:brightness(.85);}
+    .fb-photo-card-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.1) 55%,transparent 100%);display:flex;flex-direction:column;justify-content:flex-end;padding:1.2rem;}
+    .fb-photo-card-brand{display:flex;align-items:center;gap:.45rem;margin-bottom:.5rem;}
+    .fb-photo-card-brand svg{width:18px;height:18px;fill:#1877f2;}
+    .fb-photo-card-brand span{font-size:.6rem;color:rgba(255,255,255,.7);letter-spacing:.08em;text-transform:uppercase;}
+    .fb-photo-card-caption{font-size:.78rem;color:#fff;line-height:1.45;margin-bottom:.55rem;opacity:.9;}
+    .fb-photo-card-cta{font-size:.58rem;color:rgba(255,255,255,.65);letter-spacing:.12em;text-transform:uppercase;display:flex;align-items:center;gap:.3rem;transition:color .2s;}
+    .fb-photo-card:hover .fb-photo-card-cta{color:#4dc2e8;}
+
+    /* ── INSTAGRAM SECTION ── */
+    .ig-section{background:var(--bg2);border-top:1px solid var(--border);}
+    .ig-posts-grid{columns:4 220px;column-gap:6px;margin-bottom:2.5rem;}
+    @media(max-width:900px){.ig-posts-grid{columns:3;}}
+    @media(max-width:560px){.ig-posts-grid{columns:2;}}
+    /* image-only frame: clips instagram header/footer chrome; JS sizes height to image area */
+    .ig-frame{break-inside:avoid;margin-bottom:6px;position:relative;overflow:hidden;border-radius:6px;background:var(--bg3);height:280px;}
+    .ig-frame .instagram-media{margin:0!important;min-width:0!important;max-width:100%!important;width:100%!important;border-radius:0!important;box-shadow:none!important;}
+    .ig-frame iframe{position:relative!important;top:-54px!important;width:100%!important;min-width:0!important;pointer-events:none;display:block;}
+    .ig-overlay{position:absolute;inset:0;display:flex;align-items:flex-end;justify-content:flex-end;padding:.7rem;background:linear-gradient(to top,rgba(0,0,0,.55) 0%,transparent 45%);text-decoration:none;opacity:0;transition:opacity .3s;}
+    .ig-frame:hover .ig-overlay{opacity:1;}
+    .ig-overlay-label{color:#fff;font-size:.6rem;letter-spacing:.1em;text-transform:uppercase;display:flex;align-items:center;gap:.35rem;}
+    .ig-cta-row{text-align:center;padding-top:1.5rem;}
+    .ig-cta-row p{color:var(--text2);font-size:.9rem;margin-bottom:1.2rem;}
+    .ig-cta-btn{display:inline-flex;align-items:center;gap:.6rem;border:1px solid var(--border2);padding:.7rem 2rem;border-radius:2px;text-decoration:none;color:var(--text);font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;transition:all .3s;}
+    .ig-cta-btn:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+
+    /* ── VIDEO SECTION ── */
+    .video-section{background:var(--bg);}
+    .video-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    @media(max-width:1024px){.video-grid{grid-template-columns:repeat(2,1fr);}}
+    @media(max-width:600px){.video-grid{grid-template-columns:1fr;}}
+    .video-card{background:var(--card);border:1px solid var(--border);border-radius:6px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
+    .video-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.3);}
+    .video-embed{position:relative;padding-bottom:56.25%;height:0;overflow:hidden;}
+    .video-embed iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+    .yt-thumb-link{display:block;position:relative;padding-bottom:56.25%;height:0;overflow:hidden;text-decoration:none;}
+    .yt-thumb-link img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .4s;}
+    .yt-thumb-link:hover img{transform:scale(1.04);}
+    .yt-thumb-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;}
+    .yt-thumb-play-circle{width:64px;height:64px;border-radius:50%;background:rgba(0,0,0,.65);backdrop-filter:blur(4px);border:2px solid rgba(255,255,255,.35);display:flex;align-items:center;justify-content:center;transition:background .3s,transform .3s;}
+    .yt-thumb-link:hover .yt-thumb-play-circle{background:#e84d4d;border-color:#e84d4d;transform:scale(1.1);}
+    .yt-thumb-play-circle svg{width:22px;height:22px;fill:#fff;margin-left:4px;}
+    .yt-open-label{position:absolute;bottom:.6rem;right:.7rem;background:rgba(0,0,0,.7);color:#fff;font-size:.6rem;letter-spacing:.1em;padding:.2rem .5rem;border-radius:2px;text-transform:uppercase;}
+    .video-meta{padding:1rem 1.2rem 1.2rem;}
+    .video-badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:.2rem .6rem;border-radius:2px;margin-bottom:.5rem;}
+    .video-badge.yt{background:rgba(232,77,77,.15);color:#e84d4d;}
+    .video-badge.fb{background:rgba(24,119,242,.15);color:#5b9bd5;}
+    .video-badge svg{width:10px;height:10px;}
+    .video-title{font-size:.85rem;font-weight:500;line-height:1.4;color:var(--text);margin-bottom:.25rem;}
+    .video-source{font-size:.72rem;color:var(--text3);}
+
+    /* ── SOCIAL CTA ── */
+    .g-cta{text-align:center;padding:5rem 2rem;border-top:1px solid var(--border);background:var(--bg2);}
+    .g-cta h2{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;margin-bottom:.8rem;}
+    .g-cta p{color:var(--text2);margin-bottom:2rem;font-size:.9rem;}
+    .cta-socials{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;}
+    .cta-soc{display:flex;align-items:center;gap:.6rem;padding:.7rem 1.6rem;border-radius:2px;border:1px solid var(--border);text-decoration:none;color:var(--text2);font-size:.78rem;letter-spacing:.08em;transition:all .3s;}
+    .cta-soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-2px);}
+    .cta-soc svg{width:16px;height:16px;}
+
+    /* ── FOOTER ── */
+    .g-footer{padding:2rem 4rem;border-top:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;font-size:.72rem;color:var(--text3);}
+    @media(max-width:600px){.g-footer{flex-direction:column;gap:.5rem;text-align:center;padding:1.5rem;}}
+
+    /* ── Scroll reveal ── */
+    .rv{opacity:0;transform:translateY(24px);transition:opacity .65s ease,transform .65s ease;}
+    .rv.on{opacity:1;transform:none;}
+    .rv-d1{transition-delay:.1s;} .rv-d2{transition-delay:.2s;} .rv-d3{transition-delay:.3s;}
+  
+    /* ══════ UNIFIED FOOTER ══════ */
+    footer.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:5rem 0 2.5rem;margin-top:0;}
+    .site-footer .c{max-width:1300px;margin:0 auto;padding:0 4rem;}
+    .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:4rem;}
+    .foot-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:300;color:var(--text);text-decoration:none;display:block;margin-bottom:1rem;}
+    .foot-logo span{color:var(--accent);}
+    .foot-desc{font-size:.82rem;color:var(--text3);line-height:1.75;max-width:260px;margin-bottom:1.5rem;}
+    .foot-socials{display:flex;gap:.6rem;}
+    .soc{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text3);transition:all .3s;}
+    .soc svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;}
+    .soc svg.fill-icon{fill:currentColor;stroke:none;}
+    .soc:hover{border-color:var(--accent);color:var(--accent);transform:translateY(-3px);box-shadow:0 6px 18px rgba(77,194,232,.18);}
+    .foot-h{font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);margin-bottom:1.2rem;}
+    .foot-links{list-style:none;display:flex;flex-direction:column;gap:.65rem;}
+    .foot-links a{font-size:.82rem;color:var(--text3);text-decoration:none;transition:color .3s;}
+    .foot-links a:hover{color:var(--text);}
+    .foot-bottom{display:flex;justify-content:space-between;align-items:center;padding-top:2rem;border-top:1px solid var(--border);max-width:1300px;margin:0 auto;padding-left:4rem;padding-right:4rem;}
+    .foot-copy{font-size:.72rem;color:var(--text3);}
+    .foot-legal{display:flex;gap:1.5rem;}
+    .foot-legal a{font-size:.72rem;color:var(--text3);text-decoration:none;transition:color .3s;}
+    .foot-legal a:hover{color:var(--text);}
+    @media(max-width:900px){
+      .foot-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+      .site-footer .c,.foot-bottom{padding-left:1.5rem;padding-right:1.5rem;}
+      .foot-bottom{flex-direction:column;gap:.8rem;text-align:center;}
+    }
+    @media(max-width:560px){
+      .foot-grid{grid-template-columns:1fr;gap:2rem;}
+    }
+
+    /* ── Night ambient orbs ── */
+    .orb-layer{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden;}
+    [data-theme="day"] .orb-layer{display:none;}
+    .orb{position:absolute;border-radius:50%;mix-blend-mode:screen;}
+    .orb-1{width:520px;height:520px;background:radial-gradient(circle,rgba(77,194,232,.22) 0%,rgba(77,194,232,.06) 40%,transparent 65%);animation:orbA 24s ease-in-out infinite;}
+    .orb-2{width:420px;height:420px;background:radial-gradient(circle,rgba(77,194,232,.16) 0%,rgba(30,120,200,.04) 40%,transparent 65%);animation:orbB 32s ease-in-out infinite;}
+    .orb-3{width:480px;height:480px;background:radial-gradient(circle,rgba(100,200,255,.14) 0%,rgba(50,150,220,.04) 40%,transparent 65%);animation:orbC 28s ease-in-out infinite;}
+    .orb-4{width:300px;height:300px;background:radial-gradient(circle,rgba(77,194,232,.28) 0%,rgba(77,194,232,.08) 35%,transparent 60%);animation:orbD 19s ease-in-out infinite;}
+    .orb-5{width:660px;height:660px;background:radial-gradient(circle,rgba(20,80,160,.16) 0%,rgba(10,40,100,.04) 40%,transparent 65%);animation:orbE 40s ease-in-out infinite;}
+    @keyframes orbA{0%{transform:translate(-5vw,-5vh);}25%{transform:translate(55vw,15vh);}50%{transform:translate(45vw,65vh);}75%{transform:translate(5vw,45vh);}100%{transform:translate(-5vw,-5vh);}}
+    @keyframes orbB{0%{transform:translate(75vw,55vh);}25%{transform:translate(15vw,75vh);}50%{transform:translate(-5vw,25vh);}75%{transform:translate(45vw,5vh);}100%{transform:translate(75vw,55vh);}}
+    @keyframes orbC{0%{transform:translate(25vw,75vh);}33%{transform:translate(65vw,5vh);}66%{transform:translate(-5vw,45vh);}100%{transform:translate(25vw,75vh);}}
+    @keyframes orbD{0%{transform:translate(45vw,0vh);}20%{transform:translate(80vw,35vh);}40%{transform:translate(55vw,70vh);}60%{transform:translate(10vw,55vh);}80%{transform:translate(0vw,15vh);}100%{transform:translate(45vw,0vh);}}
+    @keyframes orbE{0%{transform:translate(-15vw,35vh);}50%{transform:translate(55vw,-10vh);}100%{transform:translate(-15vw,35vh);}}
+  </style>
+</head>
+<body>
+
+  <!-- Night mode ambient orbs -->
+  <div class="orb-layer" aria-hidden="true">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="orb orb-4"></div>
+    <div class="orb orb-5"></div>
+  </div>
+
+  <!-- FB SDK -->
+  <div id="fb-root"></div>
+  <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v18.0"></script>
+
+  <!-- NAV -->
+  <nav id="nav">
+    <a href="index.html" class="nav-logo" aria-label="Casa Escondida — Home">
+      <img class="nav-logo-img nav-logo-night" src="images/Logo/Untitled_design__3_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+      <img class="nav-logo-img nav-logo-day" src="images/Logo/Untitled_design__2_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html#about">About</a></li>
+      <li><a href="rooms.html">Rooms</a></li>
+      <li><a href="dive.html">Dive</a></li>
+      <li><a href="gallery.html" class="active">Gallery</a></li>
+      <li><a href="location.html">Location</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+        <span class="toggle-icon" id="themeIcon">
+          <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </span>
+        <div class="toggle-track"><div class="toggle-thumb"></div></div>
+        <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
+      </button>
+      <a href="index.html#booking" class="btn-book">Book Now</a>
+      <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+    <a href="index.html#about"    class="mob-link">About</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="rooms.html"          class="mob-link">Rooms</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="gallery.html"        class="mob-link active">Gallery</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="location.html" class="mob-link">Location</a>
+    <a href="index.html#booking"  class="mob-link mobile-nav-cta">Book Now</a>
+  </nav>
+
+  <!-- HERO -->
+  <header class="g-hero">
+    <div class="g-eyebrow">Official Gallery</div>
+    <h1 class="g-h1">Life at <em>Casa Escondida</em></h1>
+    <p class="g-sub">Real photos and videos straight from our Facebook and Instagram pages — dive life, resort moments, and the underwater world of Anilao.</p>
+    <div class="g-stats rv">
+      <div class="g-stat"><div class="g-stat-n">802</div><div class="g-stat-l">Instagram Posts</div></div>
+      <div class="g-stat"><div class="g-stat-n">30+</div><div class="g-stat-l">Dive Sites</div></div>
+      <div class="g-stat"><div class="g-stat-n">81</div><div class="g-stat-l">TripAdvisor Reviews</div></div>
+      <div class="g-stat"><div class="g-stat-n">4.5★</div><div class="g-stat-l">Overall Rating</div></div>
+    </div>
+  </header>
+
+  <!-- TAB BAR -->
+  <div class="tab-bar" role="tablist" aria-label="Gallery sections">
+    <button class="tab-btn active" data-tab="facebook" role="tab" aria-selected="true">
+      <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+      Facebook
+    </button>
+    <button class="tab-btn" data-tab="instagram" role="tab" aria-selected="false">
+      <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+      Instagram
+    </button>
+    <button class="tab-btn" data-tab="videos" role="tab" aria-selected="false">
+      <svg fill="currentColor" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+      Videos
+    </button>
+  </div>
+
+  <!-- ══════════════════════════════
+       TAB: FACEBOOK
+  ══════════════════════════════ -->
+  <div class="tab-panel active fb-section" id="tab-facebook">
+    <div class="sec-wrap">
+      <div class="sec-header rv">
+        <div class="sec-eyebrow">Facebook</div>
+        <h2 class="sec-h2">Live from Our <em>Facebook Page</em></h2>
+        <p class="sec-sub">Real photos and posts direct from our official Facebook page — updated daily with dive conditions, guest shots, and resort news.</p>
+      </div>
+
+      <div class="fb-posts-grid">
+
+        <div class="fb-post-frame rv rv-d1">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Home%20page%20images/491998608_1209966191136043_7351523782871887230_n.jpg" alt="Casa Escondida — pool deck and ocean view" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Resort life at Casa Escondida — where every morning starts with the sound of waves and ends with a sunset dive. 🌊 #ExperienceEscondida</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="fb-post-frame rv rv-d2">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Home%20page%20images/492190603_1209897824476213_275333914585297642_n.jpg" alt="Casa Escondida — pool session with PADI instructors" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Pool session with Instructor Dong and Japanese Open Water students — another group certified in Anilao's warm waters! 🤿 #experienceescondida #cedivingventures #padicourses</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="fb-post-frame rv rv-d3">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Home%20page%20images/492124461_1209520584513937_9142311961370399204_n.jpg" alt="Casa Escondida — resort and dive center" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Another beautiful day at Casa Escondida — crystal clear waters, expert guides, and the best dive sites in the Philippines right outside our door. 🌊 #anilao #cediving</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="fb-post-frame rv rv-d1">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Home%20page%20images/492220080_1209520591180603_6824898703744859298_n.jpg" alt="Casa Escondida — happy guests and divers" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Happy divers, great memories! Thank you for spending your dive holiday with us here in Anilao. Come back soon! 🤿 #experienceescondida #casaescondidaanilao</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="fb-post-frame rv rv-d2">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Home%20page%20images/492007809_1209897901142872_8728664288821625163_n.jpg" alt="Casa Escondida — sandy lounge area" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Relax, unwind, and breathe in the salt air. Our beachfront lounge is steps from the shore and even closer to your next dive. ☀️ #CEdiving</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+        <div class="fb-post-frame rv rv-d3">
+          <a class="fb-photo-card" href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" aria-label="View Casa Escondida on Facebook">
+            <img src="images/Nature%20Folder/10.jpg" alt="Casa Escondida — dive group at sunset" loading="lazy" />
+            <div class="fb-photo-card-overlay">
+              <div class="fb-photo-card-brand">
+                <svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+                <span>Casa Escondida Anilao</span>
+              </div>
+              <div class="fb-photo-card-caption">Thank you Dive Den headed by Instructor AB Lee &amp; Instructor Khoo! 🥰 So glad to have you dive with us. Until next time! #experienceescondida #Cediving #diversdenmalaysia</div>
+              <div class="fb-photo-card-cta"><svg width="10" height="10" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> View on Facebook ↗</div>
+            </div>
+          </a>
+        </div>
+
+      </div>
+
+      <div class="ig-cta-row rv">
+        <p>See more photos, dive updates, and resort moments on our official Facebook page.</p>
+        <a href="https://www.facebook.com/CasaEscondidaAnilao" target="_blank" rel="noopener noreferrer" class="ig-cta-btn">
+          <svg width="16" height="16" fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+          Follow Us on Facebook @CasaEscondidaAnilao
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════
+       TAB: INSTAGRAM
+  ══════════════════════════════ -->
+  <div class="tab-panel ig-section" id="tab-instagram">
+    <div class="sec-wrap">
+      <div class="sec-header rv">
+        <div class="sec-eyebrow">Instagram</div>
+        <h2 class="sec-h2">Follow Us on <em>Instagram</em></h2>
+        <p class="sec-sub">Real diving life, macro critters, underwater photography, and resort moments from @casaescondidaanilao.</p>
+      </div>
+
+      <div class="ig-posts-grid">
+
+        <!-- 10 real posts from @casaescondidaanilao -->
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWieAvGGAjb/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DWieAvGGAjb/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DVGEc-eGHsC/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DVGEc-eGHsC/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DWJSai1mE3h/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DWJSai1mE3h/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DRTN_d_mAnH/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DRTN_d_mAnH/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DPwK-LDkYm3/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DPwK-LDkYm3/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DW5XtnrGDll/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DW5XtnrGDll/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DXBKQadGDlN/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DXBKQadGDlN/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B0XDdeWHELq/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/B0XDdeWHELq/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B0UoZdznuO0/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/B0UoZdznuO0/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/B0VH98ZH5n1/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/B0VH98ZH5n1/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DNsoZY_Xqnh/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DNsoZY_Xqnh/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DM1ZUxfpbu4/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DM1ZUxfpbu4/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DMAPukWSuX8/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DMAPukWSuX8/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DJDUREMvl3c/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DJDUREMvl3c/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DH7-Yz3ThWg/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DH7-Yz3ThWg/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DHXaw6sPj2T/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DHXaw6sPj2T/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DDURWeaTxB-/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/DDURWeaTxB-/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d3">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/C8Bthp_ociU/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/C8Bthp_ociU/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d1">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CxPDxNFL1V8/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/CxPDxNFL1V8/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+        <div class="ig-frame rv rv-d2">
+          <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/CcagDHBL4Z5/?utm_source=ig_embed" data-instgrm-version="14" style="margin:0;max-width:100%;min-width:0;padding:0;width:100%;border:0;"></blockquote>
+          <a href="https://www.instagram.com/p/CcagDHBL4Z5/" target="_blank" rel="noopener noreferrer" class="ig-overlay" aria-label="View on Instagram"><span class="ig-overlay-label"><svg width="12" height="12" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>View on Instagram ↗</span></a>
+        </div>
+
+      </div>
+
+      <div class="ig-cta-row rv">
+        <p>We have 802 posts on Instagram — follow us to see all the latest dives, critter spotting, and resort life.</p>
+        <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="ig-cta-btn">
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+          View All on Instagram @casaescondidaanilao
+        </a>
+      </div>
+    </div>
+    <!-- Instagram embed script -->
+    <script async src="https://www.instagram.com/embed.js"></script>
+  </div>
+
+  <!-- ══════════════════════════════
+       TAB: VIDEOS
+  ══════════════════════════════ -->
+  <div class="tab-panel video-section" id="tab-videos">
+    <div class="sec-wrap">
+      <div class="sec-header rv">
+        <div class="sec-eyebrow">Watch</div>
+        <h2 class="sec-h2">Casa Escondida <em>on Video</em></h2>
+        <p class="sec-sub">Real guest vlogs and official videos — see exactly what makes Casa Escondida Anilao's most-loved dive resort.</p>
+      </div>
+
+      <div class="video-grid">
+
+        <!-- YouTube thumbnails (embedding disabled by owners — click opens YouTube) -->
+        <div class="video-card rv rv-d1">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=kRLDFqiDOpw" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: Best Dive Resort Tour & Review">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/kRLDFqiDOpw/maxresdefault.jpg" alt="Casa Escondida Tour & Review" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">Best Dive Resort in Anilao, Batangas — Tour & Review</div>
+            <div class="video-source">by MayenTV</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d2">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=Bh-W8KZQjTc" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: Best Dive Resort Vlog">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/Bh-W8KZQjTc/maxresdefault.jpg" alt="Casa Escondida Best Dive Resort Vlog" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">The Best Dive Resort in Anilao, Batangas!</div>
+            <div class="video-source">by Zaldy Batobalani</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d3">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=JQcDc7jKuXc" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: Casa Escondida Dive Weekend">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/JQcDc7jKuXc/maxresdefault.jpg" alt="Casa Escondida Dive Weekend" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">Casa Escondida Dive Resort Weekend Anilao</div>
+            <div class="video-source">by Rams Pres</div>
+          </div>
+        </div>
+
+        <!-- Facebook video embeds (these play directly on the page) -->
+        <div class="video-card rv rv-d1">
+          <div class="video-embed">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FCasaEscondidaAnilao%2Fvideos%2F2727812904142329%2F&show_text=false&width=500&t=0" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay;clipboard-write;encrypted-media;picture-in-picture;web-share" loading="lazy" title="CE's New Normal"></iframe>
+          </div>
+          <div class="video-meta">
+            <div class="video-badge fb"><svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook · 24K Views</div>
+            <div class="video-title">CE's New Normal — Official Video</div>
+            <div class="video-source">by Casa Escondida Anilao</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d2">
+          <a class="yt-thumb-link" href="https://www.facebook.com/CasaEscondidaAnilao/videos/359596111416243/" target="_blank" rel="noopener noreferrer" aria-label="Watch on Facebook: Critters of Anilao">
+            <img src="https://images.unsplash.com/photo-1437622368342-7a3d73a34c8f?auto=format&fit=crop&w=800&q=80" alt="Critters of Anilao — macro marine life video" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle" style="background:rgba(24,119,242,.85);border-color:rgba(24,119,242,.6);"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on Facebook ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge fb"><svg viewBox="0 0 24 24" fill="currentColor" width="10" height="10"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg> Facebook</div>
+            <div class="video-title">The Rain Didn't Stop Play — Critters of Anilao</div>
+            <div class="video-source">Guest video · Casa Escondida</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d3">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=KRXo2ZCBN5o" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: The Best Dive Resort">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/KRXo2ZCBN5o/maxresdefault.jpg" alt="The Best Dive Resort Casa Escondida Anilao" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">The Best Dive Resort in Anilao, Batangas! Casa Escondida</div>
+            <div class="video-source">YouTube</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d1">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=5wn8g0zreKQ" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: Diving Philippines with Philippine Flag">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/5wn8g0zreKQ/maxresdefault.jpg" alt="Diving with Philippine Flag underwater Anilao" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">Diving the Philippines — Philippine Flag Underwater | MayenTV</div>
+            <div class="video-source">YouTube</div>
+          </div>
+        </div>
+
+        <div class="video-card rv rv-d3">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=X4JwZ0rI8hc" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: PADI Open Water Certification Anilao">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/X4JwZ0rI8hc/maxresdefault.jpg" alt="PADI Open Water Certification Anilao Batangas" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">PADI Open Water Certification — Anilao, Batangas | MayenTV</div>
+            <div class="video-source">YouTube</div>
+          </div>
+        </div>
+
+
+        <div class="video-card rv rv-d2">
+          <a class="yt-thumb-link" href="https://www.youtube.com/watch?v=aA_lCxhKXD8" target="_blank" rel="noopener noreferrer" aria-label="Watch on YouTube: World Clean-Up Day 2019">
+            <img onerror="this.src=this.src.replace('maxresdefault','hqdefault')" src="https://img.youtube.com/vi/aA_lCxhKXD8/maxresdefault.jpg" alt="World Clean-Up Day 2019 Casa Escondida" loading="lazy" />
+            <div class="yt-thumb-play"><div class="yt-thumb-play-circle"><svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg></div></div>
+            <div class="yt-open-label">Watch on YouTube ↗</div>
+          </a>
+          <div class="video-meta">
+            <div class="video-badge yt"><svg viewBox="0 0 90 63.5"><path d="M88 9.9C87 6.3 84.2 3.5 80.6 2.5 73.5.4 45.4.4 45.4.4S17.2.4 10.2 2.5C6.6 3.5 3.8 6.3 2.8 9.9.6 17 .6 31.8.6 31.8S.6 46.5 2.8 53.7c1 3.6 3.8 6.4 7.4 7.4C17.2 63.1 45.4 63.1 45.4 63.1s28.1 0 35.2-2c3.6-1 6.4-3.8 7.4-7.4C90 46.5 90 31.8 90 31.8S90 17 88 9.9zM36.3 45.2V18.3l23.5 13.5-23.5 13.4z"/></svg> YouTube</div>
+            <div class="video-title">World Clean-Up Day 2019 — Casa Escondida Anilao</div>
+            <div class="video-source">YouTube</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- SOCIAL CTA -->
+  <section class="g-cta rv">
+    <h2>Stay Connected</h2>
+    <p>Follow Casa Escondida for daily dive updates, guest stories, and special offers.</p>
+    <div class="cta-socials">
+      <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="cta-soc">
+        <svg fill="currentColor" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+        Facebook — @CasaEscondidaAnilao
+      </a>
+      <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="cta-soc">
+        <svg fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+        Instagram — @casaescondidaanilao
+      </a>
+      <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="cta-soc">
+        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/></svg>
+        TripAdvisor Reviews
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="c">
+      <div class="foot-grid">
+        <div>
+          <a href="index.html" class="foot-logo">Casa <span>Escondida</span></a>
+          <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
+          <div class="foot-socials">
+            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook">
+              <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
+            </a>
+            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+            </a>
+            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            </a>
+            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            </a>
+          </div>
+        </div>
+        <div>
+          <div class="foot-h">Explore</div>
+          <ul class="foot-links">
+            <li><a href="index.html#about">About the Resort</a></li>
+            <li><a href="index.html#dive">Dive Center</a></li>
+            <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+            <li><a href="gallery.html">Photo Gallery</a></li>
+            <li><a href="index.html#dining">Restaurant &amp; Bar</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="foot-h">Dive Packages</div>
+          <ul class="foot-links">
+            <li><a href="index.html#dive">PADI Open Water</a></li>
+            <li><a href="index.html#dive">Advanced OW Course</a></li>
+            <li><a href="index.html#dive">Rescue Diver</a></li>
+            <li><a href="index.html#dive">Guided Dive Trips</a></li>
+            <li><a href="index.html#dive">Night Dives</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="foot-h">Location</div>
+          <ul class="foot-links">
+            <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
+            <li><a href="location.html">Batangas Province 4202</a></li>
+            <li><a href="location.html">Philippines</a></li>
+            <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
+            <li><a href="index.html#booking">Book Now</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
+        <div class="foot-legal">
+          <a href="mailto:casaescondidaanilao@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
+          <a href="mailto:casaescondidaanilao@gmail.com?subject=Terms%20Inquiry">Terms of Service</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+  /* ── Theme toggle ── */
+  const html = document.documentElement;
+  const syncThemeUI = () => {
+    const n = html.getAttribute('data-theme') === 'night';
+    document.getElementById('icon-moon').style.display = n ? 'block' : 'none';
+    document.getElementById('icon-sun').style.display  = n ? 'none'  : 'block';
+    document.getElementById('themeLabel').textContent = n ? 'Night' : 'Day';
+  };
+  syncThemeUI();
+  document.getElementById('themeBtn').addEventListener('click', () => {
+    const night = html.getAttribute('data-theme') === 'night';
+    const next = night ? 'day' : 'night';
+    html.setAttribute('data-theme', next);
+    localStorage.setItem('ce-theme', next);
+    syncThemeUI();
+  });
+  matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
+    if (!localStorage.getItem('ce-theme')) { html.setAttribute('data-theme', e.matches ? 'night' : 'day'); syncThemeUI(); }
+  });
+
+  /* ── Tab switching ── */
+  const tabBtns   = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+
+  tabBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const target = btn.dataset.tab;
+      tabBtns.forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected','true');
+      document.getElementById('tab-' + target).classList.add('active');
+      // re-process Instagram embeds when tab opens
+      if (target === 'instagram' && window.instgrm) {
+        window.instgrm.Embeds.process();
+      }
+      // re-parse Facebook XFBML when tab opens
+      if (target === 'facebook' && window.FB) {
+        FB.XFBML.parse(document.getElementById('tab-facebook'));
+      }
+    });
+  });
+
+  /* ── Scroll reveal ── */
+  const ro = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) e.target.classList.add('on');
+      else e.target.classList.remove('on');
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.rv').forEach(el => ro.observe(el));
+
+  /* ── Mobile hamburger toggle ── */
+  const hamburger = document.getElementById('navHamburger');
+  const mobileNav = document.getElementById('mobileNav');
+  function openMobileNav(){
+    mobileNav.style.display='flex';
+    requestAnimationFrame(()=>mobileNav.classList.add('open'));
+    hamburger.setAttribute('aria-expanded','true');
+    mobileNav.setAttribute('aria-hidden','false');
+    document.body.style.overflow='hidden';
+  }
+  function closeMobileNav(){
+    mobileNav.classList.remove('open');
+    hamburger.setAttribute('aria-expanded','false');
+    mobileNav.setAttribute('aria-hidden','true');
+    document.body.style.overflow='';
+    setTimeout(()=>{mobileNav.style.display='none';},300);
+  }
+  hamburger.addEventListener('click',()=>{
+    hamburger.getAttribute('aria-expanded')==='true' ? closeMobileNav() : openMobileNav();
+  });
+  mobileNav.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeMobileNav));
+  document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMobileNav();});
+
+  /* ── Instagram image-only frame sizer ──
+     After embed.js loads each iframe, read its height and size the
+     container to show just the image (strip ~54px header + ~104px footer). */
+  function sizeIgFrames() {
+    document.querySelectorAll('.ig-frame').forEach(function(frame) {
+      var iframe = frame.querySelector('iframe');
+      if (!iframe) return;
+      var h = iframe.offsetHeight;
+      if (h > 120) {
+        frame.style.height = Math.max(h - 158, 80) + 'px';
+      }
+    });
+  }
+  var _igTick = 0;
+  var _igTimer = setInterval(function() {
+    sizeIgFrames();
+    if (++_igTick >= 24) clearInterval(_igTimer);
+  }, 500);
+  window.addEventListener('resize', function() { setTimeout(sizeIgFrames, 200); });
+  </script>
+
+  <script>
+  /* ── Ripple & Cursor Trail ── */
+  (function(){
+    const cvs = document.createElement('canvas');
+    cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;mix-blend-mode:screen;';
+    document.body.appendChild(cvs);
+    const ctx = cvs.getContext('2d');
+    let W, H;
+    const resize = () => { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; };
+    resize();
+    window.addEventListener('resize', resize);
+
+    const ripples = [], particles = [];
+    let mx = -999, my = -999;
+
+    window.addEventListener('click', e => {
+      const x = e.clientX, y = e.clientY;
+      ripples.push({ x, y, r:0, maxR:12, alpha:1, speed:7, type:'flash', delay:0 });
+      [{maxR:60,speed:3.2,alpha:.9,delay:0},{maxR:105,speed:5,alpha:.7,delay:4},{maxR:155,speed:7,alpha:.5,delay:9},{maxR:220,speed:9,alpha:.3,delay:15}]
+        .forEach(cfg => ripples.push({ x, y, r:0, type:'ring', ...cfg }));
+      for (let i=0;i<18;i++){
+        const ang=(i/18)*Math.PI*2, spd=2+Math.random()*4;
+        particles.push({x,y,vx:Math.cos(ang)*spd,vy:Math.sin(ang)*spd,r:2+Math.random()*2,life:1,decay:.022+Math.random()*.018,trail:false});
+      }
+      for (let i=0;i<8;i++) particles.push({x,y,vx:(Math.random()-.5)*2,vy:(Math.random()-.5)*2-1,r:1.5,life:1,decay:.05+Math.random()*.04,trail:false});
+    });
+
+    window.addEventListener('mousemove', e => {
+      const dx=e.clientX-mx, dy=e.clientY-my;
+      if (dx*dx+dy*dy>50){ mx=e.clientX; my=e.clientY;
+        for(let i=0;i<4;i++) particles.push({x:mx+(Math.random()-.5)*6,y:my+(Math.random()-.5)*6,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5-.5,r:1+Math.random()*2.5,life:1,decay:.045+Math.random()*.03,trail:true});
+      }
+    });
+
+    function loop(){
+      ctx.clearRect(0,0,W,H);
+      for(let i=ripples.length-1;i>=0;i--){
+        const rp=ripples[i];
+        if(rp.delay>0){rp.delay--;continue;}
+        rp.r+=rp.speed;
+        const prog=rp.r/rp.maxR;
+        if(prog>=1){ripples.splice(i,1);continue;}
+        if(rp.type==='flash'){
+          const a=rp.alpha*(1-prog);
+          const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);
+          grd.addColorStop(0,`rgba(180,240,255,${a})`);grd.addColorStop(.5,`rgba(77,194,232,${a*.6})`);grd.addColorStop(1,`rgba(77,194,232,0)`);
+          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
+        } else {
+          const ease=1-prog*prog, a=rp.alpha*ease;
+          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);
+          ctx.strokeStyle=`rgba(77,194,232,${a})`;ctx.lineWidth=Math.max(2.5*(1-prog*.7),.5);ctx.stroke();
+          if(rp.r>20){ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r*.65,0,Math.PI*2);ctx.strokeStyle=`rgba(140,220,248,${a*.35})`;ctx.lineWidth=1;ctx.stroke();}
+          if(prog<.3){const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);grd.addColorStop(0,'rgba(77,194,232,0)');grd.addColorStop(.75,'rgba(77,194,232,0)');grd.addColorStop(1,`rgba(77,194,232,${a*.18})`);ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}
+        }
+      }
+      for(let i=particles.length-1;i>=0;i--){
+        const p=particles[i];
+        p.x+=p.vx;p.y+=p.vy;
+        if(!p.trail)p.vy+=.06;
+        p.life-=p.decay;
+        if(p.life<=0){particles.splice(i,1);continue;}
+        const a=p.life*(p.trail?.55:.85), r=Math.max(p.r*p.life,.3);
+        const grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*2.5);
+        grd.addColorStop(0,`rgba(190,245,255,${a})`);grd.addColorStop(.4,`rgba(77,194,232,${a*.7})`);grd.addColorStop(1,'rgba(77,194,232,0)');
+        ctx.beginPath();ctx.arc(p.x,p.y,r*2.5,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
+      }
+      requestAnimationFrame(loop);
+    }
+    loop();
+  })();
+  </script>
+</body>
+</html>
