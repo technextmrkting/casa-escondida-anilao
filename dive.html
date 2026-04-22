@@ -189,15 +189,51 @@
     .site-info-name{font-size:.85rem;font-weight:500;margin-bottom:.25rem;}
     .site-info-meta{font-size:.72rem;color:var(--text3);}
 
-    /* ── MARINE LIFE ── */
+    /* ── MARINE LIFE — ECOSYSTEM LIBRARY ── */
     .marine-section{background:var(--bg);}
-    .marine-strip{display:grid;grid-template-columns:repeat(5,1fr);gap:6px;margin-top:2.5rem;}
-    @media(max-width:768px){.marine-strip{grid-template-columns:repeat(3,1fr);}}
-    .marine-tile{position:relative;aspect-ratio:1;overflow:hidden;border-radius:3px;cursor:pointer;}
-    .marine-tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .5s;}
-    .marine-tile:hover img{transform:scale(1.12);filter:brightness(.7);}
-    .marine-tile-label{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:.65rem;letter-spacing:.14em;text-transform:uppercase;color:#fff;opacity:0;transition:opacity .3s;}
-    .marine-tile:hover .marine-tile-label{opacity:1;}
+    .eco-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:2.2rem;margin-bottom:2.2rem;}
+    .eco-filter{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.55rem 1.1rem;border-radius:40px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit;}
+    .eco-filter:hover{border-color:var(--accent);color:var(--accent);}
+    .eco-filter.active{background:var(--accent);border-color:var(--accent);color:#04080f;}
+    .eco-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
+    @media(max-width:900px){.eco-grid{grid-template-columns:repeat(3,1fr);}}
+    @media(max-width:640px){.eco-grid{grid-template-columns:repeat(2,1fr);gap:.7rem;}}
+    .eco-card{position:relative;aspect-ratio:1;overflow:hidden;border-radius:6px;cursor:pointer;border:1px solid var(--border);background:var(--bg2);transition:transform .5s ease,border-color .3s,box-shadow .4s;}
+    .eco-card:hover{transform:translateY(-4px);border-color:var(--accent);box-shadow:0 14px 40px -14px rgba(77,194,232,.35);}
+    .eco-card img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease,filter .4s;}
+    .eco-card:hover img{transform:scale(1.08);filter:brightness(.6);}
+    .eco-card-label{position:absolute;left:0;right:0;bottom:0;padding:1rem .9rem .85rem;background:linear-gradient(to top,rgba(4,8,15,.92) 0%,rgba(4,8,15,.5) 60%,transparent 100%);color:#fff;pointer-events:none;}
+    .eco-card-name{font-family:'Playfair Display',serif;font-size:.95rem;font-weight:500;line-height:1.15;letter-spacing:.01em;margin-bottom:.2rem;}
+    .eco-card-sci{font-size:.62rem;letter-spacing:.08em;font-style:italic;color:rgba(255,255,255,.7);}
+    .eco-card-rarity{position:absolute;top:.7rem;right:.7rem;background:rgba(4,8,15,.8);backdrop-filter:blur(6px);border:1px solid rgba(77,194,232,.35);color:var(--accent);padding:.22rem .55rem;border-radius:40px;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:600;}
+    .eco-card-rarity.rare{border-color:rgba(232,197,106,.55);color:var(--gold);}
+    .eco-card-rarity.common{border-color:rgba(255,255,255,.2);color:rgba(255,255,255,.8);}
+    .eco-card-cat{position:absolute;top:.7rem;left:.7rem;background:rgba(4,8,15,.8);backdrop-filter:blur(6px);color:rgba(255,255,255,.85);padding:.22rem .55rem;border-radius:40px;font-size:.55rem;letter-spacing:.14em;text-transform:uppercase;font-weight:500;}
+    .eco-card-hint{position:absolute;bottom:.7rem;right:.7rem;width:26px;height:26px;display:flex;align-items:center;justify-content:center;background:rgba(77,194,232,.9);border-radius:50%;color:#04080f;opacity:0;transform:translateY(6px);transition:all .35s ease;}
+    .eco-card:hover .eco-card-hint{opacity:1;transform:translateY(0);}
+    .eco-empty{grid-column:1/-1;text-align:center;color:var(--text3);padding:4rem 0;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;}
+
+    /* Ecosystem modal */
+    .eco-modal{position:fixed;inset:0;background:rgba(4,8,15,.9);backdrop-filter:blur(14px);display:none;align-items:center;justify-content:center;z-index:9999;padding:1.5rem;opacity:0;transition:opacity .3s ease;}
+    .eco-modal.open{display:flex;opacity:1;}
+    .eco-modal-inner{background:var(--bg);border:1px solid var(--border);border-radius:10px;max-width:960px;width:100%;max-height:90vh;overflow:hidden;display:grid;grid-template-columns:1.1fr 1fr;transform:translateY(14px);transition:transform .45s cubic-bezier(.2,.8,.2,1);}
+    .eco-modal.open .eco-modal-inner{transform:translateY(0);}
+    @media(max-width:820px){.eco-modal-inner{grid-template-columns:1fr;max-height:92vh;overflow-y:auto;}}
+    .eco-modal-photo{position:relative;background:#04080f;min-height:320px;}
+    .eco-modal-photo img{width:100%;height:100%;object-fit:cover;display:block;}
+    @media(max-width:820px){.eco-modal-photo{aspect-ratio:4/3;min-height:0;}.eco-modal-photo img{height:100%;}}
+    .eco-modal-body{padding:2.2rem 2rem;overflow-y:auto;max-height:90vh;}
+    @media(max-width:820px){.eco-modal-body{padding:1.6rem 1.4rem;max-height:none;}}
+    .eco-modal-cat{font-size:.63rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.7rem;}
+    .eco-modal-name{font-family:'Playfair Display',serif;font-size:2rem;font-weight:400;line-height:1.1;color:var(--text);margin-bottom:.35rem;}
+    .eco-modal-sci{font-size:.8rem;font-style:italic;color:var(--text3);margin-bottom:1.4rem;}
+    .eco-modal-desc{font-size:.88rem;line-height:1.7;color:var(--text2);margin-bottom:1.6rem;}
+    .eco-modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1.4rem;padding-top:1.3rem;border-top:1px solid var(--border);}
+    .eco-spec{display:flex;flex-direction:column;gap:.25rem;}
+    .eco-spec-lbl{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--text3);font-weight:600;}
+    .eco-spec-val{font-size:.82rem;color:var(--text);font-weight:500;}
+    .eco-modal-close{position:absolute;top:1rem;right:1rem;width:38px;height:38px;display:flex;align-items:center;justify-content:center;background:rgba(4,8,15,.75);backdrop-filter:blur(8px);border:1px solid var(--border);border-radius:50%;color:#fff;cursor:pointer;font-size:1.3rem;line-height:1;transition:all .25s;z-index:2;}
+    .eco-modal-close:hover{background:var(--accent);color:#04080f;border-color:var(--accent);transform:rotate(90deg);}
 
     /* ── PACKAGES ── */
     .packages-section{background:var(--bg2);border-top:1px solid var(--border);}
@@ -542,21 +578,28 @@
 </section>
 
 <!-- ═══ MARINE LIFE ═══ -->
-<section class="marine-section">
+<section class="marine-section" id="ecosystem">
   <div class="sec-wrap">
     <div class="sec-header rvl">
-      <div class="sec-eyebrow">Marine Life</div>
+      <div class="sec-eyebrow">Ecosystem Library</div>
       <h2 class="sec-h2">What Awaits <em>Below</em></h2>
-      <p class="sec-sub">Anilao's waters are home to some of the most extraordinary marine life on Earth — from rare nudibranchs and pygmy seahorses to reef sharks and whale sharks passing through.</p>
+      <p class="sec-sub">Anilao sits inside the Coral Triangle — the most biodiverse marine region on Earth. Browse the ecosystem we dive every day: colourful nudibranchs, reef fish schools, macro critters hidden in coral rubble, and the occasional turtle gliding past our jetty. Tap any species to learn more.</p>
     </div>
-    <div class="marine-strip rvl">
-      <div class="marine-tile"><img src="images/Nature Folder/16.jpg" alt="Marine life Anilao" loading="lazy" /><div class="marine-tile-label">Nudibranch</div></div>
-      <div class="marine-tile"><img src="images/Nature Folder/17.jpg" alt="Reef fish Anilao" loading="lazy" /><div class="marine-tile-label">Reef Fish</div></div>
-      <div class="marine-tile"><img src="images/Nature Folder/18.jpg" alt="Coral Anilao" loading="lazy" /><div class="marine-tile-label">Coral Gardens</div></div>
-      <div class="marine-tile"><img src="images/Nature Folder/20.jpg" alt="Critters Anilao" loading="lazy" /><div class="marine-tile-label">Macro Critters</div></div>
-      <div class="marine-tile"><img src="images/Nature Folder/10.jpg" alt="Anilao underwater" loading="lazy" /><div class="marine-tile-label">Sea Turtles</div></div>
+
+    <div class="eco-filters rvl" role="tablist" aria-label="Filter marine species">
+      <button class="eco-filter active" data-filter="all" role="tab" aria-selected="true">All</button>
+      <button class="eco-filter" data-filter="nudibranch" role="tab">Nudibranchs</button>
+      <button class="eco-filter" data-filter="fish" role="tab">Reef Fish</button>
+      <button class="eco-filter" data-filter="macro" role="tab">Macro Critters</button>
+      <button class="eco-filter" data-filter="coral" role="tab">Corals & Anemones</button>
+      <button class="eco-filter" data-filter="large" role="tab">Turtles & More</button>
     </div>
-    <div style="text-align:center;margin-top:2rem;" class="rvl">
+
+    <div class="eco-grid rvl" id="ecoGrid">
+      <!-- Cards are injected by JS from data below -->
+    </div>
+
+    <div style="text-align:center;margin-top:3rem;" class="rvl">
       <a href="gallery.html" style="display:inline-flex;align-items:center;gap:.5rem;color:var(--accent);text-decoration:none;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;border-bottom:1px solid rgba(77,194,232,.3);padding-bottom:.3rem;transition:border-color .3s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='rgba(77,194,232,.3)'">
         View Full Gallery
         <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -564,6 +607,29 @@
     </div>
   </div>
 </section>
+
+<!-- ═══ ECOSYSTEM DETAIL MODAL ═══ -->
+<div class="eco-modal" id="ecoModal" role="dialog" aria-modal="true" aria-labelledby="ecoModalName">
+  <div class="eco-modal-inner">
+    <div class="eco-modal-photo">
+      <button class="eco-modal-close" id="ecoModalClose" aria-label="Close detail">&times;</button>
+      <img id="ecoModalImg" src="" alt="" />
+    </div>
+    <div class="eco-modal-body">
+      <div class="eco-modal-cat" id="ecoModalCat"></div>
+      <h3 class="eco-modal-name" id="ecoModalName"></h3>
+      <div class="eco-modal-sci" id="ecoModalSci"></div>
+      <p class="eco-modal-desc" id="ecoModalDesc"></p>
+      <div class="eco-modal-specs">
+        <div class="eco-spec"><div class="eco-spec-lbl">Size</div><div class="eco-spec-val" id="ecoSize"></div></div>
+        <div class="eco-spec"><div class="eco-spec-lbl">Depth</div><div class="eco-spec-val" id="ecoDepth"></div></div>
+        <div class="eco-spec"><div class="eco-spec-lbl">Best Season</div><div class="eco-spec-val" id="ecoSeason"></div></div>
+        <div class="eco-spec"><div class="eco-spec-lbl">Rarity</div><div class="eco-spec-val" id="ecoRarity"></div></div>
+        <div class="eco-spec" style="grid-column:1/-1;"><div class="eco-spec-lbl">Where to Spot</div><div class="eco-spec-val" id="ecoWhere"></div></div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ═══ PACKAGES ═══ -->
 <section class="packages-section" id="packages">
@@ -894,6 +960,234 @@
       requestAnimationFrame(loop);
     }
     loop();
+  })();
+
+  /* ────────────────────────────────────────────────────────
+     ECOSYSTEM LIBRARY — data, render, filter, modal
+  ──────────────────────────────────────────────────────── */
+  (function(){
+    const species = [
+      {
+        id:'chromodoris-willani',
+        name:'Chromodoris Willani',
+        sci:'Chromodoris willani',
+        cat:'nudibranch', catLabel:'Nudibranch',
+        img:'images/Nature Folder/542218726_1320055313460463_8788918903468326751_n.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'Up to 4 cm',
+        depth:'8 – 25 m',
+        season:'Year-round',
+        where:'Coral rubble slopes off Anilao, grazing on sponges — especially on night dives.',
+        desc:'One of Anilao\'s most photographed nudibranchs. Recognisable by the pale blue body with black longitudinal lines and contrasting white-tipped gills and rhinophores. Slow-moving and confident, it makes for a patient photographer\'s dream subject.'
+      },
+      {
+        id:'halgerda-batangas',
+        name:'Halgerda Batangas',
+        sci:'Halgerda batangas',
+        cat:'nudibranch', catLabel:'Nudibranch',
+        img:'images/Nature Folder/541471419_1320055306793797_4411489496363337447_n.jpg',
+        rarity:'Signature Species', rarityClass:'rare',
+        size:'3 – 5 cm',
+        depth:'10 – 30 m',
+        season:'Year-round',
+        where:'Named after Batangas itself — found on sandy rubble between corals near Mainit Point and Twin Rocks.',
+        desc:'A local celebrity. Halgerda batangas was first described from specimens collected here in Batangas, making it one of Anilao\'s namesake species. Its translucent white body, orange tubercle tips, and intricate red-orange ridges are a macro-photographer\'s classic.'
+      },
+      {
+        id:'anemone-shrimp',
+        name:'Anemone Shrimp',
+        sci:'Periclimenes sp.',
+        cat:'macro', catLabel:'Macro Critter',
+        img:'images/Nature Folder/543175596_1320055310127130_6484463467171841313_n.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'1 – 2 cm',
+        depth:'5 – 20 m',
+        season:'Year-round',
+        where:'Living commensally inside magnificent sea anemones and mushroom corals on nearly every house-reef dive.',
+        desc:'Nearly transparent with delicate purple and white accents, these shrimp hide among the stinging tentacles of sea anemones — immune to the sting thanks to protective mucus. A prized macro subject requiring a steady hand and careful approach.'
+      },
+      {
+        id:'tomato-anemonefish',
+        name:'Tomato Anemonefish',
+        sci:'Amphiprion frenatus',
+        cat:'fish', catLabel:'Reef Fish',
+        img:'images/Nature Folder/17.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'Up to 14 cm',
+        depth:'1 – 12 m',
+        season:'Year-round',
+        where:'Paired within bubble-tip anemones on the shallow reef flats directly in front of the Casa Escondida jetty.',
+        desc:'Bright red-orange with a single white bar behind the eye, this feisty clownfish lives its entire life inside a host anemone. Females aggressively defend the nest — you may see one charging your dome port during mating season!'
+      },
+      {
+        id:'bigeye-trevally',
+        name:'Bigeye Trevally',
+        sci:'Caranx sexfasciatus',
+        cat:'fish', catLabel:'Schooling Fish',
+        img:'images/Nature Folder/15.jpg',
+        rarity:'Spectacular', rarityClass:'rare',
+        size:'60 – 85 cm',
+        depth:'10 – 40 m',
+        season:'Apr – Oct (schooling peak)',
+        where:'Forming silver tornadoes above Cathedral Rock and Kirby\'s Rock on incoming tides.',
+        desc:'Few dive experiences rival being engulfed by a swirling tornado of jacks. Bigeye trevally gather in tight schools above pinnacles during the day and disperse to hunt at dusk. Anilao\'s schools can number in the hundreds.'
+      },
+      {
+        id:'yellowstripe-snapper',
+        name:'Yellowstripe Snapper',
+        sci:'Lutjanus kasmira',
+        cat:'fish', catLabel:'Schooling Fish',
+        img:'images/Nature Folder/16.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'25 – 35 cm',
+        depth:'3 – 35 m',
+        season:'Year-round',
+        where:'Dense schools hovering along coral walls at Sepoc, Bahura, and Mainit — often mixed with blue-lined snappers.',
+        desc:'Electric-yellow with four horizontal blue stripes, these snappers form some of the most photogenic schools on the reef. They hold perfectly still mid-water, parting just enough for a diver to drift through before re-forming behind you.'
+      },
+      {
+        id:'moorish-idol',
+        name:'Moorish Idol',
+        sci:'Zanclus cornutus',
+        cat:'fish', catLabel:'Reef Fish',
+        img:'images/Nature Folder/14.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'Up to 23 cm',
+        depth:'3 – 30 m',
+        season:'Year-round',
+        where:'Cruising solo or in pairs across coral gardens throughout the Anilao reef system.',
+        desc:'Instantly recognisable by its long trailing dorsal filament and bold black-yellow-white banding. Moorish idols glide past in a deliberate, unhurried style — a calm counterpoint to the frenetic reef activity around them.'
+      },
+      {
+        id:'giant-moray',
+        name:'Giant Moray Eel',
+        sci:'Gymnothorax javanicus',
+        cat:'fish', catLabel:'Reef Predator',
+        img:'images/Nature Folder/11.jpg',
+        rarity:'Uncommon', rarityClass:'common',
+        size:'Up to 3 m',
+        depth:'5 – 40 m',
+        season:'Year-round',
+        where:'Peering from crevices and overhangs at Secret Bay, Arthur\'s Rock, and the house reef.',
+        desc:'Despite a ferocious gape-mouthed appearance, morays are simply pumping water over their gills — not threatening. These ambush predators rest by day and hunt octopus and fish by night. A cleaner shrimp is often at work inside their mouths.'
+      },
+      {
+        id:'blotcheye-soldierfish',
+        name:'Blotcheye Soldierfish',
+        sci:'Myripristis murdjan',
+        cat:'fish', catLabel:'Reef Fish',
+        img:'images/Nature Folder/12.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'20 – 30 cm',
+        depth:'3 – 25 m',
+        season:'Year-round',
+        where:'Tucked in reef overhangs and cave mouths during the day; actively feeding above the reef at dusk.',
+        desc:'Large rose-red eyes give this nocturnal fish its name and its edge — oversized pupils gather the last light of dusk, when soldierfish emerge in groups to pick off plankton drifting past the reef wall.'
+      },
+      {
+        id:'magnificent-anemone',
+        name:'Magnificent Sea Anemone',
+        sci:'Heteractis magnifica',
+        cat:'coral', catLabel:'Anemone',
+        img:'images/Nature Folder/491923419_1209162477883081_4885199553472169746_n.jpg',
+        rarity:'Common', rarityClass:'common',
+        size:'Disc up to 1 m',
+        depth:'3 – 20 m',
+        season:'Year-round',
+        where:'Carpeting rocky outcrops at Twin Rocks and the Casa Escondida house reef — always hosting clownfish.',
+        desc:'Despite the name, these are stinging invertebrates, not plants. Magnificent anemones host clownfish, porcelain crabs, and commensal shrimp in a complex partnership — the fish gets protection, the anemone gets defended from butterflyfish predators.'
+      },
+      {
+        id:'crown-jellyfish',
+        name:'Crown Jellyfish',
+        sci:'Cephea cephea',
+        cat:'large', catLabel:'Drifter',
+        img:'images/Nature Folder/492111061_1209162474549748_1905845639214674003_n.jpg',
+        rarity:'Seasonal', rarityClass:'rare',
+        size:'Bell 20 – 50 cm',
+        depth:'Surface – 20 m',
+        season:'Mar – May (bloom)',
+        where:'Drifting in the blue between dive sites during plankton blooms — often with rabbitfish feeding on the bell.',
+        desc:'A gentle drifter with a distinctive crown-shaped bell. Crown jellyfish are followed by rabbitfish and juvenile trevally that nibble on their tentacles for protection. A mild sting — divers stay clear of the trailing arms.'
+      },
+      {
+        id:'hawksbill-turtle',
+        name:'Hawksbill Sea Turtle',
+        sci:'Eretmochelys imbricata',
+        cat:'large', catLabel:'Sea Turtle',
+        img:'images/Nature Folder/10.jpg',
+        rarity:'Protected', rarityClass:'rare',
+        size:'60 – 90 cm shell',
+        depth:'5 – 25 m',
+        season:'Year-round',
+        where:'Resting under coral overhangs at Koala, Secret Bay, and along the wreck at Sepoc Point.',
+        desc:'A critically endangered species with a sharp beak perfectly shaped for prying sponges from reef crevices. Hawksbills at Anilao are habituated to divers and will often continue foraging calmly while you drift past — keep your distance and never chase.'
+      }
+    ];
+
+    const grid = document.getElementById('ecoGrid');
+    const filters = document.querySelectorAll('.eco-filter');
+    const modal = document.getElementById('ecoModal');
+    const modalClose = document.getElementById('ecoModalClose');
+    if(!grid||!modal) return;
+
+    function render(cat){
+      const list = (cat==='all') ? species : species.filter(s=>s.cat===cat);
+      if(!list.length){ grid.innerHTML = '<div class="eco-empty">No species in this category yet.</div>'; return; }
+      grid.innerHTML = list.map(s => `
+        <button type="button" class="eco-card" data-id="${s.id}" aria-label="View details for ${s.name}">
+          <img src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
+          <div class="eco-card-cat">${s.catLabel}</div>
+          <div class="eco-card-rarity ${s.rarityClass}">${s.rarity}</div>
+          <div class="eco-card-label">
+            <div class="eco-card-name">${s.name}</div>
+            <div class="eco-card-sci">${s.sci}</div>
+          </div>
+          <div class="eco-card-hint" aria-hidden="true">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </div>
+        </button>
+      `).join('');
+      grid.querySelectorAll('.eco-card').forEach(card=>{
+        card.addEventListener('click', ()=>openModal(card.dataset.id));
+      });
+    }
+
+    function openModal(id){
+      const s = species.find(x=>x.id===id);
+      if(!s) return;
+      document.getElementById('ecoModalImg').src = s.img;
+      document.getElementById('ecoModalImg').alt = s.name;
+      document.getElementById('ecoModalCat').textContent = s.catLabel;
+      document.getElementById('ecoModalName').textContent = s.name;
+      document.getElementById('ecoModalSci').textContent = s.sci;
+      document.getElementById('ecoModalDesc').textContent = s.desc;
+      document.getElementById('ecoSize').textContent = s.size;
+      document.getElementById('ecoDepth').textContent = s.depth;
+      document.getElementById('ecoSeason').textContent = s.season;
+      document.getElementById('ecoRarity').textContent = s.rarity;
+      document.getElementById('ecoWhere').textContent = s.where;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal(){
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    filters.forEach(btn => {
+      btn.addEventListener('click', ()=>{
+        filters.forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected','true');
+        render(btn.dataset.filter);
+      });
+    });
+    modalClose.addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if(e.target===modal) closeModal(); });
+    document.addEventListener('keydown', e => { if(e.key==='Escape' && modal.classList.contains('open')) closeModal(); });
+
+    render('all');
   })();
 </script>
 </body>
