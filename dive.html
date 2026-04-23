@@ -614,6 +614,26 @@
       .cur-ripple, .cur-burst { display: none !important; }
       .svc-list { display: none !important; }
     }
+  
+    /* ── HARD-KILL cursor & svc-list on all mobile/touch (broadened) ── */
+    @media (max-width: 1100px) {
+      #cur-dot, #cur-ring, .cur-ring-burst,
+      .cur-ripple, .cur-burst, .cursor-trail {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+      }
+      .svc-list { display: none !important; }
+    }
+    @media (hover: none) {
+      #cur-dot, #cur-ring, .cur-ring-burst,
+      .cur-ripple, .cur-burst, .cursor-trail {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+      }
+      .svc-list { display: none !important; }
+    }
   </style>
 </head>
 <body>
@@ -2233,6 +2253,21 @@
   nav.querySelectorAll('a').forEach(function (a) { a.addEventListener('click', closeMenu); });
 })();
 
+  </script>
+
+  <script>
+/* ── Remove cursor elements on touch / narrow screens ── */
+(function(){
+  if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    ['cur-dot','cur-ring'].forEach(function(id){
+      var el = document.getElementById(id);
+      if (el) el.parentNode.removeChild(el);
+    });
+    document.querySelectorAll('.cur-ring-burst,.cur-ripple,.cur-burst').forEach(function(el){
+      el.parentNode.removeChild(el);
+    });
+  }
+})();
   </script>
 </body>
 </html>
