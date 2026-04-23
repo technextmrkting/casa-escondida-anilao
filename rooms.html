@@ -677,6 +677,20 @@
     .rv-quote, .foot-desc, p { letter-spacing: 0 !important; }
   }
 
+  
+  /* ── Cursor off on touch (pointer:coarse covers all phones/tablets) ── */
+  @media (pointer: coarse) {
+    #cur-dot, #cur-ring,
+    .cur-ring-burst, .cur-ripple, .cur-burst { display: none !important; }
+    canvas                                   { display: none !important; }
+    body, body *                             { cursor: auto !important; }
+  }
+  .is-touch #cur-dot, .is-touch #cur-ring,
+  .is-touch .cur-ring-burst, .is-touch .cur-ripple,
+  .is-touch .cur-burst                       { display: none !important; }
+  .is-touch canvas                           { display: none !important; }
+  .is-touch body, .is-touch body *           { cursor: auto !important; }
+
   </style>
 </head>
 <body>
@@ -1097,6 +1111,15 @@
   </footer>
 
   <script>
+/* ── Touch device detection — disables cursor system ── */
+(function(){
+  var isTouch = (window.matchMedia && window.matchMedia("(pointer:coarse)").matches)
+                || "ontouchstart" in window
+                || navigator.maxTouchPoints > 0;
+  if (isTouch) document.documentElement.classList.add("is-touch");
+})();
+</script>
+<script>
   /* ── Theme toggle ── */
   const html = document.documentElement;
   const syncThemeUI = () => {
