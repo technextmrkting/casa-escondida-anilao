@@ -819,6 +819,23 @@
     .foot-grid { gap: 1.2rem !important; }
     .foot-bottom { padding-top: 0.8rem !important; }
 
+    
+    /* ── MOBILE PERF: orb-layer uses mix-blend-mode:screen — kills mobile GPU ── */
+    .orb-layer { display: none !important; }
+
+    /* ── MOBILE PERF: hero rays & bubbles — heavy animations, not visible on small screens ── */
+    .hero-bubbles, .hb, .h-ray { display: none !important; }
+
+    /* ── MOBILE PERF: nav backdrop-filter is the most expensive GPU effect ── */
+    #nav.scrolled {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4,8,15,0.94) !important;
+    }
+    [data-theme="day"] #nav.scrolled {
+      background: rgba(245,240,234,0.96) !important;
+    }
+
     /* General: reduce letter-spacing on body copy */
     .sec-lead, .sec-sub, .rm-desc, .svc-desc,
     .rv-quote, .foot-desc, p { letter-spacing: 0 !important; }
@@ -936,7 +953,7 @@
         <div class="qc-ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
         <div>
           <div class="qc-lbl">Phone</div>
-          <div class="qc-val"><a href="tel:+63437401234">+63 43 740 1234</a></div>
+          <div class="qc-val"><a href="tel:+639778372272">+63 977 837 2272</a></div>
         </div>
       </div>
       <div class="qc-item rv rv-d2">
@@ -1295,11 +1312,11 @@
           <h3>Reach Us <em>Directly</em></h3>
           <p>Our front desk is staffed around the clock. For quickest replies, message us on Facebook or send an email with your dates.</p>
           <div class="contact-methods">
-            <a href="tel:+63437401234" class="cm-item">
+            <a href="tel:+639778372272" class="cm-item">
               <div class="cm-ic"><svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
               <div>
                 <div class="cm-lbl">Phone / Viber</div>
-                <div class="cm-val">+63 43 740 1234</div>
+                <div class="cm-val">+63 977 837 2272</div>
               </div>
             </a>
             <a href="mailto:casaescondidaanilao@gmail.com" class="cm-item">

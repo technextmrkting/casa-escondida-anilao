@@ -31,7 +31,7 @@
     "name": "Casa Escondida Anilao Resort & Dive Center",
     "description": "PADI certified resort and dive center in Anilao, Mabini, Batangas Philippines. Ocean-front rooms, island BBQ, 30+ dive sites.",
     "url": "https://casaescondidaanilao.com/",
-    "telephone": "+63-43-740-1234",
+    "telephone": "+63-977-837-2272",
     "image": "https://images.unsplash.com/photo-1559827260-dc66d52bef19?auto=format&fit=crop&w=1200&q=85",
     "address": {
       "@type": "PostalAddress",
@@ -596,26 +596,6 @@
     .hr-count { color:rgba(255,255,255,0.55); font-size:0.7rem; letter-spacing:0.04em; margin-top:0.18rem; }
     @media(max-width:768px){ .hero-rating { display:none; } }
 
-    /* Scroll arrow */
-    .scroll-cue {
-      position:absolute; bottom:2.2rem; left:50%; transform:translateX(-50%);
-      z-index:10; display:flex; flex-direction:column; align-items:center; gap:0.5rem;
-      animation:heroIn 1.4s ease 1s both;
-    }
-    .scroll-cue span { font-size:0.62rem; letter-spacing:0.22em; text-transform:uppercase; color:rgba(255,255,255,0.4); }
-    .scroll-arrow {
-      width:1px; height:44px;
-      background:linear-gradient(180deg,rgba(255,255,255,0.5),transparent);
-      position:relative; overflow:hidden;
-    }
-    .scroll-arrow::after {
-      content:''; position:absolute; top:0; left:0;
-      width:1px; height:50%; background:var(--accent);
-      animation:arrowDrop 1.8s ease-in-out infinite;
-    }
-    @keyframes arrowDrop {
-      0%{ transform:translateY(-100%); } 100%{ transform:translateY(300%); }
-    }
 
     /* ═══════════════════════════════════════════
        SHARED SECTION STYLES
@@ -718,9 +698,9 @@
                  border-color 0.3s ease,
                  background 0.3s ease;
     }
-    .svc-card:hover  { transform:translateY(-8px) scale(1.01); box-shadow:0 20px 48px rgba(77,194,232,0.15); }
-    .rm-card:hover   { transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.25); }
-    .rv-card:hover   { transform:translateY(-6px) scale(1.01); box-shadow:0 16px 36px rgba(77,194,232,0.12); }
+    .svc-card:hover  { transform:translateY(-8px) scale(1.01); box-shadow:0 20px 48px rgba(77,194,232,0.15); z-index:10; }
+    .rm-card:hover   { transform:translateY(-6px); box-shadow:0 18px 40px rgba(0,0,0,0.25); z-index:10; }
+    .rv-card:hover   { transform:translateY(-6px) scale(1.01); box-shadow:0 16px 36px rgba(77,194,232,0.12); z-index:10; }
     .di-stat:hover   { transform:translateY(-4px) scale(1.02); }
 
     /* ── Tag pop-in ── */
@@ -790,12 +770,7 @@
     }
     .ap-badge { animation:badgeBounce 3.5s ease-in-out infinite; }
 
-    /* ── Scroll cue pulse ── */
-    @keyframes cueGlow {
-      0%,100% { box-shadow:0 0 0 0 rgba(77,194,232,0.4); }
-      50%     { box-shadow:0 0 0 12px rgba(77,194,232,0); }
-    }
-    .scroll-arrow { animation:arrowDrop 1.8s ease-in-out infinite, cueGlow 2s ease-in-out infinite; }
+
 
     /* ── Marquee pause on hover ── */
     .marquee-strip:hover .marquee-inner { animation-play-state:paused; }
@@ -971,7 +946,7 @@
       transition:transform 0.4s, border-color 0.3s, box-shadow 0.4s;
       cursor:none;
     }
-    .rm-card:hover { transform:translateY(-8px); border-color:var(--border-accent); box-shadow:0 24px 60px rgba(0,0,0,0.2); }
+    .rm-card:hover { transform:translateY(-8px); border-color:var(--border-accent); box-shadow:0 24px 60px rgba(0,0,0,0.2); z-index:10; }
     .rm-photo { height:240px; overflow:hidden; position:relative; }
     .rm-photo img { width:100%; height:100%; object-fit:cover; transition:transform 0.7s ease; }
     .rm-card:hover .rm-photo img { transform:scale(1.06); }
@@ -1081,7 +1056,7 @@
       border-radius:3px; padding:2.2rem;
       transition:border-color 0.3s, transform 0.3s, background 0.3s;
     }
-    .rv-card:hover { border-color:var(--border-accent); transform:translateY(-5px); background:var(--bg-card-hover); }
+    .rv-card:hover { border-color:var(--border-accent); transform:translateY(-5px); background:var(--bg-card-hover); z-index:10; }
     .rv-stars { color:var(--gold); font-size:0.85rem; letter-spacing:1px; margin-bottom:1rem; }
     .rv-quote {
       font-family:'Playfair Display',serif; font-style:italic;
@@ -1782,13 +1757,13 @@
 
     /* Hero */
     .hero-h1 {
-      font-size: 2.1rem !important;
-      line-height: 1.1 !important;
+      font-size: 3.2rem !important;
+      line-height: 1.05 !important;
       margin-bottom: 0.5rem !important;
       letter-spacing: -0.02em !important;
     }
     .hero-sub {
-      font-size: 0.78rem !important;
+      font-size: 1rem !important;
       margin-bottom: 1.2rem !important;
       letter-spacing: 0.01em !important;
     }
@@ -1826,6 +1801,10 @@
     /* Booking section */
     .booking-title { font-size: 1.7rem !important; margin-bottom: 0.4rem !important; }
 
+    /* Gallery intro — collapse gap between title and description on mobile */
+    .gallery-intro { gap: 0.8rem !important; margin-bottom: 1.6rem !important; }
+    .btn-outline-sm { margin-top: 0.8rem !important; }
+
     /* Gallery grid */
     .gal-grid { gap: 3px !important; }
 
@@ -1843,9 +1822,39 @@
     /* General: reduce letter-spacing on body copy */
     .sec-lead, .sec-sub, .rm-desc, .svc-desc,
     .rv-quote, .foot-desc, p { letter-spacing: 0 !important; }
+
+    
+    /* ── MOBILE PERF: orb-layer uses mix-blend-mode:screen — kills mobile GPU ── */
+    .orb-layer { display: none !important; }
+
+    /* ── MOBILE PERF: hero rays & bubbles — heavy animations, not visible on small screens ── */
+    .hero-bubbles, .hb, .h-ray { display: none !important; }
+
+    /* ── MOBILE PERF: nav backdrop-filter is the most expensive GPU effect ── */
+    #nav.scrolled {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      background: rgba(4,8,15,0.94) !important;
+    }
+    [data-theme="day"] #nav.scrolled {
+      background: rgba(245,240,234,0.96) !important;
+    }
+
+    /* ── Hero image: completely static on mobile — no animation, no transform ── */
+    /* background-size:cover fills the container without any transform needed */
+    .hero-photo,
+    [data-theme="night"] .hero-photo {
+      animation: none !important;
+      transform: none !important;
+      will-change: auto !important;
+    }
+
+    /* ── background-attachment:fixed causes full repaint on scroll + iOS parallax glitch ── */
+    [data-theme="night"] { background-attachment: scroll !important; }
+    html, body { background-attachment: scroll !important; }
   }
 
-  
+
   /* ── Cursor off on touch (pointer:coarse covers all phones/tablets) ── */
   @media (pointer: coarse) {
     #cur-dot, #cur-ring,
@@ -1983,10 +1992,6 @@
       </a>
     </div>
 
-    <div class="scroll-cue">
-      <span>Scroll</span>
-      <div class="scroll-arrow"></div>
-    </div>
   </section>
 
   <!-- ═══ MARQUEE ═══ -->
@@ -2438,7 +2443,7 @@
                 <div class="loc-lbl">Contact &amp; Reservations</div>
                 <div class="loc-val">
                   <a href="mailto:casaescondidaanilao@gmail.com">casaescondidaanilao@gmail.com</a><br>
-                  <a href="tel:+639174012345">+63 917 401 2345</a><br>
+                  <a href="tel:+639778372272">+63 977 837 2272</a><br>
                   Message us on <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer">Facebook</a> or <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer">Instagram</a>
                 </div>
               </div>
@@ -2659,8 +2664,9 @@
   });
   dot.style.display='none'; ring.style.display='none';
 
-  /* smooth ring follow */
+  /* smooth ring follow (stops on touch — cursor hidden but rAF loop still costs battery) */
   (function animRing(){
+    if(document.documentElement.classList.contains('is-touch')) return;
     rx+=(mx-rx)*0.11; ry+=(my-ry)*0.11;
     ring.style.left=rx+'px'; ring.style.top=ry+'px';
     requestAnimationFrame(animRing);
@@ -2782,25 +2788,29 @@
     if(!el.closest('.rv,.rvl,.rvr')) el.classList.add('rv');
   });
 
-  /* ── Parallax hero ── */
+  /* ── Parallax hero (desktop only — touch guard prevents floating image on scroll) ── */
   const heroPhoto = document.querySelector('.hero-photo');
   const heroContent = document.querySelector('.hero-content');
-  window.addEventListener('scroll',()=>{
-    const y = window.scrollY;
-    if(heroPhoto) heroPhoto.style.transform=`scale(1.08) translateY(${y*0.22}px)`;
-    if(heroContent) heroContent.style.transform=`translateY(${y*0.28}px) scale(${1 - y*0.0002})`;
-  },{passive:true});
-
-  /* ── Section image parallax ── */
-  document.querySelectorAll('.parallax-img img').forEach(img=>{
-    const section = img.closest('section');
-    if(!section) return;
+  if(!document.documentElement.classList.contains('is-touch')){
     window.addEventListener('scroll',()=>{
-      const rect = section.getBoundingClientRect();
-      const offset = rect.top / window.innerHeight;
-      img.style.transform = `translateY(${offset * 30}px)`;
+      const y = window.scrollY;
+      if(heroPhoto) heroPhoto.style.transform=`scale(1.08) translateY(${y*0.22}px)`;
+      if(heroContent) heroContent.style.transform=`translateY(${y*0.28}px) scale(${1 - y*0.0002})`;
     },{passive:true});
-  });
+  }
+
+  /* ── Section image parallax (desktop only) ── */
+  if(!document.documentElement.classList.contains('is-touch')){
+    document.querySelectorAll('.parallax-img img').forEach(img=>{
+      const section = img.closest('section');
+      if(!section) return;
+      window.addEventListener('scroll',()=>{
+        const rect = section.getBoundingClientRect();
+        const offset = rect.top / window.innerHeight;
+        img.style.transform = `translateY(${offset * 30}px)`;
+      },{passive:true});
+    });
+  }
 
   /* ── Booking form — date min + submit handler ── */
   const bookingForm    = document.getElementById('bookingForm');
@@ -2967,8 +2977,11 @@
   </script>
 
   <script>
-  /* ── Ripple & Cursor Trail ── */
+  /* ── Ripple & Cursor Trail (desktop/mouse only) ── */
   (function(){
+    /* Skip entirely on touch devices — no canvas, no rAF loop */
+    if(document.documentElement.classList.contains('is-touch')) return;
+    if(window.matchMedia && window.matchMedia('(pointer:coarse)').matches) return;
     const cvs = document.createElement('canvas');
     cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;mix-blend-mode:screen;';
     document.body.appendChild(cvs);
