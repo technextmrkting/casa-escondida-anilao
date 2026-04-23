@@ -687,6 +687,20 @@
     .rm-name { font-size: 1.05rem !important; }
   }
 
+  
+    /* ── Hide cursor elements on mobile (mouse-only features) ── */
+    @media (max-width: 768px) {
+      #cur-dot, #cur-ring, .cur-ring-burst,
+      .cur-ripple, .cur-burst { display: none !important; }
+
+      /* Hide hover-only list on touch (tap triggers :hover in some browsers) */
+      .svc-list { display: none !important; }
+    }
+    @media (hover: none) {
+      #cur-dot, #cur-ring, .cur-ring-burst,
+      .cur-ripple, .cur-burst { display: none !important; }
+      .svc-list { display: none !important; }
+    }
   </style>
 </head>
 <body>
