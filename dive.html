@@ -443,8 +443,24 @@
     }
   
   
-    .foot-powered-link { font-size:0.72rem; color:var(--text-muted); text-decoration:none; transition:color .3s; white-space:nowrap; }
-    .foot-powered-link:hover { color:var(--accent) !important; }
+    .foot-powered-link {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      text-decoration: none;
+      white-space: nowrap;
+      transition: opacity .2s;
+    }
+    .foot-powered-link:hover { opacity: .75; }
+    .tn-brand {
+      background: linear-gradient(90deg, #4dc8e8 0%, #06d6a0 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-weight: 600;
+      padding-bottom: 1px;
+      border-bottom: 1px dashed rgba(6,214,160,.45);
+      display: inline;
+    }
   </style>
 
   <style>
@@ -1124,7 +1140,7 @@
       <a href="mailto:casaescondidaanilao@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
       <a href="mailto:casaescondidaanilao@gmail.com?subject=Terms%20Inquiry">Terms of Service</a>
       <span style="color:var(--text-muted);opacity:.4">·</span>
-      <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by TechNext Asia</a>
+      <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
     </div>
   </div>
 </footer>
@@ -1873,7 +1889,7 @@
       <a href="mailto:casaescondidaanilao@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
       <a href="mailto:casaescondidaanilao@gmail.com?subject=Terms%20Inquiry">Terms of Service</a>
       <span style="color:var(--text-muted);opacity:.4">·</span>
-      <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by TechNext Asia</a>
+      <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
     </div>
   </div>
       <div class="foot-powered">
