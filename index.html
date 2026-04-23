@@ -1671,7 +1671,7 @@
     /* ── Hide cursor elements on mobile (mouse-only features) ── */
     @media (max-width: 768px) {
       #cur-dot, #cur-ring, .cur-ring-burst,
-      .cur-ripple, .cur-burst { display: none !important; }
+      .cur-ripple, .cur-burst, .cur-spark { display: none !important; }
 
       /* Hide hover-only list on touch (tap triggers :hover in some browsers) */
       .svc-list { display: none !important; }
@@ -1858,13 +1858,13 @@
   /* ── Cursor off on touch (pointer:coarse covers all phones/tablets) ── */
   @media (pointer: coarse) {
     #cur-dot, #cur-ring,
-    .cur-ring-burst, .cur-ripple, .cur-burst { display: none !important; }
+    .cur-ring-burst, .cur-ripple, .cur-burst, .cur-spark { display: none !important; }
     canvas                                   { display: none !important; }
     body, body *                             { cursor: auto !important; }
   }
   .is-touch #cur-dot, .is-touch #cur-ring,
   .is-touch .cur-ring-burst, .is-touch .cur-ripple,
-  .is-touch .cur-burst                       { display: none !important; }
+  .is-touch .cur-burst, .is-touch .cur-spark { display: none !important; }
   .is-touch canvas                           { display: none !important; }
   .is-touch body, .is-touch body *           { cursor: auto !important; }
 
@@ -2632,6 +2632,8 @@
     s.addEventListener('animationend',()=>s.remove(),{once:true});
   }
   document.addEventListener('mousedown', e=>{
+    if(document.documentElement.classList.contains('is-touch')) return;
+    if(window.matchMedia && window.matchMedia('(pointer:coarse)').matches) return;
     const x=e.clientX, y=e.clientY;
     /* soft glow */
     spawnRipple(x, y, 120, 'cur-burst');
