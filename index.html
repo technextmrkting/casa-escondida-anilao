@@ -359,6 +359,12 @@
       transition:background 0.3s, transform 0.2s;
     }
     .btn-nav-cta:hover { background:var(--accent-dark); transform:translateY(-1px); }
+    /* Scrolled state: keep the button filled in all themes */
+    #nav.scrolled .btn-nav-cta { background:var(--accent); color:#fff; }
+
+    /* Hamburger: clean up focus ring after mouse/touch click while keeping keyboard ring */
+    .nav-hamburger:focus { outline: none; }
+    .nav-hamburger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
 
     /* ── Focus-visible: keyboard navigation rings ── */
     :focus-visible {
@@ -929,12 +935,17 @@
     .svc-photo img { width:100%; height:100%; object-fit:cover; transition:transform .7s ease,filter .5s; filter:brightness(.82); }
     .svc-card:hover .svc-photo img { transform:scale(1.07); filter:brightness(.65); }
     .svc-badge { position:absolute; top:1.2rem; left:1.2rem; z-index:2; background:rgba(4,8,15,.65); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(255,255,255,.14); padding:.28rem .75rem; border-radius:2px; font-size:.58rem; letter-spacing:.15em; text-transform:uppercase; color:rgba(255,255,255,.85); }
-    .svc-content { position:absolute; bottom:0; left:0; right:0; padding:1.8rem; z-index:2; }
-    .svc-name { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:400; color:#fff; margin-bottom:.5rem; }
-    .svc-desc { font-size:.78rem; color:rgba(255,255,255,.7); line-height:1.75; margin-bottom:.6rem; }
-    .svc-list { list-style:none; display:flex; flex-direction:column; gap:.3rem; max-height:0; overflow:hidden; transition:max-height .4s ease,opacity .35s ease; opacity:0; }
+    /* column-reverse: title is first child → renders at the VERY BOTTOM of svc-content
+       so it never jumps when the list above it expands.
+       Margins in column-reverse: physical bottom-edge faces the element below,
+       so margin-bottom on desc = gap between desc and name (which is below it). */
+    .svc-content { position:absolute; bottom:0; left:0; right:0; padding:1.5rem; z-index:2;
+                   display:flex; flex-direction:column-reverse; }
+    .svc-name { font-family:'Playfair Display',serif; font-size:1.2rem; font-weight:400; color:#fff; margin-bottom:0; margin-top:0; }
+    .svc-desc { font-size:.78rem; color:rgba(255,255,255,.7); line-height:1.6; margin-bottom:.35rem; margin-top:0; }
+    .svc-list { list-style:none; display:flex; flex-direction:column; gap:.22rem; max-height:0; overflow:hidden; transition:max-height .4s ease,opacity .35s ease; opacity:0; margin-bottom:.3rem; margin-top:.3rem; }
     .svc-card:hover .svc-list { max-height:200px; opacity:1; }
-    .svc-list li { font-size:.72rem; color:var(--accent); padding-left:1rem; position:relative; }
+    .svc-list li { font-size:.7rem; color:var(--accent); padding-left:1rem; position:relative; }
     .svc-list li::before { content:'—'; position:absolute; left:0; color:var(--accent); opacity:.6; }
 
     /* ═══════════════════════════════════════════
@@ -1758,6 +1769,14 @@
     }
 
     /* Hero */
+    /* Shrink hero-tag on small screens: wide letter-spacing causes horizontal overflow */
+    .hero-tag {
+      font-size: 0.58rem !important;
+      letter-spacing: 0.14em !important;
+      gap: 0.45rem !important;
+    }
+    .hero-tag::before { width: 18px !important; }
+
     .hero-h1 {
       font-size: 3.2rem !important;
       line-height: 1.05 !important;
