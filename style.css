@@ -57,6 +57,9 @@
     .nav-hamburger[aria-expanded="true"] span:nth-child(1){transform:translateY(6.5px) rotate(45deg);}
     .nav-hamburger[aria-expanded="true"] span:nth-child(2){opacity:0;}
     .nav-hamburger[aria-expanded="true"] span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg);}
+    /* Day mode: dark-blue hamburger on all pages */
+    [data-theme="day"] .nav-hamburger span{background:var(--accent);}
+    [data-theme="day"] #nav.scrolled .nav-hamburger span{background:var(--accent);}
     .mobile-nav{display:none;position:fixed;inset:0;z-index:199;background:var(--bg);flex-direction:column;align-items:center;justify-content:center;gap:1.5rem;opacity:0;transition:opacity .3s ease;}
     .mobile-nav.open{opacity:1;}
     .mobile-nav a{font-family:'Playfair Display',serif;font-size:2rem;font-weight:300;color:var(--text);text-decoration:none;letter-spacing:.02em;transition:color .3s;}
@@ -82,10 +85,11 @@
     /* ══════ UNIFIED FOOTER ══════ */
     footer.site-footer{background:var(--bg2);border-top:1px solid var(--border);padding:5rem 0 2.5rem;margin-top:0;}
     .site-footer .c{max-width:1300px;margin:0 auto;padding:0 4rem;}
-    .foot-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr 1fr;gap:3.5rem;margin-bottom:4rem;}
+    .foot-grid{display:grid;grid-template-columns:1fr 1.8fr;gap:4.5rem;margin-bottom:4rem;align-items:start;}
+    .foot-col-links{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
     .foot-logo{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:300;color:var(--text);text-decoration:none;display:block;margin-bottom:1rem;}
     .foot-logo span{color:var(--accent);}
-    .foot-desc{font-size:.82rem;color:var(--text3);line-height:1.75;max-width:260px;margin-bottom:1.5rem;}
+    .foot-desc{font-size:.82rem;color:var(--text3);line-height:1.75;max-width:300px;margin-bottom:1.5rem;}
     .foot-socials{display:flex;gap:.6rem;}
     .soc{width:36px;height:36px;border:1px solid var(--border);border-radius:50%;display:flex;align-items:center;justify-content:center;text-decoration:none;color:var(--text3);transition:all .3s;}
     .soc svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;display:block;}
@@ -101,12 +105,16 @@
     .foot-legal a{font-size:.72rem;color:var(--text3);text-decoration:none;transition:color .3s;}
     .foot-legal a:hover{color:var(--text);}
     @media(max-width:900px){
-      .foot-grid{grid-template-columns:1fr 1fr;gap:2.5rem;}
+      .foot-grid{grid-template-columns:1fr;gap:3rem;}
+      .foot-col-links{grid-template-columns:repeat(3,1fr);}
       .site-footer .c,.foot-bottom{padding-left:1.5rem;padding-right:1.5rem;}
       .foot-bottom{flex-direction:column;gap:.8rem;text-align:center;}
     }
     @media(max-width:560px){
-      .foot-grid{grid-template-columns:1fr;gap:2rem;}
+      .foot-col-links{grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    }
+    @media(max-width:380px){
+      .foot-col-links{grid-template-columns:1fr;gap:1.5rem;}
     }
 
     /* ── Night ambient orbs ── */
@@ -329,6 +337,25 @@
   /* Hide old thin line dividers */
   .mobile-nav-divider { display: none !important; }
 
+  /* ── Day mode: light-themed drawer ── */
+  [data-theme="day"] .mobile-nav {
+    background: var(--bg, #f5f0ea) !important;
+    border-left-color: var(--border, rgba(0,0,0,.1)) !important;
+    box-shadow: -10px 0 40px rgba(0,0,0,.12) !important;
+  }
+  [data-theme="day"] .mobile-nav a {
+    color: var(--text2, #3a5568) !important;
+    border-bottom-color: var(--border, rgba(0,0,0,.08)) !important;
+  }
+  [data-theme="day"] .mobile-nav a:hover,
+  [data-theme="day"] .mobile-nav a.active { color: var(--accent, #1a6b98) !important; }
+  /* Book Now CTA: always white text on the solid accent button */
+  [data-theme="day"] .mobile-nav .mobile-nav-cta,
+  [data-theme="day"] .mobile-nav a.mobile-nav-cta { color: #fff !important; }
+  [data-theme="day"] .mob-nav-bkdrop {
+    background: rgba(13,30,46,.35) !important;
+  }
+
   /* ── Backdrop overlay ── */
   .mob-nav-bkdrop {
     position: fixed; inset: 0;
@@ -538,7 +565,7 @@
     .dpg-item { height: 170px !important; }
 
     /* Footer */
-    .foot-grid { gap: 1.2rem !important; }
+    .foot-col-links { gap: 1.2rem !important; }
     .foot-bottom { padding-top: 0.8rem !important; }
 
     

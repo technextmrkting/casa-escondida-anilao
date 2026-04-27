@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="preload" as="image" href="images/Hero Image/generate_different_angle_202604220023.png" />
+  <link rel="preload" as="image" href="images/Hero Image/hf_20260427_125509_05a0eb7e-3e2e-4dab-85fb-e077fd155f4c.png" type="image/png" />
 
   <meta charset="UTF-8" />
   <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
@@ -405,8 +405,8 @@
     .hero-photo {
       position:absolute; inset:0;
       background:
-        url('images/Hero Image/generate_different_angle_202604220023.png')
-        center 40% / cover no-repeat;
+        url('images/Hero Image/hf_20260427_125509_05a0eb7e-3e2e-4dab-85fb-e077fd155f4c.png')
+        center 30% / cover no-repeat;
       animation:dayFloat 22s ease-in-out infinite alternate;
       will-change:transform;
     }
@@ -519,9 +519,9 @@
     .hero-tag {
       display:inline-flex; align-items:center; gap:0.7rem;
       font-size:0.7rem; letter-spacing:0.3em; text-transform:uppercase;
-      color:var(--accent); margin-bottom:1.2rem;
+      color:#fff; margin-bottom:1.2rem;
     }
-    .hero-tag::before { content:''; width:28px; height:1px; background:var(--accent); opacity:0.7; }
+    .hero-tag::before { content:''; width:28px; height:1px; background:#fff; opacity:0.7; }
     .hero-h1 {
       font-family:'Playfair Display', serif;
       font-size:clamp(3.5rem,9vw,8.5rem);
@@ -571,24 +571,62 @@
     }
     .hero-btns { display:flex; gap:1rem; flex-wrap:wrap; }
     .btn-hero-primary {
+      position:relative; overflow:hidden;
       background:var(--accent); color:#fff; border:none;
       padding:1rem 2.6rem;
       font-family:'DM Sans',sans-serif;
       font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
       text-decoration:none; border-radius:2px; cursor:none;
-      transition:background 0.3s, transform 0.25s;
+      transition:background 0.3s, transform 0.28s cubic-bezier(.34,1.56,.64,1), box-shadow 0.3s;
     }
-    .btn-hero-primary:hover { background:var(--accent-dark); transform:translateY(-3px); }
+    /* Shimmer sweep */
+    .btn-hero-primary::after {
+      content:''; position:absolute; top:0; left:-120%;
+      width:55%; height:100%;
+      background:linear-gradient(90deg,transparent,rgba(255,255,255,.24),transparent);
+      transform:skewX(-18deg); pointer-events:none;
+      transition:none;
+    }
+    .btn-hero-primary:hover {
+      background:var(--accent-dark);
+      transform:translateY(-4px);
+      box-shadow:0 10px 30px rgba(77,194,232,.38);
+    }
+    .btn-hero-primary:hover::after { animation:btnShimmer .65s ease forwards; }
+    .btn-hero-primary:active { transform:translateY(-1px) scale(.97) !important; box-shadow:0 4px 14px rgba(77,194,232,.22) !important; transition-duration:.1s !important; }
+
     .btn-hero-ghost {
+      position:relative; overflow:hidden;
       background:transparent; color:#fff;
       border:1px solid rgba(255,255,255,0.35);
       padding:1rem 2.6rem;
       font-family:'DM Sans',sans-serif;
       font-size:0.78rem; letter-spacing:0.14em; text-transform:uppercase;
       text-decoration:none; border-radius:2px; cursor:none;
-      transition:border-color 0.3s, color 0.3s, transform 0.25s;
+      transition:border-color 0.3s, transform 0.28s cubic-bezier(.34,1.56,.64,1), background 0.3s;
     }
-    .btn-hero-ghost:hover { border-color:rgba(255,255,255,0.8); transform:translateY(-3px); }
+    /* Fill wipe */
+    .btn-hero-ghost::before {
+      content:''; position:absolute; inset:0;
+      background:rgba(255,255,255,.1);
+      transform:scaleX(0); transform-origin:left;
+      transition:transform .38s cubic-bezier(.4,0,.2,1);
+      pointer-events:none;
+    }
+    .btn-hero-ghost:hover { border-color:rgba(255,255,255,.85); transform:translateY(-4px); }
+    .btn-hero-ghost:hover::before { transform:scaleX(1); }
+    .btn-hero-ghost:active { transform:translateY(-1px) scale(.97) !important; transition-duration:.1s !important; }
+
+    /* Ripple element (injected by JS on click) */
+    .btn-ripple {
+      position:absolute; border-radius:50%;
+      background:rgba(255,255,255,.3);
+      transform:scale(0);
+      animation:btnRipple .7s ease-out forwards;
+      pointer-events:none;
+    }
+    @keyframes btnShimmer { 0%{left:-120%} 100%{left:160%} }
+    @keyframes btnRipple  { to{transform:scale(4.5);opacity:0} }
 
     /* Hero rating pills — group of two cards */
     .hero-rating {
@@ -955,8 +993,8 @@
     .svc-desc { font-size:.78rem; color:rgba(255,255,255,.7); line-height:1.6; margin-bottom:.35rem; margin-top:0; }
     .svc-list { list-style:none; display:flex; flex-direction:column; gap:.22rem; max-height:0; overflow:hidden; transition:max-height .4s ease,opacity .35s ease; opacity:0; margin-bottom:.3rem; margin-top:.3rem; }
     .svc-card:hover .svc-list { max-height:200px; opacity:1; }
-    .svc-list li { font-size:.7rem; color:var(--accent); padding-left:1rem; position:relative; }
-    .svc-list li::before { content:'—'; position:absolute; left:0; color:var(--accent); opacity:.6; }
+    .svc-list li { font-size:.7rem; color:rgba(255,255,255,.85); padding-left:1rem; position:relative; }
+    .svc-list li::before { content:'—'; position:absolute; left:0; color:rgba(255,255,255,.5); opacity:1; }
 
     /* ═══════════════════════════════════════════
        ROOMS
@@ -1285,7 +1323,8 @@
       border-top:1px solid var(--border);
       padding:5rem 0 2.5rem;
     }
-    .foot-grid { display:grid; grid-template-columns:1.8fr 1fr 1fr 1fr; gap:3.5rem; margin-bottom:4rem; }
+    .foot-grid { display:grid; grid-template-columns:1fr 1.8fr; gap:4.5rem; margin-bottom:4rem; align-items:start; }
+    .foot-col-links { display:grid; grid-template-columns:repeat(3,1fr); gap:2rem; }
     .foot-logo { font-family:'Playfair Display',serif; font-size:1.4rem; font-weight:300; color:var(--text-primary); text-decoration:none; display:block; margin-bottom:1rem; }
     .foot-logo span { color:var(--accent); }
     .foot-desc { font-size:0.82rem; color:var(--text-muted); line-height:1.75; max-width:260px; margin-bottom:1.5rem; }
@@ -1320,7 +1359,8 @@
       .services-grid { grid-template-columns:1fr 1fr; grid-template-rows:auto; }
       .services-grid .svc-card { grid-column:auto!important; grid-row:auto!important; height:280px; }
       .rooms-grid,.reviews-grid { grid-template-columns:1fr 1fr; }
-      .foot-grid { grid-template-columns:1fr 1fr; gap:2.5rem; }
+      .foot-grid { grid-template-columns:1fr; gap:3rem; }
+      .foot-col-links { grid-template-columns:repeat(3,1fr); }
       .hero-content { padding:0 2.5rem 5rem; }
       .hero-rating { right:2.5rem; }
     }
@@ -1333,11 +1373,14 @@
     .nav-hamburger span {
       display:block; width:22px; height:1.5px;
       background:var(--text-primary);
-      transition:transform 0.3s ease, opacity 0.3s ease;
+      transition:transform 0.3s ease, opacity 0.3s ease, background 0.35s ease;
     }
     .nav-hamburger[aria-expanded="true"] span:nth-child(1){ transform:translateY(6.5px) rotate(45deg); }
     .nav-hamburger[aria-expanded="true"] span:nth-child(2){ opacity:0; }
     .nav-hamburger[aria-expanded="true"] span:nth-child(3){ transform:translateY(-6.5px) rotate(-45deg); }
+    /* About page only — day mode: white over hero, accent-dark after scroll */
+    [data-theme="day"] .nav-hamburger span { background: #fff !important; }
+    [data-theme="day"] #nav.scrolled .nav-hamburger span { background: var(--accent) !important; }
 
     /* Mobile nav drawer */
     .mobile-nav {
@@ -1384,6 +1427,7 @@
       .mosaic { display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto; }
       .mo { grid-column:auto !important; grid-row:auto !important; height:160px; }
       .foot-grid { grid-template-columns:1fr; }
+      .foot-col-links { grid-template-columns:repeat(2,1fr); gap:1.5rem; }
       .foot-bottom { flex-direction:column; gap:1rem; text-align:center; }
       .dive-photo-grid { grid-template-columns:1fr; }
       .dpg-item:nth-child(1){ grid-row:auto; }
@@ -1623,6 +1667,10 @@
   .mobile-nav .mobile-nav-cta:hover,
   .mobile-nav a.mobile-nav-cta:hover { opacity: .88 !important; }
 
+  /* Day mode: white text on dark-blue CTA button */
+  [data-theme="day"] .mobile-nav .mobile-nav-cta,
+  [data-theme="day"] .mobile-nav a.mobile-nav-cta { color: #fff !important; }
+
   /* Hide old thin line dividers */
   .mobile-nav-divider { display: none !important; }
 
@@ -1848,7 +1896,7 @@
     .dpg-item { height: 170px !important; }
 
     /* Footer */
-    .foot-grid { gap: 1.2rem !important; }
+    .foot-col-links { gap: 1.2rem !important; }
     .foot-bottom { padding-top: 0.8rem !important; }
 
     /* General: reduce letter-spacing on body copy */
@@ -1859,8 +1907,38 @@
     /* ── MOBILE PERF: orb-layer uses mix-blend-mode:screen — kills mobile GPU ── */
     .orb-layer { display: none !important; }
 
-    /* ── MOBILE PERF: hero rays & bubbles — heavy animations, not visible on small screens ── */
-    .hero-bubbles, .hb, .h-ray { display: none !important; }
+    /* ── MOBILE: hero rays & bubbles — enabled with enhanced movement ── */
+    .hero-bubbles { display: block !important; }
+    .hb           { display: block !important; }
+    .h-ray        { display: block !important; }
+
+    /* Bubbles — zigzag rise with higher opacity */
+    @keyframes hbRiseMobile {
+      0%   { transform: translateY(110vh) translateX(0px);    opacity: 0; }
+      8%   { opacity: 0.95; }
+      25%  { transform: translateY(80vh)  translateX(28px); }
+      50%  { transform: translateY(50vh)  translateX(-22px); }
+      75%  { transform: translateY(22vh)  translateX(20px); }
+      92%  { opacity: 0.6; }
+      100% { transform: translateY(-10vh) translateX(-10px);  opacity: 0; }
+    }
+    .hb {
+      animation-name: hbRiseMobile !important;
+      animation-duration: 6s !important;
+      opacity: 0.9 !important;
+    }
+
+    /* Rays — bright pulse + blur shift for visible wave effect */
+    @keyframes rayPulseMobile {
+      0%,100% { opacity: 0.4;  filter: blur(10px); }
+      30%     { opacity: 1.0;  filter: blur(2px);  }
+      65%     { opacity: 0.65; filter: blur(6px);  }
+    }
+    .h-ray {
+      animation-name: rayPulseMobile !important;
+      animation-duration: 2.8s !important;
+      opacity: 0.8 !important;
+    }
 
     /* ── MOBILE PERF: nav backdrop-filter is the most expensive GPU effect ── */
     #nav.scrolled {
@@ -1872,13 +1950,30 @@
       background: rgba(245,240,234,0.96) !important;
     }
 
-    /* ── Hero image: completely static on mobile — no animation, no transform ── */
-    /* background-size:cover fills the container without any transform needed */
+    /* ── Hero image: gentle wave float on mobile ── */
+    @keyframes heroWaveMobile {
+      0%   { transform: scale(1.08) translateY(0px)   translateX(0px);  }
+      25%  { transform: scale(1.10) translateY(-12px) translateX(8px);  }
+      50%  { transform: scale(1.09) translateY(-22px) translateX(-8px); }
+      75%  { transform: scale(1.10) translateY(-14px) translateX(10px); }
+      100% { transform: scale(1.08) translateY(-6px)  translateX(-5px); }
+    }
     .hero-photo,
     [data-theme="night"] .hero-photo {
-      animation: none !important;
-      transform: none !important;
-      will-change: auto !important;
+      animation: heroWaveMobile 10s ease-in-out infinite alternate !important;
+      will-change: transform !important;
+      background-position: 60% 30% !important;
+      background-size: cover !important;
+    }
+    .hero-photo::before,
+    [data-theme="night"] .hero-photo::before {
+      background-position: 60% 30% !important;
+      background-size: cover !important;
+    }
+    [data-theme="day"] .hero-photo {
+      background-image: url('images/Hero Image/hf_20260427_125509_05a0eb7e-3e2e-4dab-85fb-e077fd155f4c.png') !important;
+      background-position: 60% 25% !important;
+      background-size: cover !important;
     }
 
     /* ── background-attachment:fixed causes full repaint on scroll + iOS parallax glitch ── */
@@ -1956,6 +2051,8 @@
     <a href="#about"    class="mob-link">About</a>
     <div class="mobile-nav-divider"></div>
     <a href="rooms.html" class="mob-link">Rooms</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="dive.html"   class="mob-link">Dive</a>
     <div class="mobile-nav-divider"></div>
     <a href="gallery.html"  class="mob-link">Gallery</a>
     <div class="mobile-nav-divider"></div>
@@ -2110,7 +2207,7 @@
   <section id="dive" class="pad" style="padding-top:0">
     <!-- Full-bleed hero photo -->
     <div class="dive-hero-photo">
-      <img decoding="async" src="images/background/generate_different_angle,_202604212351.png" alt="Scuba diver with sea turtles underwater Anilao" loading="lazy" width="1920" height="1080" />
+      <img decoding="async" src="images/background/generate_different_angle,_202604212351.webp" alt="Scuba diver with sea turtles underwater Anilao" loading="lazy" width="1920" height="1080" />
       <div class="dive-hero-overlay">
         <div class="dive-hero-text">
           <div class="eyebrow rv" style="color:rgba(77,194,232,0.9)">Dive Center</div>
@@ -2139,12 +2236,6 @@
           <div class="svc-content">
             <div class="svc-name">Professional Dive Center</div>
             <p class="svc-desc">Full-service PADI dive center with seasoned divemasters — your gateway to Anilao's legendary marine world.</p>
-            <ul class="svc-list">
-              <li>PADI certification courses</li>
-              <li>Equipment rental &amp; care</li>
-              <li>Guided dive trips daily</li>
-              <li>Night dives available</li>
-            </ul>
           </div>
         </div>
         <div class="svc-card rv" style="transition-delay:0.07s">
@@ -2153,12 +2244,6 @@
           <div class="svc-content">
             <div class="svc-name">Pool &amp; Beach Access</div>
             <p class="svc-desc">Unwind by the pool with sweeping ocean views or step directly onto the beach for warm Batangas Bay waters.</p>
-            <ul class="svc-list">
-              <li>Outdoor swimming pool</li>
-              <li>Direct beach access</li>
-              <li>Sunbathing deck</li>
-              <li>Oceanfront loungers</li>
-            </ul>
           </div>
         </div>
         <div class="svc-card rv" style="transition-delay:0.14s">
@@ -2167,12 +2252,6 @@
           <div class="svc-content">
             <div class="svc-name">Restaurant &amp; Bar</div>
             <p class="svc-desc">Fresh Filipino and international cuisine, cold drinks at our oceanside bar, and the legendary island BBQ experience.</p>
-            <ul class="svc-list">
-              <li>Buffet breakfast included</li>
-              <li>Full board packages</li>
-              <li>Island BBQ experience</li>
-              <li>Bar &amp; lounge</li>
-            </ul>
           </div>
         </div>
         <div class="svc-card rv" style="transition-delay:0.21s">
@@ -2181,12 +2260,6 @@
           <div class="svc-content">
             <div class="svc-name">Comfortable Rooms</div>
             <p class="svc-desc">24 ocean-side rooms thoughtfully appointed for the diving traveler — fall asleep to waves, wake up ready to dive.</p>
-            <ul class="svc-list">
-              <li>Air conditioning</li>
-              <li>Hot shower &amp; bath</li>
-              <li>Flat-screen TV &amp; minibar</li>
-              <li>Daily housekeeping</li>
-            </ul>
           </div>
         </div>
         <div class="svc-card rv" style="transition-delay:0.28s">
@@ -2195,12 +2268,6 @@
           <div class="svc-content">
             <div class="svc-name">Island Excursions</div>
             <p class="svc-desc">Boat trips, snorkeling, and sunset cruises across the Philippines' most biodiverse bay — adventures for every traveler.</p>
-            <ul class="svc-list">
-              <li>Island hopping tours</li>
-              <li>Snorkeling trips</li>
-              <li>Sunset boat rides</li>
-              <li>Marine sanctuary visits</li>
-            </ul>
           </div>
         </div>
         <div class="svc-card rv" style="transition-delay:0.35s">
@@ -2209,12 +2276,6 @@
           <div class="svc-content">
             <div class="svc-name">Events &amp; Connectivity</div>
             <p class="svc-desc">Free high-speed WiFi resort-wide. Conference facilities for retreats, team-building, and special celebrations.</p>
-            <ul class="svc-list">
-              <li>Free high-speed WiFi</li>
-              <li>Free on-site parking</li>
-              <li>Conference room</li>
-              <li>Event coordination</li>
-            </ul>
           </div>
         </div>
       </div>
@@ -2423,7 +2484,7 @@
             title="Casa Escondida Anilao Resort location on Google Maps"
           ></iframe>
           <div class="loc-map-link">
-            <a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/" target="_blank" rel="noopener noreferrer" class="loc-map-btn">
+            <a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" class="loc-map-btn">
               View on Google Maps →
             </a>
           </div>
@@ -2540,56 +2601,58 @@
   </main><!-- /#main-content -->
 
   <!-- ═══ FOOTER ═══ -->
-  <footer>
+  <footer class="site-footer">
     <div class="c">
       <div class="foot-grid">
         <div>
           <a href="#hero" class="foot-logo">Casa <span>Escondida</span></a>
           <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
           <div class="foot-socials">
-            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Follow us on Facebook">
+            <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook">
               <svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
             </a>
-            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Follow us on Instagram">
+            <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram">
               <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
             </a>
-            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Read our TripAdvisor reviews">
+            <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
               <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
             </a>
-            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Book on Booking.com">
+            <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
             </a>
           </div>
         </div>
-        <div>
-          <div class="foot-h">Explore</div>
-          <ul class="foot-links">
-            <li><a href="#about">About the Resort</a></li>
-            <li><a href="#dive">Dive Center</a></li>
-            <li><a href="#rooms">Rooms &amp; Suites</a></li>
-            <li><a href="gallery.html">Photo Gallery</a></li>
-            <li><a href="#dining">Restaurant &amp; Bar</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="foot-h">Dive Packages</div>
-          <ul class="foot-links">
-            <li><a href="#dive">PADI Open Water</a></li>
-            <li><a href="#dive">Advanced OW Course</a></li>
-            <li><a href="#dive">Rescue Diver</a></li>
-            <li><a href="#dive">Guided Dive Trips</a></li>
-            <li><a href="#dive">Night Dives</a></li>
-          </ul>
-        </div>
-        <div>
-          <div class="foot-h">Location</div>
-          <ul class="foot-links">
-            <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
-            <li><a href="location.html">Batangas Province 4202</a></li>
-            <li><a href="location.html">Philippines</a></li>
-            <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
-            <li><a href="#booking">Book Now</a></li>
-          </ul>
+        <div class="foot-col-links">
+          <div>
+            <div class="foot-h">Explore</div>
+            <ul class="foot-links">
+              <li><a href="#about">About the Resort</a></li>
+              <li><a href="dive.html">Dive Center</a></li>
+              <li><a href="rooms.html">Rooms &amp; Suites</a></li>
+              <li><a href="gallery.html">Photo Gallery</a></li>
+              <li><a href="#dining">Restaurant &amp; Bar</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="foot-h">Dive Programs</div>
+            <ul class="foot-links">
+              <li><a href="dive.html#courses">PADI Open Water</a></li>
+              <li><a href="dive.html#courses">Advanced OW Course</a></li>
+              <li><a href="dive.html#courses">Rescue Diver</a></li>
+              <li><a href="dive.html#packages">Guided Dive Trips</a></li>
+              <li><a href="dive.html#packages">Night Dives</a></li>
+            </ul>
+          </div>
+          <div>
+            <div class="foot-h">Location</div>
+            <ul class="foot-links">
+              <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
+              <li><a href="location.html">Batangas Province 4202</a></li>
+              <li><a href="location.html">Philippines</a></li>
+              <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
+              <li><a href="#booking">Book Now</a></li>
+            </ul>
+          </div>
         </div>
       </div>
       <div class="foot-bottom">
@@ -2740,7 +2803,9 @@
 
   /* ── Bubbles ── */
   const bc = document.getElementById('heroBubbles');
-  for(let i=0;i<30;i++){
+  const isMobile = window.innerWidth <= 768;
+  const bubbleCount = isMobile ? 15 : 30;
+  for(let i=0;i<bubbleCount;i++){
     const b=document.createElement('div'); b.className='hb';
     const s=Math.random()*18+3;
     b.style.cssText=`width:${s}px;height:${s}px;left:${Math.random()*100}%;animation-duration:${Math.random()*9+6}s;animation-delay:${Math.random()*6}s;opacity:${Math.random()*0.4+0.15}`;
@@ -3134,6 +3199,23 @@
   </script>
 
   <script>
+/* ── Hero button ripple on click ── */
+(function(){
+  document.querySelectorAll('.btn-hero-primary,.btn-hero-ghost').forEach(function(btn){
+    btn.addEventListener('click', function(e){
+      var rect = this.getBoundingClientRect();
+      var size = Math.max(rect.width, rect.height);
+      var r = document.createElement('span');
+      r.className = 'btn-ripple';
+      r.style.cssText = 'width:'+size+'px;height:'+size+'px;left:'+(e.clientX-rect.left-size/2)+'px;top:'+(e.clientY-rect.top-size/2)+'px';
+      this.appendChild(r);
+      setTimeout(function(){ if(r.parentNode) r.parentNode.removeChild(r); }, 750);
+    });
+  });
+})();
+  </script>
+
+  <script>
 /* ── Remove cursor elements on touch / narrow screens ── */
 (function(){
   if (!window.matchMedia || !window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
@@ -3146,6 +3228,7 @@
     });
   }
 })();
+
   </script>
 </body>
 </html>
