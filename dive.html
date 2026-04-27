@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="preload" as="image" href="images/Nature Folder/Chromodoris willani.jpg" />
+
   <meta charset="UTF-8" />
   <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -820,8 +822,8 @@
 <!-- NAV -->
 <nav id="nav">
   <a href="index.html" class="nav-logo" aria-label="Casa Escondida — Home">
-    <img class="nav-logo-img nav-logo-night" src="images/Logo/Untitled_design__3_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
-    <img class="nav-logo-img nav-logo-day" src="images/Logo/Untitled_design__2_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+    <img decoding="async" height="44" width="180" fetchpriority="high" class="nav-logo-img nav-logo-night" src="images/Logo/Untitled_design__3_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+    <img decoding="async" height="44" width="180" fetchpriority="high" class="nav-logo-img nav-logo-day" src="images/Logo/Untitled_design__2_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
   </a>
   <ul class="nav-links">
     <li><a href="index.html#about">About</a></li>
@@ -849,7 +851,7 @@
 <!-- ═══ HERO ═══ -->
 <section class="dv-hero">
   <div class="dv-hero-photo">
-    <img src="images/Nature Folder/Chromodoris willani.jpg" alt="Chromodoris willani nudibranch on Anilao seafloor" />
+    <img src="images/Nature Folder/Chromodoris willani.jpg" alt="Chromodoris willani nudibranch on Anilao seafloor" loading="eager" fetchpriority="high" decoding="async" width="1920" height="1080" />
   </div>
   <div class="dv-hero-overlay"></div>
   <div class="dv-hero-content">
@@ -887,7 +889,7 @@
         </div>
       </div>
       <div class="overview-image rvl rvl-d2">
-        <img src="images/Nature Folder/Peacock Mantis Shrimp.jpg" alt="Peacock mantis shrimp — Anilao macro diving" loading="lazy" />
+        <img src="images/Nature Folder/Peacock Mantis Shrimp.jpg" alt="Peacock mantis shrimp — Anilao macro diving" loading="lazy" decoding="async" width="800" height="533" />
         <div class="ov-padi-badge">
           <div class="ov-padi-logo">PADI</div>
           <div class="ov-padi-text">5-Star Dive Center<br>Anilao, Batangas</div>
@@ -1034,7 +1036,7 @@
   <div class="eco-modal-inner">
     <div class="eco-modal-photo">
       <button class="eco-modal-close" id="ecoModalClose" aria-label="Close detail">&times;</button>
-      <img id="ecoModalImg" src="" alt="" />
+      <img decoding="async" id="ecoModalImg" src="" alt="" />
     </div>
     <div class="eco-modal-body">
       <div class="eco-modal-cat" id="ecoModalCat"></div>
@@ -1176,7 +1178,7 @@
 <!-- ═══ CTA BAND ═══ -->
 <section class="dive-cta">
   <div class="dive-cta-bg">
-    <img src="images/Nature Folder/sea fan coral.jpg" alt="Anilao sea fan coral reef" loading="lazy" />
+    <img src="images/Nature Folder/sea fan coral.jpg" alt="Anilao sea fan coral reef" loading="lazy" decoding="async" width="800" height="533" />
   </div>
   <div class="dive-cta-overlay"></div>
   <div class="dive-cta-content rvl">
@@ -1569,7 +1571,7 @@
       if(!list.length){ grid.innerHTML = '<div class="eco-empty">No species in this category yet.</div>'; return; }
       grid.innerHTML = list.map(s => `
         <button type="button" class="eco-card" data-id="${s.id}" aria-label="View details for ${s.name}">
-          <img src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
+          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
           <div class="eco-card-cat">${s.catLabel}</div>
           <div class="eco-card-rarity ${s.rarityClass}">${s.rarity}</div>
           <div class="eco-card-label">
@@ -1645,7 +1647,7 @@
         </div>
       </div>
       <div class="overview-image rvl rvl-d2">
-        <img src="images/Nature Folder/Peacock Mantis Shrimp.jpg" alt="Peacock mantis shrimp — Anilao macro diving" loading="lazy" />
+        <img src="images/Nature Folder/Peacock Mantis Shrimp.jpg" alt="Peacock mantis shrimp — Anilao macro diving" loading="lazy" decoding="async" width="800" height="533" />
         <div class="ov-padi-badge">
           <div class="ov-padi-logo">PADI</div>
           <div class="ov-padi-text">5-Star Dive Center<br>Anilao, Batangas</div>
@@ -1792,7 +1794,7 @@
   <div class="eco-modal-inner">
     <div class="eco-modal-photo">
       <button class="eco-modal-close" id="ecoModalClose" aria-label="Close detail">&times;</button>
-      <img id="ecoModalImg" src="" alt="" />
+      <img decoding="async" id="ecoModalImg" src="" alt="" />
     </div>
     <div class="eco-modal-body">
       <div class="eco-modal-cat" id="ecoModalCat"></div>
@@ -1934,7 +1936,7 @@
 <!-- ═══ CTA BAND ═══ -->
 <section class="dive-cta">
   <div class="dive-cta-bg">
-    <img src="images/Nature Folder/sea fan coral.jpg" alt="Anilao sea fan coral reef" loading="lazy" />
+    <img src="images/Nature Folder/sea fan coral.jpg" alt="Anilao sea fan coral reef" loading="lazy" decoding="async" width="800" height="533" />
   </div>
   <div class="dive-cta-overlay"></div>
   <div class="dive-cta-content rvl">
@@ -2321,7 +2323,7 @@
       if(!list.length){ grid.innerHTML = '<div class="eco-empty">No species in this category yet.</div>'; return; }
       grid.innerHTML = list.map(s => `
         <button type="button" class="eco-card" data-id="${s.id}" aria-label="View details for ${s.name}">
-          <img src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
+          <img decoding="async" src="${s.img}" alt="${s.name} — ${s.sci}" loading="lazy" />
           <div class="eco-card-cat">${s.catLabel}</div>
           <div class="eco-card-rarity ${s.rarityClass}">${s.rarity}</div>
           <div class="eco-card-label">
