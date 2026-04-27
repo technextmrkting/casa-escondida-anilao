@@ -282,6 +282,46 @@
     .faq-item[open] .faq-q::after{transform:rotate(-135deg);margin-top:4px;}
     .faq-a{padding:0 1.4rem 1.3rem;font-size:.85rem;color:var(--text2);line-height:1.75;}
     .faq-a a{color:var(--accent);text-decoration:none;border-bottom:1px dotted var(--accent);}
+
+    /* ── CTA section ── */
+    .loc-cta {
+      text-align: center;
+      padding: 5rem 2rem;
+      background: linear-gradient(135deg, rgba(4,8,15,0.97) 0%, rgba(10,30,60,0.97) 100%);
+    }
+    .loc-cta h2 { font-size: clamp(2rem,5vw,3.2rem); color: #fff; margin-bottom: 0.8rem; }
+    .loc-cta h2 em { font-style: italic; color: var(--gold, #e8c56a); }
+    .loc-cta p  { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 520px; margin: 0 auto 2.2rem; line-height: 1.75; }
+    .cta-btns   { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+    .cta-btn-main {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      background: var(--gold, #e8c56a);
+      color: #0a0f1a;
+      font-weight: 700;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .cta-btn-main:hover { opacity: 0.88; transform: translateY(-2px); }
+    .cta-btn-outline {
+      display: inline-block;
+      padding: 0.85rem 2.2rem;
+      background: transparent;
+      color: #fff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border: 1.5px solid rgba(255,255,255,0.45);
+      border-radius: 4px;
+      transition: border-color 0.2s, background 0.2s, transform 0.2s;
+    }
+    .cta-btn-outline:hover { border-color: #fff; background: rgba(255,255,255,0.08); transform: translateY(-2px); }
 </style>
 
   
