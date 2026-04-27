@@ -117,6 +117,19 @@
       .foot-col-links{grid-template-columns:1fr;gap:1.5rem;}
     }
 
+    /* ── Language selector ── */
+    .lang-sel{position:relative;}
+    .lang-btn{display:flex;align-items:center;gap:0.35rem;background:transparent;border:1px solid var(--border2);border-radius:20px;padding:0.28rem 0.65rem;color:var(--text);cursor:pointer;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;}
+    .lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:var(--nav-bg);border:1px solid var(--border2);border-radius:10px;overflow:hidden;min-width:148px;z-index:10000;list-style:none;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,0.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+    .lang-drop.open{display:flex;}
+    .lang-opt{padding:0.6rem 1rem;cursor:pointer;font-size:0.8rem;color:var(--text);transition:background .15s,color .15s;}
+    .lang-opt:hover{background:var(--border);color:var(--accent);}
+    .lang-opt.active{color:var(--accent);font-weight:600;}
+    #google_translate_element{display:none;}
+    .goog-te-banner-frame,.skiptranslate{display:none!important;}
+    body{top:0!important;}
+
     /* ── Night ambient orbs ── */
     .orb-layer{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden;}
     [data-theme="day"] .orb-layer{display:none;}

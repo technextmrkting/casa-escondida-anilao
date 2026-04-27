@@ -1436,6 +1436,18 @@
       .b-input, .b-field, .btn-book { width:100%; max-width:400px; }
     }
 
+    /* ── Language selector ── */
+    .lang-sel{position:relative;}
+    .lang-btn{display:flex;align-items:center;gap:0.35rem;background:transparent;border:1px solid var(--border2);border-radius:20px;padding:0.28rem 0.65rem;color:var(--text-primary);cursor:pointer;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;}
+    .lang-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:var(--nav-bg);border:1px solid var(--border);border-radius:10px;overflow:hidden;min-width:148px;z-index:10000;list-style:none;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,0.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
+    .lang-drop.open{display:flex;}
+    .lang-opt{padding:0.6rem 1rem;cursor:pointer;font-size:0.8rem;color:var(--text-primary);transition:background .15s,color .15s;}
+    .lang-opt:hover{background:var(--border);color:var(--accent);}
+    .lang-opt.active{color:var(--accent);font-weight:600;}
+    #google_translate_element{display:none;}
+    .goog-te-banner-frame,.skiptranslate{display:none!important;}
+
     /* ── Night ambient orbs ── */
     .orb-layer{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden;}
     [data-theme="day"] .orb-layer{display:none;}
@@ -2028,8 +2040,21 @@
       <li><a href="dive.html">Dive</a></li>
       <li><a href="gallery.html">Gallery</a></li>
       <li><a href="location.html">Location</a></li>
+      <li><a href="blog.html">Blog</a></li>
     </ul>
     <div class="nav-right">
+      <div class="lang-sel" id="langSel">
+        <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+          <span id="langLabel">EN</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px;flex-shrink:0"><polyline points="6 9 12 15 18 9"/></svg>
+        </button>
+        <ul class="lang-drop" id="langDrop" role="listbox" aria-label="Select language">
+          <li class="lang-opt" data-lang="en" role="option">🇺🇸 English</li>
+          <li class="lang-opt" data-lang="tl" role="option">🇵🇭 Filipino</li>
+          <li class="lang-opt" data-lang="zh-CN" role="option">🇨🇳 中文</li>
+        </ul>
+      </div>
       <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
         <span class="toggle-icon" id="themeIcon">
           <!-- moon (night default) -->
@@ -2057,6 +2082,8 @@
     <a href="gallery.html"  class="mob-link">Gallery</a>
     <div class="mobile-nav-divider"></div>
     <a href="location.html" class="mob-link">Location</a>
+    <div class="mobile-nav-divider"></div>
+    <a href="blog.html"    class="mob-link">Blog</a>
     <a href="#booking"  class="mob-link mobile-nav-cta">Book Now</a>
   </nav>
 
@@ -2658,8 +2685,8 @@
       <div class="foot-bottom">
         <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
         <div class="foot-legal">
-          <a href="mailto:casaescondidaanilao@gmail.com?subject=Privacy%20Policy%20Inquiry">Privacy Policy</a>
-          <a href="mailto:casaescondidaanilao@gmail.com?subject=Terms%20Inquiry">Terms of Service</a>
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-of-service.html">Terms of Service</a>
           <span style="color:var(--text-muted);opacity:.4">·</span>
           <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
         </div>
@@ -3229,6 +3256,32 @@
   }
 })();
 
+  </script>
+
+  <!-- Google Translate -->
+  <div id="google_translate_element" style="display:none"></div>
+  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,tl,zh-CN',autoDisplay:false},'google_translate_element');}</script>
+  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
+  <script>
+  (function(){
+    var LANGS={en:'EN',tl:'TL','zh-CN':'ZH'};
+    var btn=document.getElementById('langBtn'),drop=document.getElementById('langDrop'),lbl=document.getElementById('langLabel');
+    if(!btn)return;
+    function getCur(){var m=document.cookie.match(/googtrans=\/en\/([^;]+)/);return m?decodeURIComponent(m[1]):'en';}
+    function setLang(lang){
+      var h=window.location.hostname,d=h.includes('.')?'.'+h.replace(/^www\./,''):h;
+      var exp=lang==='en'?'Thu, 01 Jan 1970 00:00:00 GMT':'Fri, 01 Jan 2027 00:00:00 GMT';
+      var val=lang==='en'?'':'/en/'+lang;
+      document.cookie='googtrans='+val+';path=/;expires='+exp+';domain='+d;
+      document.cookie='googtrans='+val+';path=/;expires='+exp;
+      location.reload();
+    }
+    var cur=getCur();lbl.textContent=LANGS[cur]||'EN';
+    document.querySelectorAll('.lang-opt').forEach(function(o){if(o.dataset.lang===cur)o.classList.add('active');});
+    btn.addEventListener('click',function(e){e.stopPropagation();var op=drop.classList.toggle('open');btn.setAttribute('aria-expanded',op);});
+    document.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');});
+    document.querySelectorAll('.lang-opt').forEach(function(o){o.addEventListener('click',function(){setLang(o.dataset.lang);});});
+  })();
   </script>
 </body>
 </html>
