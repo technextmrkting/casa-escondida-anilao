@@ -862,63 +862,7 @@
     /* ═══════════════════════════════════════════
        ABOUT
     ═══════════════════════════════════════════ */
-    #about { background:var(--bg-primary); padding-top:3rem; position:relative; overflow:hidden; }
-
-    /* ── About section ambient orbs — night mode, desktop + mobile ── */
-    .about-orb-layer { position:absolute; inset:0; pointer-events:none; z-index:0; overflow:hidden; }
-    [data-theme="day"] .about-orb-layer { display:none; }
-    .about-orb-layer > .ao { position:absolute; border-radius:50%; mix-blend-mode:screen; pointer-events:none; }
-    .ao-1 {
-      width:380px; height:380px;
-      background:radial-gradient(circle,rgba(77,194,232,.22) 0%,rgba(77,194,232,.06) 40%,transparent 65%);
-      animation:aoA 22s ease-in-out infinite;
-    }
-    .ao-2 {
-      width:300px; height:300px;
-      background:radial-gradient(circle,rgba(100,180,255,.16) 0%,rgba(50,130,220,.05) 40%,transparent 65%);
-      animation:aoB 30s ease-in-out infinite;
-    }
-    .ao-3 {
-      width:240px; height:240px;
-      background:radial-gradient(circle,rgba(232,197,106,.14) 0%,rgba(200,160,60,.04) 40%,transparent 65%);
-      animation:aoC 26s ease-in-out infinite;
-    }
-    .ao-4 {
-      width:200px; height:200px;
-      background:radial-gradient(circle,rgba(77,194,232,.18) 0%,rgba(30,120,200,.04) 35%,transparent 60%);
-      animation:aoD 18s ease-in-out infinite;
-    }
-    @keyframes aoA {
-      0%  { transform:translate(-8%,  5%); }
-      30% { transform:translate(72%, 20%); }
-      60% { transform:translate(55%, 78%); }
-      100%{ transform:translate(-8%,  5%); }
-    }
-    @keyframes aoB {
-      0%  { transform:translate(82%, 60%); }
-      33% { transform:translate(15%, 85%); }
-      66% { transform:translate(55%, 10%); }
-      100%{ transform:translate(82%, 60%); }
-    }
-    @keyframes aoC {
-      0%  { transform:translate(38%, -8%); }
-      50% { transform:translate(8%,  72%); }
-      100%{ transform:translate(38%, -8%); }
-    }
-    @keyframes aoD {
-      0%  { transform:translate(60%, 40%); }
-      25% { transform:translate(10%, 10%); }
-      50% { transform:translate(80%, 5%);  }
-      75% { transform:translate(30%, 80%); }
-      100%{ transform:translate(60%, 40%); }
-    }
-    /* Mobile: smaller orbs for better perf */
-    @media(max-width:768px){
-      .ao-1 { width:220px; height:220px; }
-      .ao-2 { width:180px; height:180px; }
-      .ao-3 { width:150px; height:150px; }
-      .ao-4 { width:130px; height:130px; }
-    }
+    #about { background:var(--bg-primary); padding-top:3rem; }
     .about-grid { display:grid; grid-template-columns:1fr 1fr; gap:5rem; align-items:center; }
     .about-photos {
       position:relative;
@@ -1960,8 +1904,13 @@
     .rv-quote, .foot-desc, p { letter-spacing: 0 !important; }
 
     
-    /* ── MOBILE PERF: orb-layer uses mix-blend-mode:screen — kills mobile GPU ── */
-    .orb-layer { display: none !important; }
+    /* ── MOBILE: orb-layer enabled — smaller orbs for smooth perf ── */
+    .orb-layer { display: block !important; }
+    .orb-1 { width:200px !important; height:200px !important; }
+    .orb-2 { width:160px !important; height:160px !important; }
+    .orb-3 { width:180px !important; height:180px !important; }
+    .orb-4 { width:120px !important; height:120px !important; }
+    .orb-5 { width:240px !important; height:240px !important; }
 
     /* ── MOBILE: hero rays & bubbles — enabled with enhanced movement ── */
     .hero-bubbles { display: block !important; }
@@ -2204,14 +2153,7 @@
   <!-- ═══ ABOUT ═══ -->
   <main id="main-content">
   <section id="about" class="pad">
-    <!-- Night-mode ambient orbs scoped to about section -->
-    <div class="about-orb-layer" aria-hidden="true">
-      <div class="ao ao-1"></div>
-      <div class="ao ao-2"></div>
-      <div class="ao ao-3"></div>
-      <div class="ao ao-4"></div>
-    </div>
-    <div class="c" style="position:relative;z-index:1;">
+    <div class="c">
       <div class="about-grid">
         <div class="about-photos rvl">
           <div class="ap-1">
