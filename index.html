@@ -1732,10 +1732,16 @@
       flex-direction: column !important;
       gap: 2rem !important;
     }
+    /* Override desktop 6-col/3-row grid → 2 images side by side */
     .about-photos {
-      height: 260px !important;
+      grid-template-columns: 2fr 1fr !important;
+      grid-template-rows: 220px !important;
+      height: 220px !important;
       overflow: hidden !important;
     }
+    .ap-1 { grid-column: 1/2 !important; grid-row: 1/2 !important; }
+    .ap-3 { grid-column: 2/3 !important; grid-row: 1/2 !important; display: block !important; }
+    .ap-2, .ap-4, .ap-5 { display: none !important; }
     .about-text { order: 2; }
 
     /* Mosaic tiles */
@@ -1865,7 +1871,13 @@
 
     /* About */
     .about-grid { gap: 1.2rem !important; }
-    .about-photos { height: 200px !important; }
+    .about-photos {
+      grid-template-columns: 1fr !important;
+      grid-template-rows: 200px !important;
+      height: 200px !important;
+    }
+    .ap-3 { display: none !important; }
+    .ap-1 { grid-column: 1/2 !important; grid-row: 1/2 !important; }
 
     /* Service cards */
     .services-grid { gap: 5px !important; }
