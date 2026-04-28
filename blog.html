@@ -1,93 +1,128 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <link rel="stylesheet" href="style.css" />
   <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Blog — Casa Escondida Anilao Resort & Dive Center</title>
+  <title>Blog — Dive Guides, Marine Life & Travel Tips | Casa Escondida Anilao</title>
   <link rel="canonical" href="https://technextmarketing.github.io/casa-escondida-anilao/blog.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
-  <meta name="description" content="Stories, dive guides, marine life encounters, and travel tips from Casa Escondida Anilao — your window into the underwater world of Batangas, Philippines." />
+  <meta name="description" content="Dive guides, marine life spotting tips, travel advice, and resort stories from Anilao, Batangas — the macro diving capital of the Philippines." />
+  <meta name="keywords" content="Anilao diving, Batangas diving, dive guide Philippines, nudibranch Anilao, macro diving Philippines, Casa Escondida Anilao, dive resort Batangas, Mabini Batangas, PADI certification Philippines, underwater photography Anilao" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Blog — Dive Guides, Marine Life &amp; Travel Tips | Casa Escondida Anilao" />
+  <meta property="og:description" content="Dive guides, marine life spotting tips, travel advice, and resort stories from Anilao, Batangas — the macro diving capital of the Philippines." />
+  <meta property="og:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
+  <meta property="og:url" content="https://technextmarketing.github.io/casa-escondida-anilao/blog.html" />
+  <meta property="og:site_name" content="Casa Escondida Anilao" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Blog — Casa Escondida Anilao" />
+  <meta name="twitter:description" content="Dive guides, marine life tips, and travel advice from Anilao, Batangas." />
+  <meta name="twitter:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
-  <link rel="dns-prefetch" href="https://www.facebook.com" />
-  <link rel="dns-prefetch" href="https://connect.facebook.net" />
-  <link rel="dns-prefetch" href="https://www.instagram.com" />
-  <link rel="dns-prefetch" href="https://www.tripadvisor.com.ph" />
-  <link rel="dns-prefetch" href="https://www.booking.com" />
-  <link rel="dns-prefetch" href="https://maps.google.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" /></noscript>
   <style>
-    /* ── REVEAL ANIMATION ── */
-    .rvl{opacity:0;transform:translateY(28px);transition:opacity .8s ease,transform .8s ease;}
-    .rvl.visible{opacity:1;transform:translateY(0);}
-    .rvl-d1{transition-delay:.1s;}
-    .rvl-d2{transition-delay:.2s;}
-    .rvl-d3{transition-delay:.3s;}
-
     /* ── BLOG GRID ── */
-    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;margin-top:3rem;}
+    .blog-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2rem;}
     @media(max-width:900px){.blog-grid{grid-template-columns:repeat(2,1fr);}}
-    @media(max-width:600px){.blog-grid{grid-template-columns:1fr;}}
-    .blog-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform .3s,box-shadow .3s;}
-    .blog-card:hover{transform:translateY(-6px);box-shadow:0 16px 40px rgba(0,0,0,0.2);}
-    .bc-img{height:180px;}
-    .bc-body{padding:1.4rem;}
-    .bc-cat{font-size:0.62rem;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);font-weight:600;}
-    .bc-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--text);margin:0.5rem 0 0.6rem;line-height:1.4;}
-    .bc-excerpt{font-size:0.8rem;color:var(--text2);line-height:1.7;margin-bottom:1rem;}
-    .bc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:0.8rem;}
-    .bc-date{font-size:0.72rem;color:var(--text2);}
-    .bc-more{font-size:0.75rem;color:var(--accent);text-decoration:none;font-weight:600;transition:opacity .2s;}
-    .bc-more:hover{opacity:0.75;}
+    @media(max-width:580px){.blog-grid{grid-template-columns:1fr;}}
+    .blog-card{background:var(--card);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .3s,box-shadow .3s,border-color .3s;display:flex;flex-direction:column;}
+    .blog-card:hover{transform:translateY(-5px);box-shadow:0 18px 48px rgba(0,0,0,.22);border-color:var(--border2);}
+    .bc-thumb{height:178px;position:relative;overflow:hidden;flex-shrink:0;}
+    .bc-thumb-tag{position:absolute;bottom:.5rem;left:.5rem;font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:rgba(255,255,255,.95);background:rgba(0,0,0,.52);padding:.2rem .65rem;border-radius:20px;backdrop-filter:blur(6px);}
+    .bc-body{padding:1.3rem;display:flex;flex-direction:column;flex:1;}
+    .bc-cat{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;font-weight:600;margin-bottom:.45rem;}
+    .bc-title{font-family:'Playfair Display',serif;font-size:1rem;font-weight:400;color:var(--text);margin-bottom:.55rem;line-height:1.45;flex:1;}
+    .bc-excerpt{font-size:.79rem;color:var(--text2);line-height:1.72;margin-bottom:1rem;}
+    .bc-foot{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--border);padding-top:.75rem;margin-top:auto;}
+    .bc-meta{display:flex;flex-direction:column;gap:.15rem;}
+    .bc-date{font-size:.68rem;color:var(--text3);}
+    .bc-read{font-size:.65rem;color:var(--text3);}
+    .bc-more{font-size:.72rem;color:var(--accent);text-decoration:none;font-weight:600;transition:opacity .2s;white-space:nowrap;}
+    .bc-more:hover{opacity:.7;}
 
-    /* ── EYEBROW (rv) ── */
-    .eyebrow.rv,.rv.eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;}
+    /* ── FILTER CONTROLS ── */
+    .blog-controls{display:flex;flex-wrap:wrap;gap:1rem;align-items:flex-start;margin-bottom:2rem;}
+    .blog-cats{display:flex;flex-wrap:wrap;gap:.45rem;flex:1;min-width:0;}
+    .cat-btn{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.4rem .9rem;border-radius:40px;font-size:.63rem;letter-spacing:.13em;text-transform:uppercase;cursor:pointer;transition:all .22s;font-family:inherit;white-space:nowrap;}
+    .cat-btn:hover{border-color:var(--accent);color:var(--accent);}
+    .cat-btn.active{background:var(--accent);border-color:var(--accent);color:#fff;}
+    .blog-tools{display:flex;gap:.6rem;align-items:center;flex-shrink:0;}
+    .sort-wrap{position:relative;}
+    .sort-select{background:var(--card);border:1px solid var(--border);color:var(--text2);padding:.4rem 2rem .4rem .75rem;border-radius:8px;font-size:.72rem;font-family:inherit;cursor:pointer;-webkit-appearance:none;appearance:none;outline:none;transition:border-color .2s;}
+    .sort-select:focus{border-color:var(--accent);}
+    .sort-wrap::after{content:'▾';position:absolute;right:.6rem;top:50%;transform:translateY(-50%);font-size:.65rem;color:var(--text3);pointer-events:none;}
+    .search-wrap{display:flex;align-items:center;gap:.4rem;background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.38rem .75rem;transition:border-color .2s;}
+    .search-wrap:focus-within{border-color:var(--accent);}
+    .search-wrap svg{width:13px;height:13px;stroke:var(--text3);flex-shrink:0;}
+    .search-input{background:none;border:none;outline:none;color:var(--text);font-size:.75rem;font-family:inherit;width:150px;}
+    .search-input::placeholder{color:var(--text3);}
+    @media(max-width:580px){.blog-tools{width:100%;}.search-input{width:100%;flex:1;}}
+    .blog-meta-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;}
+    .blog-count{font-size:.72rem;color:var(--text3);}
+    .blog-empty{grid-column:1/-1;text-align:center;padding:5rem 2rem;color:var(--text3);}
+    .blog-empty-icon{font-size:2.8rem;margin-bottom:.8rem;}
+    .blog-empty p{font-size:.88rem;}
+    .blog-pagination{display:flex;align-items:center;justify-content:center;gap:.35rem;margin:2.5rem 0 5rem;flex-wrap:wrap;}
+    .blog-pagination button{min-width:2.2rem;height:2.2rem;border:1px solid var(--border);background:var(--card);color:var(--text2);border-radius:6px;font-size:.8rem;cursor:pointer;transition:border-color .18s,color .18s,background .18s;padding:0 .55rem;font-family:inherit;}
+    .blog-pagination button:hover:not(:disabled){border-color:var(--accent);color:var(--accent);}
+    .blog-pagination button.pg-active{background:var(--accent);color:#fff;border-color:var(--accent);font-weight:600;}
+    .blog-pagination button:disabled{opacity:.3;cursor:default;}
 
-    /* Lang selector */
-    .lang-sel{position:relative;}
-    .lang-btn{display:flex;align-items:center;gap:0.35rem;background:transparent;border:1px solid var(--border2);border-radius:20px;padding:0.28rem 0.65rem;color:var(--text);cursor:pointer;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;}
-    .lang-btn:hover{border-color:var(--accent);color:var(--accent);}
-    .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:var(--nav-bg);border:1px solid var(--border2);border-radius:10px;overflow:hidden;min-width:148px;z-index:10000;list-style:none;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,0.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
-    .lang-drop.open{display:flex;}
-    .lang-opt{padding:0.6rem 1rem;cursor:pointer;font-size:0.8rem;color:var(--text);transition:background .15s,color .15s;}
-    .lang-opt:hover{background:var(--border);color:var(--accent);}
-    .lang-opt.active{color:var(--accent);font-weight:600;}
-    #google_translate_element{display:none;}
-    .goog-te-banner-frame,.skiptranslate{display:none!important;}
-    body{top:0!important;}
+    /* ── CATEGORY ACCENT COLOURS ── */
+    .bc-cat.dive-guide{color:#4dc2e8;}
+    .bc-cat.marine-life{color:#4de8a0;}
+    .bc-cat.travel-tips{color:#c8a4f0;}
+    .bc-cat.resort-life{color:#f0b84d;}
+    .bc-cat.conservation{color:#4de8c8;}
+    .bc-cat.dive-tips{color:#7ab8e8;}
+    .bc-cat.news{color:#e88a4d;}
+    .bc-cat.photography{color:#b4a4e8;}
+
+    /* ── FEATURED POST ── */
+    .blog-featured{display:grid;grid-template-columns:1.4fr 1fr;gap:2rem;margin-bottom:3rem;background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:border-color .3s;}
+    .blog-featured:hover{border-color:var(--border2);}
+    .bf-thumb{min-height:300px;position:relative;}
+    .bf-body{padding:2.2rem 2rem;display:flex;flex-direction:column;justify-content:center;}
+    .bf-eyebrow{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem;}
+    .bf-title{font-family:'Playfair Display',serif;font-size:clamp(1.3rem,2.2vw,1.7rem);font-weight:400;color:var(--text);line-height:1.3;margin-bottom:.8rem;}
+    .bf-excerpt{font-size:.84rem;color:var(--text2);line-height:1.75;margin-bottom:1.4rem;}
+    .bf-foot{display:flex;align-items:center;gap:1.2rem;}
+    .bf-date{font-size:.7rem;color:var(--text3);}
+    .bf-more{font-size:.75rem;color:#fff;background:var(--accent);padding:.45rem 1.2rem;border-radius:4px;text-decoration:none;font-weight:500;transition:background .25s;}
+    .bf-more:hover{background:var(--accent-d);}
+    @media(max-width:768px){.blog-featured{grid-template-columns:1fr;}.bf-thumb{min-height:200px;}.bf-body{padding:1.4rem 1.3rem;}}
   </style>
 </head>
 <body>
+<div id="pg-bar"></div>
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
-<!-- Night mode ambient orbs -->
 <div class="orb-layer" aria-hidden="true">
-  <div class="orb orb-1"></div>
-  <div class="orb orb-2"></div>
-  <div class="orb orb-3"></div>
-  <div class="orb orb-4"></div>
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="orb orb-3"></div><div class="orb orb-4"></div>
   <div class="orb orb-5"></div>
 </div>
 
 <!-- MOBILE NAV -->
 <nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
-  <a href="index.html#about"   class="mob-link">About</a>
+  <a href="index.html#about" class="mob-link">About</a>
   <div class="mobile-nav-divider"></div>
-  <a href="rooms.html"         class="mob-link">Rooms</a>
+  <a href="rooms.html" class="mob-link">Rooms</a>
   <div class="mobile-nav-divider"></div>
-  <a href="dive.html"          class="mob-link">Dive</a>
+  <a href="dive.html" class="mob-link">Dive</a>
   <div class="mobile-nav-divider"></div>
-  <a href="gallery.html"       class="mob-link">Gallery</a>
+  <a href="gallery.html" class="mob-link">Gallery</a>
   <div class="mobile-nav-divider"></div>
-  <a href="location.html"      class="mob-link">Location</a>
+  <a href="location.html" class="mob-link">Location</a>
   <div class="mobile-nav-divider"></div>
-  <a href="blog.html"          class="mob-link active">Blog</a>
+  <a href="blog.html" class="mob-link active">Blog</a>
   <a href="index.html#booking" class="mob-link mobile-nav-cta">Book Now</a>
 </nav>
 
@@ -109,23 +144,11 @@
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
       <span class="toggle-icon" id="themeIcon">
         <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
       </span>
       <div class="toggle-track"><div class="toggle-thumb"></div></div>
       <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
     </button>
-    <div class="lang-sel" id="langSel">
-      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span id="langLabel">EN</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px;flex-shrink:0"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="lang-drop" id="langDrop" role="listbox" aria-label="Select language">
-        <li class="lang-opt" data-lang="en" role="option">🇺🇸 English</li>
-        <li class="lang-opt" data-lang="tl" role="option">🇵🇭 Filipino</li>
-        <li class="lang-opt" data-lang="zh-CN" role="option">🇨🇳 中文</li>
-      </ul>
-    </div>
     <a href="index.html#booking" class="btn-book">Book Now</a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
@@ -133,110 +156,76 @@
   </div>
 </nav>
 
-<!-- ═══ HERO ═══ -->
-<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg-secondary);">
+<!-- HERO -->
+<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg2);border-bottom:1px solid var(--border);">
   <div class="c">
-    <div class="eyebrow rv" style="margin-bottom:0.6rem">Casa Escondida</div>
+    <div class="eyebrow" style="margin-bottom:0.6rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600">Casa Escondida</div>
     <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:var(--text)">Stories from <em style="font-style:italic;color:var(--gold)">the Deep</em></h1>
-    <p style="color:var(--text2);margin-top:0.8rem;max-width:480px">Dive guides, resort life, marine encounters, and travel tips from Anilao, Batangas.</p>
+    <p style="color:var(--text2);margin-top:0.8rem;max-width:520px;font-size:.92rem;line-height:1.7">Dive guides, marine life spotting tips, resort stories, and travel advice from Anilao, Batangas — the macro diving capital of the Philippines.</p>
   </div>
 </section>
 
-<!-- ═══ BLOG GRID ═══ -->
-<section style="background:var(--bg);border-top:1px solid var(--border);">
-  <div class="c" style="padding:3rem 2rem 6rem;">
+<!-- BLOG SECTION -->
+<section style="background:var(--bg);padding:5rem 0 6rem;">
+  <div class="c">
 
-    <div class="blog-grid">
-
-      <!-- Post 1 -->
-      <article class="blog-card rvl rvl-d1">
-        <div class="bc-img" style="background:#0a2a4a;display:flex;align-items:center;justify-content:center;font-size:3rem">🤿</div>
-        <div class="bc-body">
-          <span class="bc-cat">Dive Guide</span>
-          <h3 class="bc-title">Best Dive Sites in Anilao: A Complete Guide</h3>
-          <p class="bc-excerpt">From the famous Kirby's Rock to the macro haven of Secret Bay, discover the top spots that make Anilao the macro capital of the Philippines.</p>
-          <div class="bc-foot">
-            <span class="bc-date">April 20, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
+    <!-- Featured Post -->
+    <article class="blog-featured" id="featuredPost">
+      <div class="bf-thumb">
+        <img src="images/Nature%20Folder/sea%20fan%20coral.jpg" alt="Best Dive Sites in Anilao, Batangas" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+        <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(0,0,0,.35) 0%,transparent 60%);"></div>
+        <div style="position:absolute;bottom:1rem;left:1rem;background:var(--accent);color:#fff;font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;padding:.3rem .7rem;border-radius:3px;font-weight:600">Featured</div>
+      </div>
+      <div class="bf-body">
+        <div class="bf-eyebrow">Dive Guide</div>
+        <h2 class="bf-title">Best Dive Sites in Anilao, Batangas: The Complete 2026 Guide</h2>
+        <p class="bf-excerpt">Anilao hosts over 50 named dive sites packed inside a coastline barely 10 km long — from the seamount walls of Kirby's Rock to the silty macro heaven of Secret Bay. Whether you're chasing nudibranchs, frogfish, or open-water pelagics, this guide maps every must-dive and tells you exactly what to expect below the surface.</p>
+        <div class="bf-foot">
+          <span class="bf-date">April 20, 2026 · 8 min read</span>
+          <a href="blog-post.html?id=1" class="bf-more">Read Article →</a>
         </div>
-      </article>
+      </div>
+    </article>
 
-      <!-- Post 2 -->
-      <article class="blog-card rvl rvl-d2">
-        <div class="bc-img" style="background:#1a4a3a;display:flex;align-items:center;justify-content:center;font-size:3rem">🐚</div>
-        <div class="bc-body">
-          <span class="bc-cat">Marine Life</span>
-          <h3 class="bc-title">Nudibranchs of Anilao: 20 Species You Might Spot</h3>
-          <p class="bc-excerpt">Anilao is world-famous for its incredible nudibranch diversity. Here's your field guide to identifying the most stunning sea slugs in Philippine waters.</p>
-          <div class="bc-foot">
-            <span class="bc-date">April 15, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
+    <!-- Filter Controls -->
+    <div class="blog-controls">
+      <div class="blog-cats" id="blogCats" role="tablist" aria-label="Filter posts by category">
+        <button class="cat-btn active" data-cat="all" role="tab" aria-selected="true">All</button>
+        <button class="cat-btn" data-cat="dive-guide" role="tab" aria-selected="false">Dive Guide</button>
+        <button class="cat-btn" data-cat="marine-life" role="tab" aria-selected="false">Marine Life</button>
+        <button class="cat-btn" data-cat="travel-tips" role="tab" aria-selected="false">Travel Tips</button>
+        <button class="cat-btn" data-cat="resort-life" role="tab" aria-selected="false">Resort Life</button>
+        <button class="cat-btn" data-cat="conservation" role="tab" aria-selected="false">Conservation</button>
+        <button class="cat-btn" data-cat="dive-tips" role="tab" aria-selected="false">Dive Tips</button>
+        <button class="cat-btn" data-cat="news" role="tab" aria-selected="false">News &amp; Events</button>
+        <button class="cat-btn" data-cat="photography" role="tab" aria-selected="false">Photography</button>
+      </div>
+      <div class="blog-tools">
+        <div class="sort-wrap">
+          <select class="sort-select" id="blogSort" aria-label="Sort posts">
+            <option value="newest">Newest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="az">A – Z</option>
+          </select>
         </div>
-      </article>
-
-      <!-- Post 3 -->
-      <article class="blog-card rvl rvl-d3">
-        <div class="bc-img" style="background:#2a1a4a;display:flex;align-items:center;justify-content:center;font-size:3rem">🗺️</div>
-        <div class="bc-body">
-          <span class="bc-cat">Travel Tips</span>
-          <h3 class="bc-title">Manila to Anilao: The Complete Transfer Guide</h3>
-          <p class="bc-excerpt">Everything you need to know about getting from Manila to Casa Escondida — by car, shuttle, or boat. Includes schedules, tips, and cost breakdown.</p>
-          <div class="bc-foot">
-            <span class="bc-date">April 10, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
+        <div class="search-wrap">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <input class="search-input" id="blogSearch" type="search" placeholder="Search posts…" aria-label="Search posts" />
         </div>
-      </article>
-
-      <!-- Post 4 -->
-      <article class="blog-card rvl rvl-d1">
-        <div class="bc-img" style="background:#4a2a0a;display:flex;align-items:center;justify-content:center;font-size:3rem">🔥</div>
-        <div class="bc-body">
-          <span class="bc-cat">Resort Life</span>
-          <h3 class="bc-title">Island BBQ Night at Casa Escondida</h3>
-          <p class="bc-excerpt">Every Saturday evening, we fire up the grill on our private island. Fresh seafood, cold drinks, and a sunset you won't forget — here's what to expect.</p>
-          <div class="bc-foot">
-            <span class="bc-date">April 5, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 5 -->
-      <article class="blog-card rvl rvl-d2">
-        <div class="bc-img" style="background:#0a3a4a;display:flex;align-items:center;justify-content:center;font-size:3rem">🎒</div>
-        <div class="bc-body">
-          <span class="bc-cat">Dive Tips</span>
-          <h3 class="bc-title">What to Pack for a Batangas Diving Trip</h3>
-          <p class="bc-excerpt">Our PADI instructors share the essential gear list for diving in Anilao — from wetsuit thickness to underwater camera settings.</p>
-          <div class="bc-foot">
-            <span class="bc-date">March 28, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
-        </div>
-      </article>
-
-      <!-- Post 6 -->
-      <article class="blog-card rvl rvl-d3">
-        <div class="bc-img" style="background:#0a4a2a;display:flex;align-items:center;justify-content:center;font-size:3rem">🌊</div>
-        <div class="bc-body">
-          <span class="bc-cat">Conservation</span>
-          <h3 class="bc-title">Protecting the Coral Triangle: Our Marine Pledges</h3>
-          <p class="bc-excerpt">Casa Escondida is committed to responsible diving. Learn about our reef-safe practices, marine protected area rules, and conservation partnerships.</p>
-          <div class="bc-foot">
-            <span class="bc-date">March 20, 2026</span>
-            <a href="#" class="bc-more">Read More →</a>
-          </div>
-        </div>
-      </article>
-
+      </div>
     </div>
+
+    <div class="blog-meta-row">
+      <p class="blog-count" id="blogCount">Showing 19 posts</p>
+    </div>
+
+    <div class="blog-grid" id="blogGrid" aria-live="polite"></div>
+    <div class="blog-pagination" id="blogPagination"></div>
+
   </div>
 </section>
 
-<!-- ═══ FOOTER ═══ -->
+<!-- FOOTER -->
 <footer class="site-footer">
   <div class="c">
     <div class="foot-grid">
@@ -251,10 +240,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
           <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
       </div>
@@ -285,7 +274,7 @@
             <li><a href="location.html">Brgy. Ligaya, Mabini</a></li>
             <li><a href="location.html">Batangas Province 4202</a></li>
             <li><a href="location.html">Philippines</a></li>
-            <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z/data=!4m9!3m8!1s0x33bda9eff584af69:0x81011df456c41163!5m2!4m1!1i2!8m2!3d13.7277078!4d120.884266!16s%2Fg%2F11cmh4mhpm?entry=ttu&g_ep=EgoyMDI2MDQyMi4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
+            <li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao+Resort+%26+Dive+Center/@13.7277078,120.884266,17z" target="_blank" rel="noopener noreferrer">Google Maps →</a></li>
             <li><a href="index.html#booking">Book Now</a></li>
           </ul>
         </div>
@@ -296,164 +285,488 @@
       <div class="foot-legal">
         <a href="privacy-policy.html">Privacy Policy</a>
         <a href="terms-of-service.html">Terms of Service</a>
-        <span style="color:var(--text-muted);opacity:.4">·</span>
+        <span style="opacity:.4">·</span>
         <a href="https://technext.asia" target="_blank" rel="noopener noreferrer" class="foot-powered-link">Powered by <span class="tn-brand">TechNext Asia</span></a>
       </div>
     </div>
   </div>
 </footer>
 
-<div id="google_translate_element" style="display:none"></div>
-<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,tl,zh-CN',autoDisplay:false},'google_translate_element');}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
 <script>
+/* ── Theme Toggle ── */
+const html = document.documentElement;
+const syncThemeUI = () => {
+  const n = html.getAttribute('data-theme') === 'night';
+  document.getElementById('icon-moon').style.display = n ? 'block' : 'none';
+  document.getElementById('icon-sun').style.display  = n ? 'none'  : 'block';
+  document.getElementById('themeLabel').textContent = n ? 'Night' : 'Day';
+};
+syncThemeUI();
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'night' ? 'day' : 'night';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('ce-theme', next);
+  syncThemeUI();
+});
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('ce-theme')) { html.setAttribute('data-theme', e.matches ? 'night' : 'day'); syncThemeUI(); }
+});
+
+/* ── Mobile Nav ── */
+const hamburger = document.getElementById('navHamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  mobileNav.style.display = open ? 'flex' : 'none';
+  hamburger.setAttribute('aria-expanded', open);
+});
+
+/* ── Navbar scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  const m = window.innerWidth <= 768;
+  nav.style.padding = window.scrollY > 40 ? (m ? '.5rem 1.5rem' : '.5rem 4rem') : (m ? '1rem 1.5rem' : '.75rem 4rem');
+}, { passive: true });
+
+/* ── Custom Cursor ── */
+const dot = document.getElementById('cur-dot'), ring = document.getElementById('cur-ring');
+if (dot && ring) {
+  let rx = 0, ry = 0;
+  document.addEventListener('mousemove', e => {
+    dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
+    rx += (e.clientX - rx) * 0.12; ry += (e.clientY - ry) * 0.12;
+    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
+  });
+  document.querySelectorAll('a,button,.blog-card').forEach(el => {
+    el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
+    el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
+  });
+  document.addEventListener('mousedown', () => document.body.classList.add('cur-click'));
+  document.addEventListener('mouseup', () => document.body.classList.remove('cur-click'));
+}
+
+/* ── Ripple & Cursor Trail ── */
 (function(){
-  var LANGS={en:'EN',tl:'TL','zh-CN':'ZH'};
-  var btn=document.getElementById('langBtn'),drop=document.getElementById('langDrop'),lbl=document.getElementById('langLabel');
-  if(!btn)return;
-  function getCur(){var m=document.cookie.match(/googtrans=\/en\/([^;]+)/);return m?decodeURIComponent(m[1]):'en';}
-  function setLang(lang){
-    var h=window.location.hostname,d=h.includes('.')?'.'+h.replace(/^www\./,''):h;
-    var exp=lang==='en'?'Thu, 01 Jan 1970 00:00:00 GMT':'Fri, 01 Jan 2027 00:00:00 GMT';
-    var val=lang==='en'?'':'/en/'+lang;
-    document.cookie='googtrans='+val+';path=/;expires='+exp+';domain='+d;
-    document.cookie='googtrans='+val+';path=/;expires='+exp;
-    location.reload();
+  const cvs = document.createElement('canvas');
+  cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;mix-blend-mode:screen;';
+  document.body.appendChild(cvs);
+  const ctx = cvs.getContext('2d');
+  let W, H;
+  const resize = () => { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; };
+  resize(); window.addEventListener('resize', resize);
+  const ripples = [], particles = [];
+  let mx = -999, my = -999;
+  window.addEventListener('click', e => {
+    const x = e.clientX, y = e.clientY;
+    ripples.push({x,y,r:0,maxR:12,alpha:1,speed:7,type:'flash',delay:0});
+    [{maxR:60,speed:3.2,alpha:.9,delay:0},{maxR:105,speed:5,alpha:.7,delay:4},{maxR:155,speed:7,alpha:.5,delay:9},{maxR:220,speed:9,alpha:.3,delay:15}]
+      .forEach(cfg => ripples.push({x,y,r:0,type:'ring',...cfg}));
+    for(let i=0;i<18;i++){const ang=(i/18)*Math.PI*2,spd=2+Math.random()*4;particles.push({x,y,vx:Math.cos(ang)*spd,vy:Math.sin(ang)*spd,r:2+Math.random()*2,life:1,decay:.022+Math.random()*.018,trail:false});}
+    for(let i=0;i<8;i++) particles.push({x,y,vx:(Math.random()-.5)*2,vy:(Math.random()-.5)*2-1,r:1.5,life:1,decay:.05+Math.random()*.04,trail:false});
+  });
+  window.addEventListener('mousemove', e => {
+    const dx=e.clientX-mx,dy=e.clientY-my;
+    if(dx*dx+dy*dy>50){mx=e.clientX;my=e.clientY;for(let i=0;i<4;i++) particles.push({x:mx+(Math.random()-.5)*6,y:my+(Math.random()-.5)*6,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5-.5,r:1+Math.random()*2.5,life:1,decay:.045+Math.random()*.03,trail:true});}
+  });
+  function loop(){
+    ctx.clearRect(0,0,W,H);
+    for(let i=ripples.length-1;i>=0;i--){const rp=ripples[i];if(rp.delay>0){rp.delay--;continue;}rp.r+=rp.speed;const prog=rp.r/rp.maxR;if(prog>=1){ripples.splice(i,1);continue;}if(rp.type==='flash'){const a=rp.alpha*(1-prog);const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);grd.addColorStop(0,`rgba(180,240,255,${a})`);grd.addColorStop(.5,`rgba(77,194,232,${a*.6})`);grd.addColorStop(1,'rgba(77,194,232,0)');ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}else{const ease=1-prog*prog,a=rp.alpha*ease;ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.strokeStyle=`rgba(77,194,232,${a})`;ctx.lineWidth=Math.max(2.5*(1-prog*.7),.5);ctx.stroke();if(rp.r>20){ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r*.65,0,Math.PI*2);ctx.strokeStyle=`rgba(140,220,248,${a*.35})`;ctx.lineWidth=1;ctx.stroke();}if(prog<.3){const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);grd.addColorStop(0,'rgba(77,194,232,0)');grd.addColorStop(.75,'rgba(77,194,232,0)');grd.addColorStop(1,`rgba(77,194,232,${a*.18})`);ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}}}
+    for(let i=particles.length-1;i>=0;i--){const p=particles[i];p.x+=p.vx;p.y+=p.vy;if(!p.trail)p.vy+=.06;p.life-=p.decay;if(p.life<=0){particles.splice(i,1);continue;}const a=p.life*(p.trail?.55:.85),r=Math.max(p.r*p.life,.3);const grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*2.5);grd.addColorStop(0,`rgba(190,245,255,${a})`);grd.addColorStop(.4,`rgba(77,194,232,${a*.7})`);grd.addColorStop(1,'rgba(77,194,232,0)');ctx.beginPath();ctx.arc(p.x,p.y,r*2.5,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}
+    requestAnimationFrame(loop);
   }
-  var cur=getCur();lbl.textContent=LANGS[cur]||'EN';
-  document.querySelectorAll('.lang-opt').forEach(function(o){if(o.dataset.lang===cur)o.classList.add('active');});
-  btn.addEventListener('click',function(e){e.stopPropagation();var op=drop.classList.toggle('open');btn.setAttribute('aria-expanded',op);});
-  document.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-  document.querySelectorAll('.lang-opt').forEach(function(o){o.addEventListener('click',function(){setLang(o.dataset.lang);});});
+  loop();
 })();
 </script>
 
 <script>
-  /* ── Theme Toggle ── */
-  const html = document.documentElement;
-  const syncThemeUI = () => {
-    const n = html.getAttribute('data-theme') === 'night';
-    document.getElementById('icon-moon').style.display = n ? 'block' : 'none';
-    document.getElementById('icon-sun').style.display  = n ? 'none'  : 'block';
-    document.getElementById('themeLabel').textContent = n ? 'Night' : 'Day';
-  };
-  syncThemeUI();
-  document.getElementById('themeBtn').addEventListener('click', () => {
-    const night = html.getAttribute('data-theme') === 'night';
-    const next = night ? 'day' : 'night';
-    html.setAttribute('data-theme', next);
-    localStorage.setItem('ce-theme', next);
-    syncThemeUI();
-  });
-  matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
-    if (!localStorage.getItem('ce-theme')) { html.setAttribute('data-theme', e.matches ? 'night' : 'day'); syncThemeUI(); }
-  });
+/* ════════════════════════════════════════
+   BLOG DATA — 19 posts (post #1 is featured)
+   ════════════════════════════════════════ */
+const POSTS = [
+  {
+    id: 2,
+    cat: 'marine-life',
+    catLabel: 'Marine Life',
+    title: 'Nudibranchs of Anilao: 20 Species You Need to Find',
+    excerpt: 'Anilao may host more than 800 nudibranch species — more than any comparable area worldwide. This visual field guide covers 20 of the most-photographed sea slugs in Batangas waters, from the electric-orange Flabellina exoptata to the rare Halgerda batangas found only here.',
+    date: '2026-04-15',
+    dateLabel: 'April 15, 2026',
+    read: '7 min read',
+    bg: 'linear-gradient(135deg,#062918 0%,#0e5a2e 60%,#1a8040 100%)',
+    icon: '🐚',
+    img: 'images/Nature%20Folder/Pikachu%20nudibranch.jpg'
+  },
+  {
+    id: 3,
+    cat: 'travel-tips',
+    catLabel: 'Travel Tips',
+    title: 'Manila to Anilao: Your Complete Transfer Guide',
+    excerpt: 'Getting from Manila to Anilao, Batangas takes 2–3 hours depending on traffic and your chosen route. This guide covers car rental, private shuttle, RORO ferry options, estimated costs, and the fastest roads for a stress-free journey to Casa Escondida.',
+    date: '2026-04-10',
+    dateLabel: 'April 10, 2026',
+    read: '5 min read',
+    bg: 'linear-gradient(135deg,#1a0835 0%,#3a1870 60%,#5a2a9a 100%)',
+    icon: '🗺️',
+    img: 'images/Nature%20Folder/Hawksbill%20sea%20turtle.jpg'
+  },
+  {
+    id: 4,
+    cat: 'resort-life',
+    catLabel: 'Resort Life',
+    title: 'Island BBQ Nights at Casa Escondida',
+    excerpt: 'Every Saturday evening our kitchen fires up the grill on the resort\'s beachfront deck — freshly caught tanigue, squid, and prawns over charcoal, cold San Miguel, and a Batangas Bay sunset. Here\'s what\'s on the menu and what to expect.',
+    date: '2026-04-05',
+    dateLabel: 'April 5, 2026',
+    read: '4 min read',
+    bg: 'linear-gradient(135deg,#2a1405 0%,#6a3410 60%,#9a5020 100%)',
+    icon: '🔥',
+    img: 'images/Nature%20Folder/Pink%20Anemonefish%20Amphiprion.jpg'
+  },
+  {
+    id: 5,
+    cat: 'dive-tips',
+    catLabel: 'Dive Tips',
+    title: 'What to Pack for a Batangas Diving Trip',
+    excerpt: 'Our PADI dive team shares the essential packing list for Anilao — the right wetsuit thickness for 26–29°C Batangas water, macro lens choices, camera settings for backscatter-prone conditions, and the small items most divers forget.',
+    date: '2026-03-28',
+    dateLabel: 'March 28, 2026',
+    read: '6 min read',
+    bg: 'linear-gradient(135deg,#0a1a30 0%,#1c3e68 60%,#2a5a8a 100%)',
+    icon: '🎒',
+    img: 'images/Nature%20Folder/Peacock%20mantis%20shrimp%20(Odontodactylus%20scyllarus).jpg'
+  },
+  {
+    id: 6,
+    cat: 'conservation',
+    catLabel: 'Conservation',
+    title: 'Protecting the Coral Triangle: Our Marine Pledges',
+    excerpt: 'Anilao sits inside the Coral Triangle — the most biodiverse marine region on Earth. We outline the reef-safe practices, Marine Protected Area rules, responsible dive briefings, and the ongoing reef monitoring work that Casa Escondida supports alongside local fisherfolk.',
+    date: '2026-03-20',
+    dateLabel: 'March 20, 2026',
+    read: '5 min read',
+    bg: 'linear-gradient(135deg,#052828 0%,#0e5a5a 60%,#1a7878 100%)',
+    icon: '🌊',
+    img: 'images/Nature%20Folder/Mushroom%20coral.jpg'
+  },
+  {
+    id: 7,
+    cat: 'dive-guide',
+    catLabel: 'Dive Guide',
+    title: 'Night Diving in Anilao: What to Expect After Dark',
+    excerpt: 'After the sun sets over Batangas Bay, Anilao\'s reef undergoes a dramatic shift. Spanish dancer nudibranchs unfurl in open water, bobbit worms emerge from the sand, and hunting cuttlefish pulse neon along the shallows. Our night dive guide covers the best sites, safety protocols, and the species you\'ll only see after dark.',
+    date: '2026-03-15',
+    dateLabel: 'March 15, 2026',
+    read: '6 min read',
+    bg: 'linear-gradient(135deg,#04080f 0%,#0a1e3a 60%,#102848 100%)',
+    icon: '🌙',
+    img: 'images/Nature%20Folder/Blue%20Ribbon%20Eel%20(Rhinomuraena%20quaesita).jpg'
+  },
+  {
+    id: 8,
+    cat: 'marine-life',
+    catLabel: 'Marine Life',
+    title: 'Frogfish of Anilao: The World\'s Best Ambush Predators',
+    excerpt: 'Hairy frogfish, painted frogfish, giant frogfish — Anilao hosts an extraordinary concentration of anglerfishes. They change colour to match their sponge host in under 10 days. This guide teaches you how to spot them, where they tend to sit, and why they\'re every macro photographer\'s favourite find.',
+    date: '2026-03-10',
+    dateLabel: 'March 10, 2026',
+    read: '5 min read',
+    bg: 'linear-gradient(135deg,#062918 0%,#0e4a28 60%,#1a6030 100%)',
+    icon: '🐡',
+    img: 'images/Nature%20Folder/Scorpionfish%20(Taenianotus%20triacanthus).jpg'
+  },
+  {
+    id: 9,
+    cat: 'photography',
+    catLabel: 'Photography',
+    title: 'Underwater Photography Tips for Anilao First-Timers',
+    excerpt: 'Anilao\'s subjects are small, slow, and close — which sounds easy but demands precise technique. Our resident underwater photographer shares the camera settings, strobe positions, and dive-buoyancy skills that will dramatically improve your images on the very first dive.',
+    date: '2026-03-05',
+    dateLabel: 'March 5, 2026',
+    read: '7 min read',
+    bg: 'linear-gradient(135deg,#080820 0%,#1c1c4a 60%,#2a2a64 100%)',
+    icon: '📸',
+    img: 'images/Nature%20Folder/Ornate%20Ghost%20Pipefish%20(Solenostomus%20paradoxus).jpg'
+  },
+  {
+    id: 10,
+    cat: 'travel-tips',
+    catLabel: 'Travel Tips',
+    title: 'Best Time to Dive Anilao: Month-by-Month Seasonal Guide',
+    excerpt: 'Anilao can be dived year-round, but visibility, water temperature, and marine life sightings shift significantly across the seasons. This month-by-month breakdown of Batangas dive conditions helps you plan your trip for the experience you\'re after — whether that\'s nudibranch hunting, whale shark encounters, or flat-calm muck diving.',
+    date: '2026-02-28',
+    dateLabel: 'February 28, 2026',
+    read: '6 min read',
+    bg: 'linear-gradient(135deg,#1a0835 0%,#2e1458 60%,#44207a 100%)',
+    icon: '📅',
+    img: 'images/Nature%20Folder/sea%20turtle.jpg'
+  },
+  {
+    id: 11,
+    cat: 'news',
+    catLabel: 'News & Events',
+    title: 'Anilao Underwater Festival 2026: Schedule & How to Join',
+    excerpt: 'The annual Anilao Underwater Festival draws underwater photographers, freediving athletes, and marine conservationists from across Southeast Asia to Batangas every year. Here\'s the 2026 schedule, competition categories, registration details, and how to watch the awards show.',
+    date: '2026-02-20',
+    dateLabel: 'February 20, 2026',
+    read: '4 min read',
+    bg: 'linear-gradient(135deg,#280a0a 0%,#5a1c1c 60%,#7a2a2a 100%)',
+    icon: '🏆',
+    img: 'images/Nature%20Folder/Flamboyant%20Cuttlefish%20(Metasepia%20pfefferi).jpg'
+  },
+  {
+    id: 12,
+    cat: 'dive-tips',
+    catLabel: 'Dive Tips',
+    title: 'Your PADI Open Water Course at Casa Escondida: What to Expect',
+    excerpt: 'From the first pool session in our shallow confined-water area to your final open water dives in Anilao Bay, our PADI instructors walk you through exactly what happens across your 3-day certification course — including the gear you\'ll use, the skills you\'ll practise, and how to make the most of your first open ocean dives.',
+    date: '2026-02-15',
+    dateLabel: 'February 15, 2026',
+    read: '8 min read',
+    bg: 'linear-gradient(135deg,#0a1a30 0%,#1a3858 60%,#285278 100%)',
+    icon: '🎓',
+    img: 'images/Nature%20Folder/Sea%20Anemone%20Coral%20Reef.jpg'
+  },
+  {
+    id: 13,
+    cat: 'marine-life',
+    catLabel: 'Marine Life',
+    title: 'Pygmy Seahorses of Anilao: A Guide to Finding the Tiny Giants',
+    excerpt: 'Bargibant\'s and Denise\'s pygmy seahorses — both recorded at Anilao — reach just 2 cm fully grown and spend their entire lives gripping the same single sea fan. Finding them requires sharp eyes, a patient guide, and the observational tricks in this guide.',
+    date: '2026-02-10',
+    dateLabel: 'February 10, 2026',
+    read: '5 min read',
+    bg: 'linear-gradient(135deg,#062918 0%,#0e6040 60%,#1a7a50 100%)',
+    icon: '🐴',
+    img: "images/Nature%20Folder/Bargibant's%20pygmy%20seahorse%20(Hippocampus%20bargibanti).jpg"
+  },
+  {
+    id: 14,
+    cat: 'conservation',
+    catLabel: 'Conservation',
+    title: 'Batangas Coral Restoration: 2025 Progress Report',
+    excerpt: 'Our coral nursery has outplanted over 2,000 coral fragments across three Anilao reef sites since 2023. This annual report documents which species are thriving, the challenges of the 2025 El Niño bleaching event, and what the latest survey transects reveal about reef recovery rates in Batangas.',
+    date: '2026-02-05',
+    dateLabel: 'February 5, 2026',
+    read: '6 min read',
+    bg: 'linear-gradient(135deg,#052828 0%,#0a4a4a 60%,#186868 100%)',
+    icon: '🪸',
+    img: 'images/Nature%20Folder/giant%20barrel%20sponge%20(Xestospongia%20testudinaria).jpg'
+  },
+  {
+    id: 15,
+    cat: 'resort-life',
+    catLabel: 'Resort Life',
+    title: 'A Full Day at Casa Escondida: Morning to Night Itinerary',
+    excerpt: 'Breakfast at sunrise, two morning dives on Anilao\'s wall sites, a cold beer and grilled catch for lunch, an afternoon snorkel with sea turtles off our jetty, sunset drinks on the deck, and a candlelit dinner. Here\'s what a perfect day at the resort actually looks like.',
+    date: '2026-01-28',
+    dateLabel: 'January 28, 2026',
+    read: '4 min read',
+    bg: 'linear-gradient(135deg,#2a1405 0%,#5a2e10 60%,#824020 100%)',
+    icon: '🌅',
+    img: 'images/Nature%20Folder/Sarasvati%20anemone%20shrimp%20(Ancylomenes%20sarasvati).jpg'
+  },
+  {
+    id: 16,
+    cat: 'dive-guide',
+    catLabel: 'Dive Guide',
+    title: 'Kirby\'s Rock: Everything You Need to Know About Anilao\'s Icon',
+    excerpt: 'A seamount that rises from 30 metres to just below the surface, Kirby\'s Rock is the most celebrated dive site in Anilao. We break down the marine life by depth band, the current patterns across the seasons, ideal tidal windows, and why every diver visiting Batangas should make this a priority dive.',
+    date: '2026-01-20',
+    dateLabel: 'January 20, 2026',
+    read: '7 min read',
+    bg: 'linear-gradient(135deg,#061a2e 0%,#0c3660 60%,#165090 100%)',
+    icon: '⚓',
+    img: 'images/Nature%20Folder/bigeye%20trevally%20(Caranx%20sexfasciatus).jpg'
+  },
+  {
+    id: 17,
+    cat: 'photography',
+    catLabel: 'Photography',
+    title: 'Best Camera Settings for Macro Photography in Philippine Waters',
+    excerpt: 'Anilao\'s subjects — 2mm juvenile fish, pygmy seahorses, hairy frogfish — demand specific macro technique. Our photography guide covers aperture, shutter speed, ISO choices, and strobe-to-subject positioning for the particulate-heavy conditions common at Batangas dive sites.',
+    date: '2026-01-15',
+    dateLabel: 'January 15, 2026',
+    read: '8 min read',
+    bg: 'linear-gradient(135deg,#080820 0%,#181848 60%,#262660 100%)',
+    icon: '🔭',
+    img: 'images/Nature%20Folder/Mimic%20octopus%20(Thaumoctopus%20mimicus).jpg'
+  },
+  {
+    id: 18,
+    cat: 'travel-tips',
+    catLabel: 'Travel Tips',
+    title: 'Anilao on a Budget: How Much Does a Dive Trip Actually Cost?',
+    excerpt: 'Accommodation, dive packages, meals, nitrox fills, and transport from Manila — we break down the realistic cost of a 3-night Anilao dive holiday at three price points, from budget guesthouse to full-service dive resort. Numbers are updated for 2026.',
+    date: '2026-01-10',
+    dateLabel: 'January 10, 2026',
+    read: '5 min read',
+    bg: 'linear-gradient(135deg,#1a0835 0%,#322060 60%,#4a2e80 100%)',
+    icon: '💰',
+    img: 'images/Nature%20Folder/Harlequin%20shrimp%20(Hymenocera%20picta).jpg'
+  },
+  {
+    id: 19,
+    cat: 'marine-life',
+    catLabel: 'Marine Life',
+    title: 'Whale Shark Season Near Batangas: When and Where to Look',
+    excerpt: 'Whale sharks are periodically recorded at dive sites across the Batangas–Quezon corridor. This guide covers seasonal sighting patterns, the dive sites where encounters are most commonly reported, responsible interaction guidelines, and how to maximise your chance of a sighting while protecting the animals.',
+    date: '2026-01-05',
+    dateLabel: 'January 5, 2026',
+    read: '6 min read',
+    bg: 'linear-gradient(135deg,#062918 0%,#0c4a38 60%,#186050 100%)',
+    icon: '🦈',
+    img: 'images/Nature%20Folder/sea%20turtle%20(2).jpg'
+  },
+  {
+    id: 20,
+    cat: 'news',
+    catLabel: 'News & Events',
+    title: 'Casa Escondida\'s New Dive Deck and Equipment Fleet — Open for 2026',
+    excerpt: 'Our newly expanded dive deck accommodates 40 divers simultaneously with dedicated gear stations, a camera rinse and charging area, and direct water entry via three steel ladders. The equipment fleet now includes 15 new aluminium tanks, 8 Scubapro BCD sets, and a freshwater camera rinse station.',
+    date: '2025-12-28',
+    dateLabel: 'December 28, 2025',
+    read: '3 min read',
+    bg: 'linear-gradient(135deg,#280a0a 0%,#4a1818 60%,#6a2020 100%)',
+    icon: '🏗️',
+    img: 'images/Nature%20Folder/Wunderpus%20octopus%20(Wunderpus%20photogenicus).jpg'
+  }
+];
 
-  /* ── Mobile Nav ── */
-  const hamburger = document.getElementById('navHamburger');
-  const mobileNav = document.getElementById('mobileNav');
-  hamburger.addEventListener('click', () => {
-    const open = mobileNav.classList.toggle('open');
-    mobileNav.style.display = open ? 'flex' : 'none';
-    hamburger.setAttribute('aria-expanded', open);
-  });
+/* ── Category accent colours map ── */
+const CAT_COLOURS = {
+  'dive-guide':  '#4dc2e8',
+  'marine-life': '#4de8a0',
+  'travel-tips': '#c8a4f0',
+  'resort-life': '#f0b84d',
+  'conservation':'#4de8c8',
+  'dive-tips':   '#7ab8e8',
+  'news':        '#e88a4d',
+  'photography': '#b4a4e8'
+};
 
-  /* ── Navbar scroll ── */
-  const nav = document.getElementById('nav');
-  window.addEventListener('scroll', () => {
-    nav.style.padding = window.scrollY > 40 ? '.5rem 4rem' : '.75rem 4rem';
-  }, { passive: true });
+/* ── State ── */
+const PER_PAGE = 15;
+let activeCat = 'all';
+let activeSort = 'newest';
+let searchQ = '';
+let currentPage = 1;
 
-  /* ── Reveal on scroll ── */
-  const rvl = document.querySelectorAll('.rvl');
-  const io = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
-  }, { threshold: 0.1 });
-  rvl.forEach(el => io.observe(el));
+/* ── Render ── */
+function renderPosts() {
+  const grid = document.getElementById('blogGrid');
+  const countEl = document.getElementById('blogCount');
+  const pagEl = document.getElementById('blogPagination');
 
-  /* ── Custom Cursor ── */
-  const dot = document.getElementById('cur-dot');
-  const ring = document.getElementById('cur-ring');
-  if (dot && ring) {
-    let rx = 0, ry = 0;
-    document.addEventListener('mousemove', e => {
-      dot.style.left = e.clientX + 'px'; dot.style.top = e.clientY + 'px';
-      rx += (e.clientX - rx) * 0.12; ry += (e.clientY - ry) * 0.12;
-      ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    });
-    document.querySelectorAll('a,button,.blog-card').forEach(el => {
-      el.addEventListener('mouseenter', () => document.body.classList.add('cur-hover'));
-      el.addEventListener('mouseleave', () => document.body.classList.remove('cur-hover'));
-    });
-    document.addEventListener('mousedown', () => document.body.classList.add('cur-click'));
-    document.addEventListener('mouseup', () => document.body.classList.remove('cur-click'));
+  let list = POSTS.slice();
+
+  if (activeCat !== 'all') list = list.filter(p => p.cat === activeCat);
+  if (searchQ) {
+    const q = searchQ.toLowerCase();
+    list = list.filter(p => p.title.toLowerCase().includes(q) || p.excerpt.toLowerCase().includes(q));
+  }
+  if (activeSort === 'newest') list.sort((a,b) => b.date.localeCompare(a.date));
+  else if (activeSort === 'oldest') list.sort((a,b) => a.date.localeCompare(b.date));
+  else if (activeSort === 'az') list.sort((a,b) => a.title.localeCompare(b.title));
+
+  const total = list.length;
+  const totalPages = Math.max(1, Math.ceil(total / PER_PAGE));
+  if (currentPage > totalPages) currentPage = totalPages;
+  const start = (currentPage - 1) * PER_PAGE;
+  const pageList = list.slice(start, start + PER_PAGE);
+
+  if (!total) {
+    countEl.textContent = 'No posts found';
+    grid.innerHTML = '<div class="blog-empty"><div class="blog-empty-icon">🔍</div><p>No posts match your search. Try a different keyword or category.</p></div>';
+    pagEl.innerHTML = '';
+    return;
   }
 
-  /* ── Ripple & Cursor Trail ── */
-  (function(){
-    const cvs = document.createElement('canvas');
-    cvs.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:99998;mix-blend-mode:screen;';
-    document.body.appendChild(cvs);
-    const ctx = cvs.getContext('2d');
-    let W, H;
-    const resize = () => { W = cvs.width = window.innerWidth; H = cvs.height = window.innerHeight; };
-    resize();
-    window.addEventListener('resize', resize);
-    const ripples = [], particles = [];
-    let mx = -999, my = -999;
-    window.addEventListener('click', e => {
-      const x = e.clientX, y = e.clientY;
-      ripples.push({ x, y, r:0, maxR:12, alpha:1, speed:7, type:'flash', delay:0 });
-      [{maxR:60,speed:3.2,alpha:.9,delay:0},{maxR:105,speed:5,alpha:.7,delay:4},{maxR:155,speed:7,alpha:.5,delay:9},{maxR:220,speed:9,alpha:.3,delay:15}]
-        .forEach(cfg => ripples.push({ x, y, r:0, type:'ring', ...cfg }));
-      for (let i=0;i<18;i++){
-        const ang=(i/18)*Math.PI*2, spd=2+Math.random()*4;
-        particles.push({x,y,vx:Math.cos(ang)*spd,vy:Math.sin(ang)*spd,r:2+Math.random()*2,life:1,decay:.022+Math.random()*.018,trail:false});
-      }
-      for (let i=0;i<8;i++) particles.push({x,y,vx:(Math.random()-.5)*2,vy:(Math.random()-.5)*2-1,r:1.5,life:1,decay:.05+Math.random()*.04,trail:false});
-    });
-    window.addEventListener('mousemove', e => {
-      const dx=e.clientX-mx, dy=e.clientY-my;
-      if (dx*dx+dy*dy>50){ mx=e.clientX; my=e.clientY;
-        for(let i=0;i<4;i++) particles.push({x:mx+(Math.random()-.5)*6,y:my+(Math.random()-.5)*6,vx:(Math.random()-.5)*.5,vy:(Math.random()-.5)*.5-.5,r:1+Math.random()*2.5,life:1,decay:.045+Math.random()*.03,trail:true});
-      }
-    });
-    function loop(){
-      ctx.clearRect(0,0,W,H);
-      for(let i=ripples.length-1;i>=0;i--){
-        const rp=ripples[i];
-        if(rp.delay>0){rp.delay--;continue;}
-        rp.r+=rp.speed;
-        const prog=rp.r/rp.maxR;
-        if(prog>=1){ripples.splice(i,1);continue;}
-        if(rp.type==='flash'){
-          const a=rp.alpha*(1-prog);
-          const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);
-          grd.addColorStop(0,`rgba(180,240,255,${a})`);grd.addColorStop(.5,`rgba(77,194,232,${a*.6})`);grd.addColorStop(1,`rgba(77,194,232,0)`);
-          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
-        } else {
-          const ease=1-prog*prog, a=rp.alpha*ease;
-          ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);
-          ctx.strokeStyle=`rgba(77,194,232,${a})`;ctx.lineWidth=Math.max(2.5*(1-prog*.7),.5);ctx.stroke();
-          if(rp.r>20){ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r*.65,0,Math.PI*2);ctx.strokeStyle=`rgba(140,220,248,${a*.35})`;ctx.lineWidth=1;ctx.stroke();}
-          if(prog<.3){const grd=ctx.createRadialGradient(rp.x,rp.y,0,rp.x,rp.y,rp.r);grd.addColorStop(0,'rgba(77,194,232,0)');grd.addColorStop(.75,'rgba(77,194,232,0)');grd.addColorStop(1,`rgba(77,194,232,${a*.18})`);ctx.beginPath();ctx.arc(rp.x,rp.y,rp.r,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();}
-        }
-      }
-      for(let i=particles.length-1;i>=0;i--){
-        const p=particles[i];
-        p.x+=p.vx;p.y+=p.vy;
-        if(!p.trail)p.vy+=.06;
-        p.life-=p.decay;
-        if(p.life<=0){particles.splice(i,1);continue;}
-        const a=p.life*(p.trail?.55:.85), r=Math.max(p.r*p.life,.3);
-        const grd=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,r*2.5);
-        grd.addColorStop(0,`rgba(190,245,255,${a})`);grd.addColorStop(.4,`rgba(77,194,232,${a*.7})`);grd.addColorStop(1,'rgba(77,194,232,0)');
-        ctx.beginPath();ctx.arc(p.x,p.y,r*2.5,0,Math.PI*2);ctx.fillStyle=grd;ctx.fill();
-      }
-      requestAnimationFrame(loop);
-    }
-    loop();
-  })();
+  countEl.textContent = `Showing ${start + 1}–${Math.min(start + PER_PAGE, total)} of ${total} post${total !== 1 ? 's' : ''}`;
+
+  grid.innerHTML = pageList.map(p => {
+    const colour = CAT_COLOURS[p.cat] || '#4dc2e8';
+    return `<article class="blog-card">
+  <div class="bc-thumb">
+    <img src="${p.img}" alt="${p.title}" loading="lazy" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;">
+    <div class="bc-thumb-tag">${p.catLabel}</div>
+  </div>
+  <div class="bc-body">
+    <span class="bc-cat ${p.cat}" style="color:${colour}">${p.catLabel}</span>
+    <h3 class="bc-title"><a href="blog-post.html?id=${p.id}" style="color:inherit;text-decoration:none;">${p.title}</a></h3>
+    <p class="bc-excerpt">${p.excerpt}</p>
+    <div class="bc-foot">
+      <div class="bc-meta">
+        <span class="bc-date">${p.dateLabel}</span>
+        <span class="bc-read">${p.read}</span>
+      </div>
+      <a href="blog-post.html?id=${p.id}" class="bc-more">Read →</a>
+    </div>
+  </div>
+</article>`;
+  }).join('');
+
+  /* Pagination controls */
+  if (totalPages <= 1) { pagEl.innerHTML = ''; return; }
+  let ph = `<button data-page="${currentPage - 1}" ${currentPage === 1 ? 'disabled' : ''} aria-label="Previous">‹</button>`;
+  for (let i = 1; i <= totalPages; i++) {
+    ph += `<button data-page="${i}" class="${i === currentPage ? 'pg-active' : ''}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</button>`;
+  }
+  ph += `<button data-page="${currentPage + 1}" ${currentPage === totalPages ? 'disabled' : ''} aria-label="Next">›</button>`;
+  pagEl.innerHTML = ph;
+}
+
+/* ── Pagination click ── */
+document.getElementById('blogPagination').addEventListener('click', e => {
+  const btn = e.target.closest('button');
+  if (!btn || btn.disabled) return;
+  currentPage = parseInt(btn.dataset.page, 10);
+  renderPosts();
+  document.getElementById('blogGrid').scrollIntoView({behavior:'smooth', block:'start'});
+});
+
+/* ── Category filter ── */
+document.getElementById('blogCats').addEventListener('click', e => {
+  const btn = e.target.closest('.cat-btn');
+  if (!btn) return;
+  document.querySelectorAll('.cat-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-selected','false'); });
+  btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
+  activeCat = btn.dataset.cat;
+  currentPage = 1;
+  renderPosts();
+});
+
+/* ── Sort ── */
+document.getElementById('blogSort').addEventListener('change', e => {
+  activeSort = e.target.value;
+  currentPage = 1;
+  renderPosts();
+});
+
+/* ── Search ── */
+let searchTimer;
+document.getElementById('blogSearch').addEventListener('input', e => {
+  clearTimeout(searchTimer);
+  searchTimer = setTimeout(() => { searchQ = e.target.value.trim(); currentPage = 1; renderPosts(); }, 220);
+});
+
+/* ── Init ── */
+renderPosts();
 </script>
+
+<script>
+(function(){
+  var bar = document.getElementById('pg-bar');
+  if (!bar) return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h = a.getAttribute('href') || '';
+    if (!h.startsWith('#') && !h.startsWith('http') && !h.startsWith('mailto:') && !a.target && !a.classList.contains('nav-logo')){
+      a.addEventListener('click', function(){ bar.style.width='70%'; bar.style.opacity='1'; });
+    }
+  });
+  window.addEventListener('pageshow', function(){ bar.classList.add('done'); });
+})();
+</script>
+
 </body>
 </html>

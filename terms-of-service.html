@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -23,7 +23,20 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" /></noscript>
   <style>
     /* ── POLICY CONTENT (shared with privacy-policy.html) ── */
-    .policy-wrap{max-width:780px;margin:0 auto;padding:3rem 2rem 6rem;}
+    .policy-layout{max-width:1200px;margin:0 auto;padding:3rem 2rem 6rem;display:flex;gap:4rem;align-items:flex-start;}
+    .policy-wrap{flex:1;max-width:none;margin:0;padding:0;}
+    .policy-sidebar{width:200px;flex-shrink:0;position:sticky;top:90px;}
+    .psb-title{font-size:.63rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;font-weight:600;}
+    .psb-list{list-style:none;padding:0;margin:0;border-left:1px solid var(--border);}
+    .psb-list a{display:block;padding:.42rem .9rem;font-size:.78rem;color:var(--text2);text-decoration:none;border-left:2px solid transparent;margin-left:-1px;transition:color .2s,border-color .2s,background .2s;}
+    .psb-list a:hover,.psb-list a.active{color:var(--accent);border-left-color:var(--accent);}
+    @media(max-width:900px){
+      .policy-layout{flex-direction:column;gap:1.5rem;}
+      .policy-sidebar{width:100%;position:static;}
+      .psb-list{border-left:none;display:flex;flex-wrap:wrap;gap:.35rem;}
+      .psb-list a{border-left:none;border:1px solid var(--border);border-radius:20px;padding:.3rem .8rem;font-size:.72rem;margin-left:0;}
+      .psb-list a:hover,.psb-list a.active{border-color:var(--accent);background:var(--accent-g);}
+    }
     .policy-section{margin-bottom:2.8rem;}
     .policy-section h2{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin-bottom:0.9rem;padding-bottom:0.6rem;border-bottom:1px solid var(--border);}
     .policy-section p{color:var(--text2);font-size:0.9rem;line-height:1.8;margin-bottom:0.85rem;}
@@ -39,25 +52,18 @@
     .policy-highlight-box{background:var(--card);border:1px solid rgba(77,194,232,0.3);border-left:3px solid var(--accent);border-radius:0 8px 8px 0;padding:1.2rem 1.4rem;margin:1rem 0 1.2rem;}
     .policy-highlight-box p{margin-bottom:0;font-size:0.85rem;color:var(--text2);}
     .policy-highlight-box strong{color:var(--accent);}
+    .policy-table{width:100%;border-collapse:collapse;margin:.5rem 0 .85rem;}
+    .policy-table td{padding:.5rem 0;color:var(--text2);vertical-align:top;line-height:1.7;font-size:.88rem;}
+    .policy-table tr+tr td{border-top:1px solid var(--border);}
+    .policy-table td:first-child{color:var(--text);font-weight:500;padding-right:1.5rem;width:150px;min-width:100px;font-size:.85rem;}
 
     /* ── EYEBROW ── */
     .eyebrow.rv,.rv.eyebrow{font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600;}
 
-    /* Lang selector */
-    .lang-sel{position:relative;}
-    .lang-btn{display:flex;align-items:center;gap:0.35rem;background:transparent;border:1px solid var(--border2);border-radius:20px;padding:0.28rem 0.65rem;color:var(--text);cursor:pointer;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;}
-    .lang-btn:hover{border-color:var(--accent);color:var(--accent);}
-    .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:var(--nav-bg);border:1px solid var(--border2);border-radius:10px;overflow:hidden;min-width:148px;z-index:10000;list-style:none;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,0.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
-    .lang-drop.open{display:flex;}
-    .lang-opt{padding:0.6rem 1rem;cursor:pointer;font-size:0.8rem;color:var(--text);transition:background .15s,color .15s;}
-    .lang-opt:hover{background:var(--border);color:var(--accent);}
-    .lang-opt.active{color:var(--accent);font-weight:600;}
-    #google_translate_element{display:none;}
-    .goog-te-banner-frame,.skiptranslate{display:none!important;}
-    body{top:0!important;}
   </style>
 </head>
 <body>
+<div id="pg-bar"></div>
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
@@ -109,18 +115,6 @@
       <div class="toggle-track"><div class="toggle-thumb"></div></div>
       <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
     </button>
-    <div class="lang-sel" id="langSel">
-      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span id="langLabel">EN</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px;flex-shrink:0"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="lang-drop" id="langDrop" role="listbox" aria-label="Select language">
-        <li class="lang-opt" data-lang="en" role="option">🇺🇸 English</li>
-        <li class="lang-opt" data-lang="tl" role="option">🇵🇭 Filipino</li>
-        <li class="lang-opt" data-lang="zh-CN" role="option">🇨🇳 中文</li>
-      </ul>
-    </div>
     <a href="index.html#booking" class="btn-book">Book Now</a>
     <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
       <span></span><span></span><span></span>
@@ -129,9 +123,9 @@
 </nav>
 
 <!-- ═══ HERO ═══ -->
-<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg-secondary);">
+<section class="pg-hero" style="padding:8rem 0 4rem;background:var(--bg2);border-bottom:1px solid var(--border);">
   <div class="c">
-    <div class="eyebrow rv" style="margin-bottom:0.6rem">Casa Escondida</div>
+    <div class="eyebrow" style="margin-bottom:0.6rem;font-size:.62rem;letter-spacing:.22em;text-transform:uppercase;color:var(--accent);font-weight:600">Casa Escondida</div>
     <h1 style="font-family:'Playfair Display',serif;font-size:clamp(2.2rem,5vw,3.5rem);font-weight:300;color:var(--text)">Terms of <em style="font-style:italic;color:var(--gold)">Service</em></h1>
     <p style="color:var(--text2);margin-top:0.8rem;max-width:480px">Please read these terms carefully before making a reservation or participating in dive activities at Casa Escondida Anilao.</p>
   </div>
@@ -139,17 +133,39 @@
 
 <!-- ═══ TERMS CONTENT ═══ -->
 <section style="background:var(--bg);border-top:1px solid var(--border);">
-  <div class="policy-wrap">
+  <div class="policy-layout">
+
+    <!-- SIDEBAR NAV -->
+    <nav class="policy-sidebar" aria-label="Terms sections">
+      <div class="psb-title">Contents</div>
+      <ul class="psb-list">
+        <li><a href="#agreement-to-terms">Agreement to Terms</a></li>
+        <li><a href="#bookings-reservations">Bookings &amp; Reservations</a></li>
+        <li><a href="#cancellation-refund">Cancellation &amp; Refund</a></li>
+        <li><a href="#diving-requirements">Diving Requirements</a></li>
+        <li><a href="#resort-rules">Resort Rules &amp; Conduct</a></li>
+        <li><a href="#liability-waiver">Liability Waiver</a></li>
+        <li><a href="#health-medical">Health &amp; Medical</a></li>
+        <li><a href="#photography-media">Photography &amp; Media</a></li>
+        <li><a href="#intellectual-property">Intellectual Property</a></li>
+        <li><a href="#governing-law">Governing Law</a></li>
+        <li><a href="#amendments">Amendments</a></li>
+        <li><a href="#contact-us">Contact Us</a></li>
+      </ul>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="policy-wrap">
 
     <div class="policy-effective">Effective Date: April 1, 2026</div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="agreement-to-terms">
       <h2>Agreement to Terms</h2>
       <p>These Terms of Service ("Terms") constitute a legally binding agreement between you and Casa Escondida Anilao Resort &amp; Dive Center ("Casa Escondida," "we," "our," or "us"), governing your use of our website, booking services, accommodations, and dive programs. By making a reservation, accessing our website, or staying at our resort, you confirm that you have read, understood, and agree to be bound by these Terms.</p>
       <p>We reserve the right to update these Terms at any time. The most current version will always be available on this page. Continued use of our services following any changes constitutes your acceptance of the revised Terms.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="bookings-reservations">
       <h2>Bookings &amp; Reservations</h2>
       <p>Reservations may be made directly through our website, by email, via Booking.com, or through other authorized booking channels. A booking is confirmed only upon receipt of a deposit or full payment as agreed at the time of reservation.</p>
       <ul>
@@ -161,52 +177,52 @@
       </ul>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="cancellation-refund">
       <h2>Cancellation &amp; Refund Policy</h2>
       <div class="policy-highlight-box">
-        <p><strong>Full refund:</strong> Cancellations made at least 48 hours before your scheduled check-in date are eligible for a full refund of the deposit paid, less any applicable transaction fees charged by the payment processor.</p>
+        <p><strong>All bookings are non-refundable.</strong> Once a reservation is confirmed and a deposit or full payment has been received, no refunds will be issued under any circumstances, including early check-out, changes in travel plans, or failure to arrive.</p>
       </div>
-      <ul>
-        <li><strong>48+ hours notice:</strong> Full refund of deposit (less processing fees).</li>
-        <li><strong>24–48 hours notice:</strong> 50% of the total booking value will be retained as a cancellation fee.</li>
-        <li><strong>Less than 24 hours / no-show:</strong> The full deposit is non-refundable. No-shows are charged the full first night's accommodation rate.</li>
-        <li><strong>Dive package cancellations:</strong> Dive packages cancelled prior to the dive day are refundable under the same schedule above. Dives already conducted are non-refundable.</li>
-        <li><strong>Group bookings (5+ rooms):</strong> Separate cancellation terms apply and will be communicated at the time of booking. Please contact us directly for group inquiries.</li>
-        <li><strong>Force majeure:</strong> In the event of cancellation due to typhoons, natural disasters, or government-mandated travel restrictions, Casa Escondida will offer a full credit valid for 12 months, or a refund at our discretion.</li>
-      </ul>
-      <p>All refund requests must be submitted in writing to casaescondidaanilao@gmail.com. Approved refunds are processed within ten (10) business days via the original payment method.</p>
+      <table class="policy-table">
+        <tr><td>All cancellations</td><td>Non-refundable. The deposit and any payments made are forfeited upon cancellation regardless of notice period.</td></tr>
+        <tr><td>No-show</td><td>Non-refundable. The full booking amount is forfeited. No-shows are charged the full stay.</td></tr>
+        <tr><td>Early check-out</td><td>No refund will be issued for unused nights due to early departure.</td></tr>
+        <tr><td>Dive package cancellations</td><td>All dive packages are non-refundable once booked. Dives not conducted due to guest cancellation or no-show are forfeited.</td></tr>
+        <tr><td>Group bookings (5+ rooms)</td><td>Non-refundable. Separate payment terms will be communicated at the time of booking. Please contact us directly for group inquiries.</td></tr>
+        <tr><td>Force majeure</td><td>In the event of cancellation due to typhoons, natural disasters, or government-mandated travel restrictions, Casa Escondida may offer a credit valid for 12 months at our sole discretion. No cash refunds will be issued.</td></tr>
+      </table>
+      <p>By completing a booking with Casa Escondida Anilao, guests acknowledge and agree to this non-refundable policy. For inquiries, contact us at <a href="mailto:casaescondidaanilao@gmail.com" style="color:var(--accent)">casaescondidaanilao@gmail.com</a>.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="diving-requirements">
       <h2>Diving Requirements &amp; Safety</h2>
       <p>Participation in dive activities at Casa Escondida is subject to the following requirements. These conditions are in place for your safety and the safety of our dive team.</p>
-      <ul>
-        <li><strong>Certification requirement:</strong> All divers participating in guided open-water dives must hold a valid PADI Open Water certification (or equivalent recognized certification from NAUI, SSI, CMAS, or similar agencies). Proof of certification card must be presented before any dive activity commences.</li>
-        <li><strong>Medical fitness declaration:</strong> All participants must complete a standard PADI Medical Statement prior to diving. Certain medical conditions may require a physician's clearance before diving is permitted. This is for your safety — our staff cannot override this requirement.</li>
-        <li><strong>Age requirements:</strong> The minimum age for PADI Open Water diving is 10 years old. Divers under 18 must have written parental or guardian consent on file.</li>
-        <li><strong>Non-certified guests:</strong> Guests without certification may participate in our Discover Scuba Diving (DSD) experience under direct instructor supervision, to a maximum depth of 6 metres. The same medical form requirements apply.</li>
-        <li><strong>Dive briefings:</strong> All divers must attend the pre-dive briefing conducted by the assigned divemaster or instructor. Guests who miss the briefing may be excluded from that dive without refund.</li>
-        <li><strong>Dive master authority:</strong> Our divemasters and instructors have full authority to refuse, curtail, or terminate a dive if, in their professional judgment, conditions are unsafe or a guest is unfit to dive. No refund will be issued for dives terminated due to guest behavior or unsafe conduct.</li>
-        <li><strong>Intoxication:</strong> Guests who appear to be under the influence of alcohol or controlled substances will not be permitted to dive. This is a non-negotiable safety policy.</li>
-      </ul>
+      <table class="policy-table">
+        <tr><td>Certification requirement</td><td>All divers participating in guided open-water dives must hold a valid PADI Open Water certification (or equivalent from NAUI, SSI, CMAS, or similar agencies). Proof of certification card must be presented before any dive activity commences.</td></tr>
+        <tr><td>Medical fitness declaration</td><td>All participants must complete a standard PADI Medical Statement prior to diving. Certain medical conditions may require a physician's clearance. This is for your safety — our staff cannot override this requirement.</td></tr>
+        <tr><td>Age requirements</td><td>The minimum age for PADI Open Water diving is 10 years old. Divers under 18 must have written parental or guardian consent on file.</td></tr>
+        <tr><td>Non-certified guests</td><td>Guests without certification may participate in our Discover Scuba Diving (DSD) experience under direct instructor supervision, to a maximum depth of 6 metres. The same medical form requirements apply.</td></tr>
+        <tr><td>Dive briefings</td><td>All divers must attend the pre-dive briefing conducted by the assigned divemaster or instructor. Guests who miss the briefing may be excluded from that dive without refund.</td></tr>
+        <tr><td>Divemaster authority</td><td>Our divemasters and instructors have full authority to refuse, curtail, or terminate a dive if conditions are unsafe or a guest is unfit to dive. No refund will be issued for dives terminated due to guest behavior or unsafe conduct.</td></tr>
+        <tr><td>Intoxication</td><td>Guests who appear to be under the influence of alcohol or controlled substances will not be permitted to dive. This is a non-negotiable safety policy.</td></tr>
+      </table>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="resort-rules">
       <h2>Resort Rules &amp; Conduct</h2>
       <p>To ensure a peaceful and enjoyable environment for all guests, the following rules apply throughout the resort property:</p>
-      <ul>
-        <li><strong>Quiet hours:</strong> Quiet hours are observed from 10:00 PM to 7:00 AM. Loud music, gatherings, and activities that disturb other guests are not permitted during these hours.</li>
-        <li><strong>No outside food and beverages:</strong> Outside food and beverages are not permitted to be consumed in common dining areas or beach spaces. Guests may bring personal snacks to their rooms. Please respect our restaurant and bar operations.</li>
-        <li><strong>Smoking policy:</strong> Smoking is strictly prohibited in all enclosed spaces, including rooms, the restaurant, and the dive center. Designated smoking areas are provided at the resort perimeter. Guests who violate this policy will be charged a cleaning fee of PHP 2,000.</li>
-        <li><strong>Environmental responsibility:</strong> The use of non-reef-safe sunscreen is prohibited at the resort and on all dive boats. Single-use plastics are discouraged. We ask all guests to treat the marine environment with respect.</li>
-        <li><strong>Marine protected areas:</strong> All guests must adhere to local MPA rules, including no touching, collecting, or damaging coral, marine life, or sea floor structures. Violations may result in fines under Philippine law.</li>
-        <li><strong>Property damage:</strong> Guests are responsible for any damage caused to resort property, dive equipment, or vehicles. The cost of repair or replacement will be charged to the responsible guest.</li>
-        <li><strong>Firearms and illegal substances:</strong> The possession of unlicensed firearms or illegal substances on resort property is strictly prohibited and will result in immediate removal and reporting to local authorities.</li>
-        <li><strong>Pets:</strong> Pets are not permitted on the resort property, with the exception of certified assistance animals with appropriate documentation.</li>
-      </ul>
+      <table class="policy-table">
+        <tr><td>Quiet hours</td><td>Quiet hours are observed from 10:00 PM to 7:00 AM. Loud music, gatherings, and activities that disturb other guests are not permitted during these hours.</td></tr>
+        <tr><td>No outside food &amp; beverages</td><td>Outside food and beverages are not permitted in common dining areas or beach spaces. Guests may bring personal snacks to their rooms. Please respect our restaurant and bar operations.</td></tr>
+        <tr><td>Smoking policy</td><td>Smoking is strictly prohibited in all enclosed spaces, including rooms, the restaurant, and the dive center. Designated smoking areas are at the resort perimeter. Violation incurs a cleaning fee of PHP 2,000.</td></tr>
+        <tr><td>Environmental responsibility</td><td>The use of non-reef-safe sunscreen is prohibited at the resort and on all dive boats. Single-use plastics are discouraged. We ask all guests to treat the marine environment with respect.</td></tr>
+        <tr><td>Marine protected areas</td><td>All guests must adhere to local MPA rules, including no touching, collecting, or damaging coral, marine life, or sea floor structures. Violations may result in fines under Philippine law.</td></tr>
+        <tr><td>Property damage</td><td>Guests are responsible for any damage caused to resort property, dive equipment, or vehicles. The cost of repair or replacement will be charged to the responsible guest.</td></tr>
+        <tr><td>Firearms &amp; illegal substances</td><td>The possession of unlicensed firearms or illegal substances on resort property is strictly prohibited and will result in immediate removal and reporting to local authorities.</td></tr>
+        <tr><td>Pets</td><td>Pets are not permitted on the resort property, with the exception of certified assistance animals with appropriate documentation.</td></tr>
+      </table>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="liability-waiver">
       <h2>Liability Waiver Summary</h2>
       <p>Scuba diving and related water activities involve inherent risks, including but not limited to: drowning, decompression sickness, equipment malfunction, marine animal encounters, environmental hazards, and physical injury. By participating in any dive activity with Casa Escondida, guests acknowledge and accept these risks.</p>
       <div class="policy-highlight-box">
@@ -217,35 +233,35 @@
       <p>Casa Escondida is not responsible for loss or theft of personal belongings including underwater cameras, dive equipment, passports, cash, or valuables. Guests are encouraged to use in-room safes where provided and to store valuables securely.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="health-medical">
       <h2>Health &amp; Medical Conditions</h2>
       <p>Certain medical conditions may disqualify a guest from participating in dive activities. These include, but are not limited to: recent surgery, asthma, epilepsy, heart conditions, uncontrolled diabetes, and certain ear or sinus conditions. The PADI Medical Statement completed prior to diving will identify any conditions requiring physician clearance.</p>
       <p>Casa Escondida maintains basic first-aid facilities and oxygen-equipped emergency kits on-site and on all dive boats. The nearest recompression chamber is located at the Philippine Navy Base in Cavite City, approximately 90 minutes from Anilao by road. Guests with known dive injury risk factors are strongly advised to discuss this with their physician and with our dive staff prior to booking.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="photography-media">
       <h2>Photography &amp; Media</h2>
       <p>Guests are welcome to photograph and film for personal use throughout the resort. By participating in organized resort activities (dive briefings, boat dives, group events), guests acknowledge that resort staff or official photographers may capture images or video that may be used in marketing materials, social media, or the resort website.</p>
       <p>If you do not wish to be photographed or filmed, please inform a staff member prior to any activity. We will make all reasonable efforts to accommodate your preference. Guests may not photograph other guests without their consent.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="intellectual-property">
       <h2>Intellectual Property</h2>
       <p>All content on the Casa Escondida website, including text, photography, design, and branding, is the property of Casa Escondida Anilao Resort &amp; Dive Center or its licensed contributors. No part of this website may be reproduced, distributed, or transmitted in any form without prior written permission. Unauthorized use of our content, logos, or trademarks is prohibited.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="governing-law">
       <h2>Governing Law &amp; Disputes</h2>
       <p>These Terms of Service are governed by and construed in accordance with the laws of the Republic of the Philippines. Any dispute arising from or relating to these Terms, your stay, or your participation in our dive programs shall be subject to the exclusive jurisdiction of the courts of Batangas Province, Philippines.</p>
       <p>We encourage guests to raise any concerns directly with our management team during their stay or within 30 days of departure. We are committed to resolving complaints promptly and in good faith before any formal legal action is considered.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="amendments">
       <h2>Amendments</h2>
       <p>Casa Escondida reserves the right to amend these Terms at any time. Any changes will be posted to this page with an updated effective date. Bookings made prior to an amendment are governed by the Terms in effect at the time of booking, unless otherwise agreed in writing.</p>
     </div>
 
-    <div class="policy-section">
+    <div class="policy-section" id="contact-us">
       <h2>Contact Us</h2>
       <p>If you have questions or concerns regarding these Terms, or wish to discuss a specific booking situation, please reach out to us:</p>
       <div class="policy-contact-box">
@@ -256,7 +272,8 @@
       </div>
     </div>
 
-  </div>
+    </div><!-- /.policy-wrap -->
+  </div><!-- /.policy-layout -->
 </section>
 
 <!-- ═══ FOOTER ═══ -->
@@ -274,10 +291,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
           <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
       </div>
@@ -326,30 +343,6 @@
   </div>
 </footer>
 
-<div id="google_translate_element" style="display:none"></div>
-<script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,tl,zh-CN',autoDisplay:false},'google_translate_element');}</script>
-<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
-<script>
-(function(){
-  var LANGS={en:'EN',tl:'TL','zh-CN':'ZH'};
-  var btn=document.getElementById('langBtn'),drop=document.getElementById('langDrop'),lbl=document.getElementById('langLabel');
-  if(!btn)return;
-  function getCur(){var m=document.cookie.match(/googtrans=\/en\/([^;]+)/);return m?decodeURIComponent(m[1]):'en';}
-  function setLang(lang){
-    var h=window.location.hostname,d=h.includes('.')?'.'+h.replace(/^www\./,''):h;
-    var exp=lang==='en'?'Thu, 01 Jan 1970 00:00:00 GMT':'Fri, 01 Jan 2027 00:00:00 GMT';
-    var val=lang==='en'?'':'/en/'+lang;
-    document.cookie='googtrans='+val+';path=/;expires='+exp+';domain='+d;
-    document.cookie='googtrans='+val+';path=/;expires='+exp;
-    location.reload();
-  }
-  var cur=getCur();lbl.textContent=LANGS[cur]||'EN';
-  document.querySelectorAll('.lang-opt').forEach(function(o){if(o.dataset.lang===cur)o.classList.add('active');});
-  btn.addEventListener('click',function(e){e.stopPropagation();var op=drop.classList.toggle('open');btn.setAttribute('aria-expanded',op);});
-  document.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-  document.querySelectorAll('.lang-opt').forEach(function(o){o.addEventListener('click',function(){setLang(o.dataset.lang);});});
-})();
-</script>
 
 <script>
   /* ── Theme Toggle ── */
@@ -384,7 +377,7 @@
   /* ── Navbar scroll ── */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.style.padding = window.scrollY > 40 ? '.5rem 4rem' : '.75rem 4rem';
+    const _m=window.innerWidth<=768;nav.style.padding=window.scrollY>40?(_m?'.5rem 1.5rem':'.5rem 4rem'):(_m?'1rem 1.5rem':'.75rem 4rem');
   }, { passive: true });
 
   /* ── Custom Cursor ── */
@@ -470,6 +463,20 @@
     }
     loop();
   })();
+</script>
+
+<script>
+(function(){
+  var bar=document.getElementById('pg-bar');
+  if(!bar)return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h=a.getAttribute('href')||'';
+    if(!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!a.target&&!a.classList.contains('nav-logo')){
+      a.addEventListener('click',function(){bar.style.width='70%';bar.style.opacity='1';});
+    }
+  });
+  window.addEventListener('pageshow',function(){bar.classList.add('done');});
+})();
 </script>
 </body>
 </html>

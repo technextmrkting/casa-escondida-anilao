@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,6 +9,17 @@
   <link rel="canonical" href="https://technextmarketing.github.io/casa-escondida-anilao/dive.html" />
   <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
   <meta name="description" content="PADI-certified dive center at Casa Escondida Anilao — courses, guided dives, night dives, and world-class marine life at Anilao, Batangas, Philippines." />
+  <meta name="keywords" content="PADI dive center Anilao, scuba diving courses Batangas, dive certification Philippines, guided dives Anilao, night diving Batangas, Open Water course Philippines, macro diving Anilao, PADI Rescue Diver Philippines" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Dive Center — Casa Escondida Anilao, Batangas" />
+  <meta property="og:description" content="PADI-certified dive center in Anilao, Batangas. Open Water, Advanced, and Rescue courses. Guided dives and night dives in the macro diving capital of the Philippines." />
+  <meta property="og:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
+  <meta property="og:url" content="https://technextmarketing.github.io/casa-escondida-anilao/dive.html" />
+  <meta property="og:site_name" content="Casa Escondida Anilao" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Dive Center — Casa Escondida Anilao" />
+  <meta name="twitter:description" content="PADI courses and guided dives in Anilao, Batangas — the macro diving capital of the Philippines." />
+  <meta name="twitter:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
   <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
@@ -138,7 +149,7 @@
     .eco-filters{display:flex;flex-wrap:wrap;justify-content:center;gap:.55rem;margin-top:2.2rem;margin-bottom:2.2rem;}
     .eco-filter{background:transparent;border:1px solid var(--border);color:var(--text2);padding:.55rem 1.1rem;border-radius:40px;font-size:.68rem;letter-spacing:.15em;text-transform:uppercase;font-weight:500;cursor:pointer;transition:all .3s;font-family:inherit;}
     .eco-filter:hover{border-color:var(--accent);color:var(--accent);}
-    .eco-filter.active{background:var(--accent);border-color:var(--accent);color:#04080f;}
+    .eco-filter.active{background:var(--accent);border-color:var(--accent);color:#fff;}
     .eco-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.2rem;}
     @media(max-width:900px){.eco-grid{grid-template-columns:repeat(3,1fr);}}
     @media(max-width:640px){.eco-grid{grid-template-columns:repeat(2,1fr);gap:.7rem;}}
@@ -225,6 +236,7 @@
   
 </head>
 <body>
+<div id="pg-bar"></div>
 <div id="cur-dot"></div>
 <div id="cur-ring"></div>
 
@@ -268,18 +280,6 @@
     <li><a href="blog.html">Blog</a></li>
   </ul>
   <div class="nav-right">
-    <div class="lang-sel" id="langSel">
-      <button class="lang-btn" id="langBtn" aria-haspopup="listbox" aria-expanded="false">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:13px;height:13px;flex-shrink:0"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-        <span id="langLabel">EN</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" style="width:10px;height:10px;flex-shrink:0"><polyline points="6 9 12 15 18 9"/></svg>
-      </button>
-      <ul class="lang-drop" id="langDrop" role="listbox" aria-label="Select language">
-        <li class="lang-opt" data-lang="en" role="option">🇺🇸 English</li>
-        <li class="lang-opt" data-lang="tl" role="option">🇵🇭 Filipino</li>
-        <li class="lang-opt" data-lang="zh-CN" role="option">🇨🇳 中文</li>
-      </ul>
-    </div>
     <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
       <span class="toggle-icon" id="themeIcon">
         <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
@@ -652,10 +652,10 @@
             <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
           </a>
           <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6a6 6 0 0 1 6 6 6 6 0 0 1-6 6 6 6 0 0 1-6-6 6 6 0 0 1 6-6z"/><circle cx="12" cy="12" r="2.5"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
           </a>
           <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2h9a1 1 0 0 1 .7.3l2 2a1 1 0 0 1 .3.7V21a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1z"/><path d="M9 7h6M9 11h6M9 15h4"/></svg>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg>
           </a>
         </div>
       </div>
@@ -737,7 +737,7 @@
   /* ── Navbar scroll ── */
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
-    nav.style.padding = window.scrollY > 40 ? '.5rem 4rem' : '.75rem 4rem';
+    const _m=window.innerWidth<=768;nav.style.padding=window.scrollY>40?(_m?'.5rem 1.5rem':'.5rem 4rem'):(_m?'1rem 1.5rem':'.75rem 4rem');
   }, { passive: true });
 
   /* ── Reveal on scroll ── */
@@ -1128,30 +1128,19 @@
 })();
   </script>
 
-  <!-- Google Translate -->
-  <div id="google_translate_element" style="display:none"></div>
-  <script>function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:'en',includedLanguages:'en,tl,zh-CN',autoDisplay:false},'google_translate_element');}</script>
-  <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit" async defer></script>
-  <script>
-  (function(){
-    var LANGS={en:'EN',tl:'TL','zh-CN':'ZH'};
-    var btn=document.getElementById('langBtn'),drop=document.getElementById('langDrop'),lbl=document.getElementById('langLabel');
-    if(!btn)return;
-    function getCur(){var m=document.cookie.match(/googtrans=\/en\/([^;]+)/);return m?decodeURIComponent(m[1]):'en';}
-    function setLang(lang){
-      var h=window.location.hostname,d=h.includes('.')?'.'+h.replace(/^www\./,''):h;
-      var exp=lang==='en'?'Thu, 01 Jan 1970 00:00:00 GMT':'Fri, 01 Jan 2027 00:00:00 GMT';
-      var val=lang==='en'?'':'/en/'+lang;
-      document.cookie='googtrans='+val+';path=/;expires='+exp+';domain='+d;
-      document.cookie='googtrans='+val+';path=/;expires='+exp;
-      location.reload();
+<script>
+(function(){
+  var bar=document.getElementById('pg-bar');
+  if(!bar)return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h=a.getAttribute('href')||'';
+    if(!h.startsWith('#')&&!h.startsWith('http')&&!h.startsWith('mailto:')&&!a.target&&!a.classList.contains('nav-logo')){
+      a.addEventListener('click',function(){bar.style.width='70%';bar.style.opacity='1';});
     }
-    var cur=getCur();lbl.textContent=LANGS[cur]||'EN';
-    document.querySelectorAll('.lang-opt').forEach(function(o){if(o.dataset.lang===cur)o.classList.add('active');});
-    btn.addEventListener('click',function(e){e.stopPropagation();var op=drop.classList.toggle('open');btn.setAttribute('aria-expanded',op);});
-    document.addEventListener('click',function(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');});
-    document.querySelectorAll('.lang-opt').forEach(function(o){o.addEventListener('click',function(){setLang(o.dataset.lang);});});
-  })();
-  </script>
+  });
+  window.addEventListener('pageshow',function(){bar.classList.add('done');});
+})();
+</script>
+
 </body>
 </html>

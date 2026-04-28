@@ -1,0 +1,781 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="stylesheet" href="style.css" />
+  <script>(function(){var t=localStorage.getItem('ce-theme')||(matchMedia('(prefers-color-scheme:dark)').matches?'night':'day');document.documentElement.setAttribute('data-theme',t);})();</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title id="pageTitle">Blog — Casa Escondida Anilao</title>
+  <meta name="description" id="pageMeta" content="Dive guides, marine life tips, and travel advice from Anilao, Batangas." />
+  <meta id="pageKeywords" name="keywords" content="Anilao diving, Batangas, Philippines diving, Casa Escondida" />
+  <link rel="canonical" id="pageCanonical" href="https://technextmarketing.github.io/casa-escondida-anilao/blog-post.html" />
+  <meta id="ogTitle" property="og:title" content="Blog Post | Casa Escondida Anilao" />
+  <meta id="ogDesc" property="og:description" content="Dive guides and marine life stories from Anilao, Batangas." />
+  <meta id="ogImage" property="og:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
+  <meta id="ogUrl" property="og:url" content="https://technextmarketing.github.io/casa-escondida-anilao/blog-post.html" />
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Casa Escondida Anilao" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta id="twTitle" name="twitter:title" content="Blog Post | Casa Escondida Anilao" />
+  <meta id="twImage" name="twitter:image" content="https://technextmarketing.github.io/casa-escondida-anilao/images/Nature%20Folder/sea%20fan%20coral.jpg" />
+  <script id="jsonLd" type="application/ld+json">{}</script>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🤿</text></svg>" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'" />
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" /></noscript>
+  <style>
+    /* ── ARTICLE HERO ── */
+    .ap-hero{min-height:320px;position:relative;display:flex;align-items:flex-end;}
+    .ap-hero-bg{position:absolute;inset:0;}
+    .ap-hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.72) 0%,rgba(0,0,0,.25) 60%,transparent 100%);}
+    .ap-hero-content{position:relative;z-index:2;padding:3rem 4rem 2.5rem;max-width:900px;}
+    @media(max-width:768px){.ap-hero-content{padding:2rem 1.5rem 2rem;}.ap-hero{min-height:260px;}}
+    .ap-breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1rem;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;}
+    .ap-breadcrumb a{color:rgba(255,255,255,.65);text-decoration:none;transition:color .2s;}
+    .ap-breadcrumb a:hover{color:#fff;}
+    .ap-breadcrumb span{color:rgba(255,255,255,.4);}
+    .ap-hero-cat{display:inline-block;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;font-weight:600;padding:.28rem .7rem;border-radius:3px;margin-bottom:.8rem;}
+    .ap-hero-title{font-family:'Playfair Display',serif;font-size:clamp(1.6rem,3.5vw,2.5rem);font-weight:400;color:#fff;line-height:1.25;margin-bottom:1rem;}
+    .ap-hero-meta{display:flex;align-items:center;gap:1.2rem;flex-wrap:wrap;}
+    .ap-hero-meta span{font-size:.72rem;color:rgba(255,255,255,.7);}
+    .ap-hero-meta .dot{color:rgba(255,255,255,.3);}
+
+    /* ── ARTICLE LAYOUT ── */
+    .ap-wrap{max-width:1200px;margin:0 auto;padding:0 4rem;display:grid;grid-template-columns:1fr 260px;gap:4rem;align-items:flex-start;padding-top:3.5rem;padding-bottom:6rem;}
+    @media(max-width:960px){.ap-wrap{grid-template-columns:1fr;gap:0;padding:2rem 1.5rem 4rem;}}
+
+    /* ── ARTICLE BODY ── */
+    .ap-body{min-width:0;}
+    .ap-body p{color:var(--text2);font-size:.95rem;line-height:1.85;margin-bottom:1.2rem;}
+    .ap-body .ap-lead{font-size:1.05rem;color:var(--text);line-height:1.8;margin-bottom:2rem;font-weight:400;}
+    .ap-body h2{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:400;color:var(--text);margin:2.4rem 0 .8rem;padding-bottom:.6rem;border-bottom:1px solid var(--border);}
+    .ap-body h3{font-size:.95rem;font-weight:500;color:var(--text);letter-spacing:.04em;margin:1.5rem 0 .5rem;}
+    .ap-body ul,.ap-body ol{padding-left:0;list-style:none;margin:.5rem 0 1.2rem;}
+    .ap-body ul li,.ap-body ol li{display:flex;align-items:flex-start;gap:.6rem;color:var(--text2);font-size:.9rem;line-height:1.72;margin-bottom:.5rem;}
+    .ap-body ul li::before{content:'·';color:var(--accent);font-size:1.2rem;flex-shrink:0;line-height:1.4;}
+    .ap-body ol{counter-reset:li;}
+    .ap-body ol li::before{counter-increment:li;content:counter(li);color:var(--accent);font-size:.8rem;font-weight:600;flex-shrink:0;min-width:1.2rem;line-height:1.7;}
+    .ap-body strong{color:var(--text);font-weight:500;}
+    /* Species / definition list items (li starting with <strong>) */
+    .ap-body ul li:has(>strong:first-child){display:block;padding:.55rem 1rem .55rem 1.1rem;border-left:3px solid var(--accent);border-radius:0 8px 8px 0;background:var(--card);margin-bottom:.45rem!important;}
+    .ap-body ul li:has(>strong:first-child)::before{display:none;}
+    .ap-body ul li:has(>strong:first-child) strong:first-child{display:block;color:var(--accent);font-size:.83rem;letter-spacing:.02em;margin-bottom:.18rem;}
+    .tip-box{background:var(--card);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:0 10px 10px 0;padding:1.1rem 1.4rem;margin:1.5rem 0;}
+    .tip-box p{margin-bottom:0;font-size:.86rem;}
+    .tip-box strong{color:var(--accent);}
+    .info-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1.2rem 0;}
+    @media(max-width:580px){.info-grid{grid-template-columns:1fr;}}
+    .info-cell{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:.9rem 1rem;}
+    .info-cell .ic-label{font-size:.6rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:.3rem;}
+    .info-cell .ic-val{font-size:.9rem;color:var(--text);font-weight:400;}
+
+    /* ── SIDEBAR ── */
+    .ap-sidebar{position:sticky;top:90px;}
+    @media(max-width:960px){.ap-sidebar{display:none;}}
+    .ap-toc{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:1.3rem 1.4rem;margin-bottom:1.5rem;}
+    .ap-toc-title{font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.9rem;}
+    .ap-toc-list{list-style:none;padding:0;margin:0;border-left:2px solid var(--border);}
+    .ap-toc-list li a{display:block;padding:.32rem .75rem;font-size:.78rem;color:var(--text2);text-decoration:none;border-left:2px solid transparent;margin-left:-2px;transition:all .2s;line-height:1.4;}
+    .ap-toc-list li a:hover,.ap-toc-list li a.active{color:var(--accent);border-left-color:var(--accent);}
+    .ap-cta{background:linear-gradient(135deg,var(--accent-g),transparent);border:1px solid var(--border);border-radius:12px;padding:1.4rem;}
+    .ap-cta-title{font-family:'Playfair Display',serif;font-size:1.05rem;font-weight:400;color:var(--text);margin-bottom:.5rem;line-height:1.3;}
+    .ap-cta-body{font-size:.8rem;color:var(--text2);line-height:1.65;margin-bottom:1rem;}
+    .ap-cta-btn{display:block;text-align:center;background:var(--accent);color:#fff;padding:.55rem 1rem;border-radius:4px;font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:background .25s;}
+    .ap-cta-btn:hover{background:var(--accent-d);}
+
+    /* ── RELATED POSTS ── */
+    .ap-related{max-width:1200px;margin:0 auto;padding:0 4rem 5rem;}
+    @media(max-width:768px){.ap-related{padding:0 1.5rem 4rem;}}
+    .ap-related-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:400;color:var(--text);margin-bottom:.4rem;}
+    .ap-related-sub{font-size:.8rem;color:var(--text3);margin-bottom:1.8rem;}
+    .ap-related-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;}
+    @media(max-width:768px){.ap-related-grid{grid-template-columns:1fr;}}
+    .ap-rel-card{background:var(--card);border:1px solid var(--border);border-radius:12px;overflow:hidden;text-decoration:none;display:block;transition:transform .3s,border-color .3s;}
+    .ap-rel-card:hover{transform:translateY(-4px);border-color:var(--border2);}
+    .ap-rel-thumb{height:130px;position:relative;overflow:hidden;}
+    .ap-rel-body{padding:1rem 1.1rem;}
+    .ap-rel-cat{font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--accent);margin-bottom:.35rem;}
+    .ap-rel-title{font-family:'Playfair Display',serif;font-size:.92rem;font-weight:400;color:var(--text);line-height:1.4;margin-bottom:.4rem;}
+    .ap-rel-date{font-size:.65rem;color:var(--text3);}
+
+    /* ── NOT FOUND ── */
+    .ap-notfound{text-align:center;padding:8rem 2rem;}
+    .ap-notfound-icon{font-size:3rem;margin-bottom:1rem;}
+    .ap-notfound h2{font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:400;color:var(--text);margin-bottom:.6rem;}
+    .ap-notfound p{color:var(--text2);font-size:.9rem;margin-bottom:1.5rem;}
+    .ap-notfound a{color:var(--accent);text-decoration:none;font-size:.82rem;letter-spacing:.1em;text-transform:uppercase;border:1px solid var(--accent);padding:.5rem 1.2rem;border-radius:4px;transition:all .25s;}
+    .ap-notfound a:hover{background:var(--accent);color:#fff;}
+  </style>
+</head>
+<body>
+<div id="pg-bar"></div>
+<div id="cur-dot"></div><div id="cur-ring"></div>
+<div class="orb-layer" aria-hidden="true">
+  <div class="orb orb-1"></div><div class="orb orb-2"></div>
+  <div class="orb orb-3"></div><div class="orb orb-4"></div><div class="orb orb-5"></div>
+</div>
+
+<!-- MOBILE NAV -->
+<nav class="mobile-nav" id="mobileNav" aria-label="Mobile navigation" aria-hidden="true">
+  <a href="index.html#about" class="mob-link">About</a><div class="mobile-nav-divider"></div>
+  <a href="rooms.html" class="mob-link">Rooms</a><div class="mobile-nav-divider"></div>
+  <a href="dive.html" class="mob-link">Dive</a><div class="mobile-nav-divider"></div>
+  <a href="gallery.html" class="mob-link">Gallery</a><div class="mobile-nav-divider"></div>
+  <a href="location.html" class="mob-link">Location</a><div class="mobile-nav-divider"></div>
+  <a href="blog.html" class="mob-link active">Blog</a>
+  <a href="index.html#booking" class="mob-link mobile-nav-cta">Book Now</a>
+</nav>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="index.html" class="nav-logo" aria-label="Casa Escondida — Home">
+    <img decoding="async" height="44" width="180" class="nav-logo-img nav-logo-night" src="images/Logo/Untitled_design__3_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+    <img decoding="async" height="44" width="180" class="nav-logo-img nav-logo-day" src="images/Logo/Untitled_design__2_-removebg-preview.png" alt="Casa Escondida" loading="eager" />
+  </a>
+  <ul class="nav-links">
+    <li><a href="index.html#about">About</a></li>
+    <li><a href="rooms.html">Rooms</a></li>
+    <li><a href="dive.html">Dive</a></li>
+    <li><a href="gallery.html">Gallery</a></li>
+    <li><a href="location.html">Location</a></li>
+    <li><a href="blog.html" class="active">Blog</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-toggle" id="themeBtn" aria-label="Toggle theme">
+      <span class="toggle-icon" id="themeIcon">
+        <svg id="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:block"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        <svg id="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      </span>
+      <div class="toggle-track"><div class="toggle-thumb"></div></div>
+      <span id="themeLabel" style="font-size:.68rem;letter-spacing:.1em">Night</span>
+    </button>
+    <a href="index.html#booking" class="btn-book">Book Now</a>
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ARTICLE HERO -->
+<div id="articleHero"></div>
+
+<!-- ARTICLE CONTENT -->
+<div style="background:var(--bg);">
+  <div class="ap-wrap" id="articleWrap">
+    <div class="ap-body" id="articleBody"></div>
+    <aside class="ap-sidebar" id="articleSidebar"></aside>
+  </div>
+</div>
+
+<!-- RELATED POSTS -->
+<div style="background:var(--bg2);border-top:1px solid var(--border);" id="relatedSection"></div>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="c">
+    <div class="foot-grid">
+      <div>
+        <a href="index.html" class="foot-logo">Casa <span>Escondida</span></a>
+        <p class="foot-desc">A hidden paradise in Anilao, Batangas — where world-class Philippine diving meets exceptional hospitality on the shores of Batangas Bay.</p>
+        <div class="foot-socials">
+          <a href="https://web.facebook.com/CasaEscondidaAnilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Facebook"><svg class="fill-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg></a>
+          <a href="https://www.instagram.com/casaescondidaanilao/" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+          <a href="https://www.tripadvisor.com.ph/Hotel_Review-g1587920-d10086753-Reviews-Casa_Escondida_Anilao_Resort_Dive_Center-Mabini_Batangas_Province_Calabarzon_Region_.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="TripAdvisor"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></a>
+          <a href="https://www.booking.com/hotel/ph/casa-escondida-anilao-resort-amp-dive-center.en-gb.html" target="_blank" rel="noopener noreferrer" class="soc" aria-label="Booking.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col-links">
+        <div><div class="foot-h">Explore</div><ul class="foot-links"><li><a href="index.html#about">About the Resort</a></li><li><a href="dive.html">Dive Center</a></li><li><a href="rooms.html">Rooms &amp; Suites</a></li><li><a href="gallery.html">Photo Gallery</a></li></ul></div>
+        <div><div class="foot-h">Dive Programs</div><ul class="foot-links"><li><a href="dive.html#courses">PADI Open Water</a></li><li><a href="dive.html#courses">Advanced OW Course</a></li><li><a href="dive.html#packages">Guided Dive Trips</a></li><li><a href="dive.html#packages">Night Dives</a></li></ul></div>
+        <div><div class="foot-h">Location</div><ul class="foot-links"><li><a href="location.html">Brgy. Ligaya, Mabini</a></li><li><a href="location.html">Batangas Province 4202</a></li><li><a href="https://www.google.com/maps/place/Casa+Escondida+Anilao" target="_blank" rel="noopener noreferrer">Google Maps →</a></li><li><a href="index.html#booking">Book Now</a></li></ul></div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div class="foot-copy">© 2026 Casa Escondida Anilao Resort &amp; Dive Center · Mabini, Batangas</div>
+      <div class="foot-legal">
+        <a href="privacy-policy.html">Privacy Policy</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <span style="opacity:.4">·</span>
+        <a href="https://technext.asia" target="_blank" rel="noopener noreferrer">Powered by <span class="tn-brand">TechNext Asia</span></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+/* ════════════════════════════════════════
+   ALL POSTS DATA — 20 articles
+   ════════════════════════════════════════ */
+const ALL_POSTS = [
+{
+  id:1, cat:'dive-guide', catLabel:'Dive Guide',
+  title:'Best Dive Sites in Anilao, Batangas: The Complete 2026 Guide',
+  excerpt:'Anilao hosts over 50 named dive sites packed inside a coastline barely 10 km long.',
+  date:'2026-04-20', dateLabel:'April 20, 2026', read:'8 min read',
+  bg:'linear-gradient(135deg,#061a2e 0%,#0c3d6e 60%,#1a6b98 100%)', icon:'🤿',
+  img:'images/Nature%20Folder/sea%20fan%20coral.jpg',
+  content:`<p class="ap-lead">Anilao, Batangas sits just 140 kilometres south of Manila, yet it packs more named dive sites into a single coastline than almost any destination in Southeast Asia. Whether you are chasing nudibranchs at depth, seeking frogfish in the silt, or simply ticking off your first open-water dives in warm, calm conditions, Anilao delivers.</p>
+<h2 id="s1">Kirby's Rock</h2>
+<p>The most celebrated site in Anilao, Kirby's Rock is a seamount rising from 30 metres to just 3 metres below the surface. Strong seasonal currents sweep nutrients past the wall, drawing schooling jacks, giant trevally, and occasional thresher sharks at depth. The shallower stations are blanketed in black coral trees, sea fans, and thick nudibranch colonies.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Best For</div><div class="ic-val">Advanced divers</div></div><div class="info-cell"><div class="ic-label">Depth</div><div class="ic-val">5 – 30 m</div></div><div class="info-cell"><div class="ic-label">Visibility</div><div class="ic-val">8 – 20 m</div></div></div>
+<h2 id="s2">Secret Bay (Mainit Point)</h2>
+<p>Secret Bay rarely tops 5 metres visibility and the bottom is black volcanic sand and rubble — which is exactly why macro photographers consider it one of the world's great muck dives. Hairy frogfish, ghost pipefish, mimic octopus, flamboyant cuttlefish, and blue-ringed octopus all appear here with unusual regularity. Bring patience and a wide-angle dioptre.</p>
+<div class="tip-box"><p><strong>Pro tip:</strong> Enter the water at slack tide, roughly one hour before high. The silty bottom kicks up dramatically in any current, cutting visibility to near zero.</p></div>
+<h2 id="s3">Twin Rocks</h2>
+<p>Two submerged pinnacles sitting side by side make Twin Rocks one of Anilao's most beginner-friendly sites — shallow shelves at 8 metres allow comfortable bottom time while more experienced divers explore the base at 22 metres. The coral coverage here is among the healthiest in the area, hosting enormous schools of anthias and a resident hawksbill turtle that patrols the east face daily.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Best For</div><div class="ic-val">All levels</div></div><div class="info-cell"><div class="ic-label">Depth</div><div class="ic-val">5 – 22 m</div></div><div class="info-cell"><div class="ic-label">Visibility</div><div class="ic-val">10 – 18 m</div></div></div>
+<h2 id="s4">Ligaya's Garden</h2>
+<p>Named after a local dive guide who has worked the site for decades, Ligaya's Garden is a gentle reef slope ideally suited to PADI Open Water students and casual snorkellers. Water temperatures average 28°C, depth plateaus at 14 metres, and the garden's coral bommies shelter a remarkable density of juvenile reef fish. It is also the site where Casa Escondida conducts all confined open-water training dives.</p>
+<h2 id="s5">Dive Planning Tips</h2>
+<ul><li>Book your dives 24 hours in advance during peak season (March – June). The most popular sites fill quickly.</li><li>Always complete a site briefing with your guide — current direction and entry points change between tides.</li><li>Bring a surface marker buoy (SMB). It is mandatory at all Anilao open-water sites and available to borrow from our dive desk.</li><li>Nitrox fills are available at Casa Escondida's on-site compressor room. Pre-book when you check in.</li></ul>`
+},
+{
+  id:2, cat:'marine-life', catLabel:'Marine Life',
+  title:'Nudibranchs of Anilao: 20 Species You Need to Find',
+  excerpt:'Anilao may host more than 800 nudibranch species — more than any comparable area worldwide.',
+  date:'2026-04-15', dateLabel:'April 15, 2026', read:'7 min read',
+  bg:'linear-gradient(135deg,#062918 0%,#0e5a2e 60%,#1a8040 100%)', icon:'🐚',
+  img:'images/Nature%20Folder/Pikachu%20nudibranch.jpg',
+  content:`<p class="ap-lead">Anilao's nudibranch diversity is staggering — estimates range from 600 to over 800 species recorded within a few kilometres of coastline. The combination of nutrient-rich cold upwellings, diverse substrate types, and minimal trawling disturbance makes Batangas water ideal habitat for these soft-bodied molluscs.</p>
+<h2 id="s1">What Makes a Nudibranch</h2>
+<p>Nudibranchs (order Nudibranchia) are shell-less marine gastropods that breathe through exposed gill plumes — the word literally means "naked gills" in Latin. They range from 4mm to over 60cm and use vivid coloration to signal toxicity to would-be predators. Many species feed on specific prey: certain aeolids consume hydroids, while dorid nudibranchs specialise in sponges.</p>
+<h2 id="s2">Top 10 Most Photographed in Anilao</h2>
+<ul>
+<li><strong>Halgerda batangas</strong> — Described from Batangas specimens; translucent white with orange ridges. Found at 12–22 m.</li>
+<li><strong>Flabellina exoptata</strong> — Electric-pink cerata tipped in white. Prefers hydroids at 6–15 m.</li>
+<li><strong>Chromodoris annae</strong> — Electric-blue body with yellow and black margins. Very common at Twin Rocks.</li>
+<li><strong>Nembrotha kubaryana</strong> — Dark body with bright green spots; grazes on colonial tunicates.</li>
+<li><strong>Hypselodoris apolegma</strong> — Deep violet with white-tipped cerata; one of the most-sought Anilao finds.</li>
+<li><strong>Cyerce nigricans</strong> — Translucent with iridescent blue and orange spots; autotomises its cerata when threatened.</li>
+<li><strong>Jorunna funebris</strong> — White with black spots and fuzzy caryophyllidia; resembles a dalmatian at macro range.</li>
+<li><strong>Phyllidiella pustulosa</strong> — The most commonly seen nudibranch in the Philippines; toxic to fish.</li>
+<li><strong>Risbecia tryoni</strong> — Rides on the tail of a partner in a chain behaviour unique to this genus.</li>
+<li><strong>Trinchesia sibogae</strong> — Under 6mm; requires a magnifying dioptre to appreciate the detail.</li>
+</ul>
+<div class="tip-box"><p><strong>Best site for nudibranchs:</strong> Secret Bay (muck diving) and Kirby's Rock (reef wall). Dive early morning when light angles are low and animals are most active.</p></div>
+<h2 id="s3">Photography Tips</h2>
+<p>Shoot at f/16 – f/22 for sufficient depth-of-field at extreme macro range. Use a single strobe placed 45° to the subject to avoid head-on glare from the reflective mucus coating. A 100mm macro lens or a +15 dioptre on a wide-angle lens will let you fill the frame with a 2cm animal.</p>`
+},
+{
+  id:3, cat:'travel-tips', catLabel:'Travel Tips',
+  title:'Manila to Anilao: Your Complete Transfer Guide',
+  excerpt:'Getting from Manila to Anilao, Batangas takes 2–3 hours depending on route and traffic.',
+  date:'2026-04-10', dateLabel:'April 10, 2026', read:'5 min read',
+  bg:'linear-gradient(135deg,#1a0835 0%,#3a1870 60%,#5a2a9a 100%)', icon:'🗺️',
+  img:'images/Nature%20Folder/Hawksbill%20sea%20turtle.jpg',
+  content:`<p class="ap-lead">Anilao sits approximately 140 kilometres south of Manila — close enough for a weekend escape, far enough to feel genuinely removed from the city. The journey typically takes 2 to 3 hours depending on traffic and your departure time. Here are all your options.</p>
+<h2 id="s1">By Private Car or Rental</h2>
+<p>The fastest route takes the South Luzon Expressway (SLEX) south to the STAR Tollway, then exits at Batangas City before following the coastal road through San Luis to Mabini. Waze and Google Maps both handle the route reliably. Total toll cost is roughly ₱200–300 each way. We recommend departing Manila before 7am or after 10am to avoid SLEX morning peak traffic.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Distance</div><div class="ic-val">~140 km</div></div><div class="info-cell"><div class="ic-label">Drive time</div><div class="ic-val">2 – 3 hrs</div></div><div class="info-cell"><div class="ic-label">Toll cost</div><div class="ic-val">~₱200–300</div></div></div>
+<h2 id="s2">By Shuttle or Bus</h2>
+<p>DLTB and Jam Transit operate regular departures from Buendia (Gil Puyat) terminal in Manila to Batangas City Pier. From Batangas City, a tricycle or van transfer to Anilao costs around ₱300–500 per person depending on how many people share the ride. Total travel time including the transfer is 3.5 – 4.5 hours.</p>
+<h2 id="s3">By RORO Ferry (the scenic option)</h2>
+<p>Some guests take the fast craft ferry from Manila to Batangas City Pier — roughly 2 hours on the water — and then a van transfer to Anilao. This option is slower overall but dramatically more comfortable, and the Batangas Bay approach to the coastline is a beautiful introduction to the area.</p>
+<div class="tip-box"><p><strong>Casa Escondida tip:</strong> If you are travelling as a group of 4 or more, a private van transfer from Manila to the resort door is often the same price as individual bus tickets and dramatically faster. Ask our reservations team for a referral.</p></div>
+<h2 id="s4">From Ninoy Aquino International Airport (NAIA)</h2>
+<p>Allow at least 30 minutes from NAIA to the SLEX on-ramp, more on weekday afternoons. Grab or airport taxis to Anilao directly range from ₱1,800–2,500 depending on traffic. Many guests combine a first night in Manila with an early morning departure to be diving by midday.</p>`
+},
+{
+  id:4, cat:'resort-life', catLabel:'Resort Life',
+  title:'Island BBQ Nights at Casa Escondida',
+  excerpt:'Every Saturday evening our kitchen fires up the grill on the beachfront deck.',
+  date:'2026-04-05', dateLabel:'April 5, 2026', read:'4 min read',
+  bg:'linear-gradient(135deg,#2a1405 0%,#6a3410 60%,#9a5020 100%)', icon:'🔥',
+  img:'images/Nature%20Folder/Pink%20Anemonefish%20Amphiprion.jpg',
+  content:`<p class="ap-lead">Casa Escondida's Saturday Island BBQ is one of the most-loved rituals at the resort. Every weekend, from 6pm until the last guest wanders back to their room, our kitchen team sets up along the beachfront and grills the day's freshest catch over charcoal while guests gather with cold drinks and swapped dive stories.</p>
+<h2 id="s1">What's on the Grill</h2>
+<p>The menu changes with the week's catch from our local fishing cooperative, but a typical spread includes whole grilled tanigue (wahoo), skewered tiger prawns, inihaw na pusit (charcoal squid) marinated in garlic-calamansi, grilled pork belly, and a rotating vegetable selection. Everything is served family-style with sinangag (garlic rice), fresh lumpiang sariwa, and seasonal sauces from our kitchen.</p>
+<h2 id="s2">The Setting</h2>
+<p>Long communal tables are laid end-to-end along the water's edge, where Batangas Bay catches the last orange light of the evening. The bar opens at 5:30pm for sunset drinks — San Miguel Pale Pilsen, fresh buko juice, and a rotating cocktail — before the grill fires up at 6pm. On clear evenings you can see the lights of Mabini town reflecting across the bay.</p>
+<h2 id="s3">For Guests and Day Trippers</h2>
+<p>The Saturday BBQ is complimentary for all overnight guests and included in most dive packages. Day visitors and guests of nearby resorts are welcome to join on a walk-in basis for ₱650 per person. We ask for a heads-up by 3pm so our kitchen can plan the right volume.</p>
+<div class="tip-box"><p><strong>What to bring:</strong> Nothing. Towels, bug spray, and a light long-sleeved layer for after sunset are the only useful additions — the beachfront can feel cool once the land breeze picks up at 8pm.</p></div>`
+},
+{
+  id:5, cat:'dive-tips', catLabel:'Dive Tips',
+  title:'What to Pack for a Batangas Diving Trip',
+  excerpt:'Our PADI dive team shares the essential packing list for diving in Anilao.',
+  date:'2026-03-28', dateLabel:'March 28, 2026', read:'6 min read',
+  bg:'linear-gradient(135deg,#0a1a30 0%,#1c3e68 60%,#2a5a8a 100%)', icon:'🎒',
+  img:'images/Nature%20Folder/Peacock%20mantis%20shrimp%20(Odontodactylus%20scyllarus).jpg',
+  content:`<p class="ap-lead">Anilao's diving is mostly gentle — warm water, calm conditions, and short boat rides — but the specific character of Batangas dive sites does reward a few targeted packing decisions. Here is what our dive team recommends bringing, and a few things you can safely leave at home.</p>
+<h2 id="s1">Wetsuit Thickness</h2>
+<p>Water temperature at Anilao ranges from 26°C in January–February to 30°C in May–June at the surface. At depth (20 m+), thermoclines can drop temperature by 3–5°C. Most divers are comfortable in a 3mm shorty or full suit; those who run cold should consider a 5mm full suit for multiple dives per day. Casa Escondida stocks rental 3mm full suits and shorties if you prefer to travel light.</p>
+<h2 id="s2">Camera Gear</h2>
+<ul><li>A compact housing with macro wet lens (e.g. +15 dioptre) covers 90% of Anilao subjects.</li><li>A small video light (1,000–3,000 lumens) adds colour even on overcast days.</li><li>Extra batteries — you will easily shoot 300+ frames per dive at Anilao.</li><li>Silica gel packs and a waterproof dry bag for shore storage.</li></ul>
+<div class="tip-box"><p><strong>Freshwater rinse:</strong> Our dedicated camera rinse station has individual trays, a drain rack, and 240V charging outlets. No need to scramble for space at the boat ladder.</p></div>
+<h2 id="s3">Essentials</h2>
+<ul><li>Mask, fins, and dive computer — we recommend bringing your own for fit and familiarity.</li><li>Reef-safe sunscreen rated SPF 50+ (chemical sunscreens are prohibited at most Anilao MPAs).</li><li>Personal medications including motion-sickness tablets if you are prone to seasickness on the banca boats.</li><li>A surface marker buoy (SMB) — mandatory at all Anilao open-water sites.</li></ul>
+<h2 id="s4">What to Leave Behind</h2>
+<ul><li>Heavy lenses — there are no large pelagics at close Anilao sites that would require a wide-angle dome port.</li><li>Dive gloves — prohibited at most reef sites to prevent coral contact.</li><li>Formal clothing — resort life here is entirely casual.</li></ul>`
+},
+{
+  id:6, cat:'conservation', catLabel:'Conservation',
+  title:'Protecting the Coral Triangle: Our Marine Pledges',
+  excerpt:'Anilao sits inside the Coral Triangle, the most biodiverse marine region on Earth.',
+  date:'2026-03-20', dateLabel:'March 20, 2026', read:'5 min read',
+  bg:'linear-gradient(135deg,#052828 0%,#0e5a5a 60%,#1a7878 100%)', icon:'🌊',
+  img:'images/Nature%20Folder/Mushroom%20coral.jpg',
+  content:`<p class="ap-lead">The Coral Triangle spans six countries and covers 5.7 million square kilometres of ocean. It contains 76% of all known coral species, 37% of the world's reef fish species, and supports the food security of 120 million people. Anilao sits at its heart — which means every dive here carries a real responsibility.</p>
+<h2 id="s1">Why Anilao Matters</h2>
+<p>Batangas Bay and the surrounding Anilao Marine Sanctuary represent some of the healthiest reef ecosystems remaining in the Coral Triangle's Philippine sector. The area was declared a Marine Protected Area (MPA) in the 1970s — one of the earliest designations in the Philippines — and the combination of community enforcement and dive tourism revenue has allowed reefs here to recover and stabilise while neighbouring areas degraded.</p>
+<h2 id="s2">Our Reef-Safe Policy</h2>
+<ul><li>Only mineral-based (reef-safe) sunscreens are permitted for all guests diving or snorkelling from our boats.</li><li>No gloves are permitted at any reef sites — contact with coral causes tissue death even through neoprene.</li><li>No touching, riding, chasing, or collecting of any marine life, including invertebrates.</li><li>All anchoring at reef sites uses permanent mooring buoys maintained by the Mabini MPA office.</li></ul>
+<h2 id="s3">Our Coral Monitoring Programme</h2>
+<p>Casa Escondida's dive guides conduct quarterly belt transect surveys at five fixed monitoring points within the Anilao Marine Sanctuary. Data is submitted to the municipal government and cross-referenced with results from the Anilao Marine Conservation Project. The surveys track live coral cover percentage, indicator fish abundance, and giant clam populations.</p>
+<div class="tip-box"><p><strong>How to help:</strong> Join one of our monthly reef clean-up dives, hosted on the last Sunday of each month. No prior training is required — just a passion for keeping these reefs clean. Ask at the dive desk to register.</p></div>`
+},
+{
+  id:7, cat:'dive-guide', catLabel:'Dive Guide',
+  title:'Night Diving in Anilao: What to Expect After Dark',
+  excerpt:'After sunset, Anilao\'s reef transforms. Spanish dancers unfurl, bobbit worms emerge, cuttlefish hunt the shallows.',
+  date:'2026-03-15', dateLabel:'March 15, 2026', read:'6 min read',
+  bg:'linear-gradient(135deg,#04080f 0%,#0a1e3a 60%,#102848 100%)', icon:'🌙',
+  img:'images/Nature%20Folder/Blue%20Ribbon%20Eel%20(Rhinomuraena%20quaesita).jpg',
+  content:`<p class="ap-lead">Diving after dark at Anilao is not simply the daytime reef with the lights turned off — it is an entirely different ecosystem. Nocturnal species emerge from hiding, predatory behaviour intensifies, and bioluminescence turns every fin kick into a shower of cold blue light.</p>
+<h2 id="s1">What Changes After Dark</h2>
+<p>The parrotfish seal themselves in mucus sleeping bags wedged into crevices. Triggerfish and pufferfish drift motionless in mid-water. In their place: Spanish dancer nudibranchs (Hexabranchus sanguineus) up to 40cm across, swimming in undulating spirals; mantis shrimp emerging to hunt from burrows; and coconut octopus navigating the sand with an armful of collected shells.</p>
+<h2 id="s2">Species Highlights</h2>
+<ul><li><strong>Bobbit worm (Eunice aphroditois)</strong> — Ambushes fish with spring-loaded jaws from a burrow in the sand. Commonly seen at Secret Bay and Ligaya's Garden.</li><li><strong>Flamboyant cuttlefish</strong> — Pulses waves of yellow, purple, and white across its skin. The only known toxic cuttlefish species.</li><li><strong>Robust ghost pipefish</strong> — Hangs vertically in open water, invisible unless your torch catches its iridescent flank.</li><li><strong>Volute snails</strong> — Massive gastropods emerge to hunt at night, rarely seen during day dives.</li></ul>
+<h2 id="s3">Safety and Logistics</h2>
+<p>All night dives at Casa Escondida are guided (maximum 4 divers per guide) and conducted on familiar daytime sites to reduce disorientation risk. Guests receive a thorough briefing on torch signals and buddy separation protocols. Primary and backup torches are mandatory; our dive shop rents quality lights if you have not brought your own.</p>
+<div class="tip-box"><p><strong>Best night site:</strong> Ligaya's Garden. Shallow (max 14 m), calm conditions year-round, and an extraordinary density of nocturnal invertebrates in the rubble zone between 6–10 m.</p></div>`
+},
+{
+  id:8, cat:'marine-life', catLabel:'Marine Life',
+  title:'Frogfish of Anilao: The World\'s Best Ambush Predators',
+  excerpt:'Hairy frogfish, painted frogfish, giant frogfish — Anilao hosts a remarkable concentration of anglerfishes.',
+  date:'2026-03-10', dateLabel:'March 10, 2026', read:'5 min read',
+  bg:'linear-gradient(135deg,#062918 0%,#0e4a28 60%,#1a6030 100%)', icon:'🐡',
+  img:'images/Nature%20Folder/Scorpionfish%20(Taenianotus%20triacanthus).jpg',
+  content:`<p class="ap-lead">Frogfish are among the ocean's most accomplished ambush hunters — they change colour to match their sponge host in under two weeks, lure prey with a modified dorsal spine, and strike faster than almost any other vertebrate. Anilao is one of the best places on Earth to find multiple species on a single dive.</p>
+<h2 id="s1">Species Found in Anilao</h2>
+<ul>
+<li><strong>Hairy frogfish (Antennarius striatus)</strong> — The most requested find. Covered in skin appendages that perfectly mimic algae-covered rubble. Found at 6–25 m, most commonly at Secret Bay.</li>
+<li><strong>Painted frogfish (Antennarius pictus)</strong> — Variable colouration from white to yellow to black. Sits on sponges of matching colour.</li>
+<li><strong>Giant frogfish (Antennarius commerson)</strong> — Largest species, up to 38 cm. Often mistaken for a sponge at first glance.</li>
+<li><strong>Warty frogfish (Antennarius maculatus)</strong> — Covered in white-tipped warts; one of the most visually striking in the genus.</li>
+</ul>
+<h2 id="s2">How to Spot Them</h2>
+<p>Scan sponges methodically — frogfish almost always sit directly on a host sponge of their matching colour. Look for the giveaway features: pectoral "arms" planted on the substrate, a small mouth with slightly upturned corners, and the esca (lure) occasionally twitched above the head. Once you have found one frogfish on a site, the same individual typically stays within 2 metres of the same spot for weeks.</p>
+<div class="tip-box"><p><strong>Tip:</strong> Ask your guide to mark confirmed frogfish sightings on the site map at our dive desk. We maintain an active log of individual animals and their locations, updated after every dive.</p></div>
+<h2 id="s3">Photography</h2>
+<p>Frogfish are slow and tolerant of close approach — ideal macro subjects. Shoot from directly in front at eye level, use a single strobe placed slightly above to avoid harsh shadows in the skin texture, and leave the scene unhurried. Never use a pointer stick to encourage movement; disturbed frogfish simply close their eyes and refuse to cooperate.</p>`
+},
+{
+  id:9, cat:'photography', catLabel:'Photography',
+  title:'Underwater Photography Tips for Anilao First-Timers',
+  excerpt:'Anilao\'s small, slow subjects reward patience and good technique.',
+  date:'2026-03-05', dateLabel:'March 5, 2026', read:'7 min read',
+  bg:'linear-gradient(135deg,#080820 0%,#1c1c4a 60%,#2a2a64 100%)', icon:'📸',
+  img:'images/Nature%20Folder/Ornate%20Ghost%20Pipefish%20(Solenostomus%20paradoxus).jpg',
+  content:`<p class="ap-lead">Anilao is one of those dive destinations where a point-and-shoot photographer with decent buoyancy will come home with better images than a technically skilled shooter who cannot hold still. The subjects are close, small, and patient — everything else follows from good dive fundamentals.</p>
+<h2 id="s1">Get Your Buoyancy Right First</h2>
+<p>No amount of camera upgrade compensates for drifting into your subject, stirring silt, or hovering at a 30° downward angle. Before bringing a camera, complete at least 15 logged dives and practise breathing control in a pool. At Anilao specifically, muck sites like Secret Bay require exceptional trim to avoid blackout conditions from fin-kicked sediment.</p>
+<h2 id="s2">Gear for Beginners</h2>
+<ul><li>A compact mirrorless or point-and-shoot in a manufacturer housing (Sony RX100, Olympus TG-7) is sufficient for 95% of Anilao subjects.</li><li>Add a macro wet lens (+10 to +15 dioptre) for serious nudibranch and pygmy seahorse shooting.</li><li>One small strobe or video light dramatically improves colour at depths below 5 metres.</li></ul>
+<h2 id="s3">Camera Settings Starting Points</h2>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Aperture</div><div class="ic-val">f/11 – f/16</div></div><div class="info-cell"><div class="ic-label">Shutter speed</div><div class="ic-val">1/200 – 1/250</div></div><div class="info-cell"><div class="ic-label">ISO</div><div class="ic-val">100 – 200</div></div></div>
+<h2 id="s4">Common Mistakes</h2>
+<ul><li>Shooting down at subjects instead of getting to eye level — animal portraiture always improves from the subject's perspective.</li><li>Too much strobe power causing blown highlights on reflective skin or mucus.</li><li>Moving too quickly between subjects — find one animal, spend 10 minutes with it, and shoot it properly.</li></ul>
+<div class="tip-box"><p><strong>Casa Escondida offers:</strong> A half-day underwater photography workshop with our resident photographer before your first dive. Ask the dive desk to book a session — limited to 3 guests.</p></div>`
+},
+{
+  id:10, cat:'travel-tips', catLabel:'Travel Tips',
+  title:'Best Time to Dive Anilao: Month-by-Month Seasonal Guide',
+  excerpt:'Anilao can be dived year-round, but visibility, temperature, and marine life shift across the seasons.',
+  date:'2026-02-28', dateLabel:'February 28, 2026', read:'6 min read',
+  bg:'linear-gradient(135deg,#1a0835 0%,#2e1458 60%,#44207a 100%)', icon:'📅',
+  img:'images/Nature%20Folder/sea%20turtle.jpg',
+  content:`<p class="ap-lead">Anilao is a year-round diving destination — the water is warm every month and a banca boat always available — but each season has a distinct character. Choosing the right window makes the difference between 20-metre visibility and 5-metre silt, or between empty reef and resident whale shark sightings.</p>
+<h2 id="s1">Peak Season: March – June</h2>
+<p>The dry northeast monsoon (Amihan) produces flat calm seas, minimal river runoff, and the year's best visibility — consistently 15–22 metres at reef sites. Water temperature rises from 27°C in March to 30°C in June. Marine life activity peaks in April and May: spawning aggregations of grouper, the highest nudibranch diversity, and regular pelagic sightings at Kirby's Rock.</p>
+<h2 id="s2">Shoulder Season: November – February</h2>
+<p>Slightly cooler water (25–27°C), occasional northerly swells, and more variable visibility define the shoulder months. January and February are particularly good for muck diving — lower visibility sites like Secret Bay are largely unaffected, and the cooler temperatures bring interesting temperate-water visitors. Some exposed sites like Kirby's Rock may be diveable only on calmer days.</p>
+<h2 id="s3">Wet Season: July – October</h2>
+<p>Typhoon season affects Batangas intermittently from July through October. Visibility decreases due to freshwater runoff and increased particulate suspension. However, many days during this period are perfectly diveable, and accommodation and dive packages drop significantly in price. Protected sites like Ligaya's Garden and Twin Rocks remain accessible even during southwest monsoon swell.</p>
+<div class="tip-box"><p><strong>Best overall window:</strong> Late March to mid-May. Flat seas, peak visibility, warm water, active marine life, and no school holiday crowding.</p></div>`
+},
+{
+  id:11, cat:'news', catLabel:'News & Events',
+  title:'Anilao Underwater Festival 2026: Schedule and How to Join',
+  excerpt:'The annual Anilao Underwater Festival draws underwater photographers from across Southeast Asia.',
+  date:'2026-02-20', dateLabel:'February 20, 2026', read:'4 min read',
+  bg:'linear-gradient(135deg,#280a0a 0%,#5a1c1c 60%,#7a2a2a 100%)', icon:'🏆',
+  img:'images/Nature%20Folder/Flamboyant%20Cuttlefish%20(Metasepia%20pfefferi).jpg',
+  content:`<p class="ap-lead">The Anilao Underwater Photo Festival is one of Southeast Asia's most prestigious underwater photography competitions, drawing professional and amateur photographers to Batangas each year to document the marine biodiversity of the Coral Triangle.</p>
+<h2 id="s1">About the Festival</h2>
+<p>The festival was established in 2010 by the local government of Mabini, Batangas, in partnership with dive resorts and the international diving community. Its dual purpose is to promote Anilao as a global underwater photography destination and to generate awareness of the conservation value of the marine sanctuary through the images produced.</p>
+<h2 id="s2">2026 Competition Categories</h2>
+<ul><li><strong>Macro (compact)</strong> — Subject must be 10 cm or smaller; compact camera systems only.</li><li><strong>Macro (open)</strong> — Open to all camera systems with macro or telephoto lenses.</li><li><strong>Wide-angle reefscape</strong> — Must include live coral and a diver or marine life in the frame.</li><li><strong>Conservation story (photo essay)</strong> — 3–5 image series documenting a marine environment challenge or success story.</li><li><strong>Junior category</strong> — Open to photographers under 18 years old.</li></ul>
+<h2 id="s3">How to Register</h2>
+<p>Registration for the 2026 festival opens in January via the official Mabini Tourism website. Entry fees support the municipality's MPA monitoring programme. All participants must be certified divers and provide proof of dive certification at registration. Casa Escondida offers a festival accommodation and dive package — contact our reservations team for the current rate.</p>
+<div class="tip-box"><p><strong>Past winner tip:</strong> The macro category is consistently won with images of subjects under 5mm — pygmy seahorses, nudibranch egg masses, and juvenile fish. Spend your competition dives at Secret Bay and Ligaya's Garden.</p></div>`
+},
+{
+  id:12, cat:'dive-tips', catLabel:'Dive Tips',
+  title:'Your PADI Open Water Course at Casa Escondida: What to Expect',
+  excerpt:'Our PADI instructors walk you through the full 3-day certification in Anilao Bay.',
+  date:'2026-02-15', dateLabel:'February 15, 2026', read:'8 min read',
+  bg:'linear-gradient(135deg,#0a1a30 0%,#1a3858 60%,#285278 100%)', icon:'🎓',
+  img:'images/Nature%20Folder/Sea%20Anemone%20Coral%20Reef.jpg',
+  content:`<p class="ap-lead">Learning to dive in Anilao means completing your Open Water certification in one of the most biodiverse marine environments on Earth. By the time you complete your checkout dives, you will have already seen more marine life than most certified divers encounter in a year.</p>
+<h2 id="s1">Prerequisites</h2>
+<ul><li>Minimum age: 10 years (Junior Open Water); 15 years for full OW certification.</li><li>Medical: No history of heart conditions, asthma, or epilepsy. A self-declaration medical form is required; a doctor's sign-off if you have any flagged conditions.</li><li>Swimming ability: Comfortable in open water; 200m swim and 10-minute float assessed before confined water.</li></ul>
+<h2 id="s2">Day 1: Knowledge and Confined Water</h2>
+<p>The course begins with the PADI eLearning modules (completed before arrival or on Day 1 morning). After the knowledge review session with your instructor, the afternoon moves to our shallow confined-water training area for skills practice: regulator clearing, mask clearing, buoyancy exercises, and emergency procedures. Most students find the water skills far more comfortable than they expected.</p>
+<h2 id="s3">Day 2: First Open Water Dives</h2>
+<p>Two open-water dives at Ligaya's Garden to depths of 12 metres. You will repeat and demonstrate the confined-water skills in an open-ocean context, then complete a free-swim period to experience the reef. Most students agree that Day 2 is where everything clicks — and where the marine life starts to feel real.</p>
+<h2 id="s4">Day 3: Certification Dives</h2>
+<p>Two final dives to 18 metres to earn the full certification. Skills include underwater navigation, deep dive planning, and emergency ascent procedures. Upon successful completion, your PADI certification card is registered digitally and valid for life worldwide. Your first post-certification dive — a guided exploration of Twin Rocks — is included in the course package.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Duration</div><div class="ic-val">3 days</div></div><div class="info-cell"><div class="ic-label">Max depth</div><div class="ic-val">18 metres</div></div><div class="info-cell"><div class="ic-label">Dives included</div><div class="ic-val">5 open water</div></div></div>`
+},
+{
+  id:13, cat:'marine-life', catLabel:'Marine Life',
+  title:'Pygmy Seahorses of Anilao: A Guide to Finding the Tiny Giants',
+  excerpt:'Bargibant\'s and Denise\'s pygmy seahorses reach just 2 cm fully grown. Finding them requires sharp eyes and a good guide.',
+  date:'2026-02-10', dateLabel:'February 10, 2026', read:'5 min read',
+  bg:'linear-gradient(135deg,#062918 0%,#0e6040 60%,#1a7a50 100%)', icon:'🐴',
+  img:"images/Nature%20Folder/Bargibant's%20pygmy%20seahorse%20(Hippocampus%20bargibanti).jpg",
+  content:`<p class="ap-lead">Pygmy seahorses are among the most sought-after macro subjects in all of diving — and with good reason. At under 2 cm, perfectly camouflaged to their host sea fan, they require a combination of experienced eyes, slow movement, and genuine luck to find. Anilao is one of a handful of places where sightings are genuinely reliable.</p>
+<h2 id="s1">The Two Species at Anilao</h2>
+<p><strong>Bargibant's pygmy seahorse (Hippocampus bargibanti)</strong> lives exclusively on Muricella sea fans, mimicking the fan's polyp colour — pink-purple or yellow-orange depending on the host. It was the first pygmy species described to science (1970) and remains the most commonly photographed.</p>
+<p><strong>Denise's pygmy seahorse (Hippocampus denise)</strong> is even smaller — under 1.5 cm — and associates with a wider range of sea fan species, including Annella and Acanthogorgia. It was only described as a separate species in 2003 and is considerably harder to find.</p>
+<h2 id="s2">Where to Find Them</h2>
+<p>Look on sea fans in the 15–30 m depth range on moderate-current walls. The sea fans hosting pygmy seahorses tend to be large, healthy specimens orientated perpendicular to the current. Our guides maintain an updated sighting log — ask at the dive desk before any reef wall dive.</p>
+<h2 id="s3">How to Look Properly</h2>
+<ul><li>Approach slowly from below — coming from above casts a shadow and causes the animals to contract and become even harder to see.</li><li>Scan across the polyp surface systematically from one end to the other rather than searching randomly.</li><li>The give-away is a slightly different polyp shape and a tiny eye — once you have found one, the outline becomes obvious.</li></ul>
+<div class="tip-box"><p><strong>Responsible viewing:</strong> Do not touch the sea fan, use a pointer stick, or allow your fins to disturb the surrounding water. Pygmy seahorses are easily stressed, and a frightened animal can abandon its host fan permanently.</p></div>`
+},
+{
+  id:14, cat:'conservation', catLabel:'Conservation',
+  title:'Batangas Coral Restoration: 2025 Progress Report',
+  excerpt:'Our coral nursery has outplanted over 2,000 coral fragments at three Anilao reef sites since 2023.',
+  date:'2026-02-05', dateLabel:'February 5, 2026', read:'6 min read',
+  bg:'linear-gradient(135deg,#052828 0%,#0a4a4a 60%,#186868 100%)', icon:'🪸',
+  img:'images/Nature%20Folder/giant%20barrel%20sponge%20(Xestospongia%20testudinaria).jpg',
+  content:`<p class="ap-lead">Coral reefs cover less than 1% of the ocean floor but support approximately 25% of all marine species. In Batangas Bay, decades of overfishing, sedimentation from coastal development, and recurring thermal bleaching events have reduced live coral cover at some sites from above 60% to below 15%. Restoration is not optional — it is urgent.</p>
+<h2 id="s1">Our Nursery Method</h2>
+<p>Casa Escondida operates a mid-water coral nursery at 8 metres depth, 50 metres off our dive jetty. Coral fragments (3–5 cm) are collected from naturally broken pieces and attached to PVC tree frames where they grow to transplantable size over 6–12 months. The nursery currently holds approximately 400 fragments across six coral genera.</p>
+<h2 id="s2">2025 Outplanting Results</h2>
+<ul><li><strong>Total fragments outplanted:</strong> 680 across three sites (Ligaya's Garden, Twin Rocks, and a restoration site at Cathedral).</li><li><strong>Survival rate at 6 months:</strong> 74% — consistent with published benchmarks for branching Acropora in tropical environments.</li><li><strong>Top-performing species:</strong> Pocillopora damicornis (cauliflower coral) with 88% survival; Seriatopora hystrix with 81%.</li><li><strong>2025 bleaching impact:</strong> The El Niño-linked thermal event of August–September 2025 caused partial bleaching in 22% of outplanted fragments at Ligaya's Garden, with full mortality in approximately 8%.</li></ul>
+<h2 id="s3">How Guests Can Participate</h2>
+<p>Our coral adoption programme allows guests to sponsor a fragment for ₱500. Your fragment is tagged with a numbered tile, photographed at time of planting, and you receive a 6-month follow-up photo by email. Groups of 4+ can join a guided outplanting dive where you place fragments personally under instructor supervision — one of the most meaningful activities available at the resort.</p>
+<div class="tip-box"><p><strong>2026 goal:</strong> 1,000 fragments outplanted at five sites, including our first deep-water planting at 18 m using slow-growing massive coral genera less vulnerable to thermal stress.</p></div>`
+},
+{
+  id:15, cat:'resort-life', catLabel:'Resort Life',
+  title:'A Full Day at Casa Escondida: Morning to Night',
+  excerpt:'Breakfast at sunrise, two morning dives, beachside lunch, afternoon snorkel, sunset drinks, and dinner by the water.',
+  date:'2026-01-28', dateLabel:'January 28, 2026', read:'4 min read',
+  bg:'linear-gradient(135deg,#2a1405 0%,#5a2e10 60%,#824020 100%)', icon:'🌅',
+  img:'images/Nature%20Folder/Sarasvati%20anemone%20shrimp%20(Ancylomenes%20sarasvati).jpg',
+  content:`<p class="ap-lead">Days at Casa Escondida follow their own unhurried rhythm — structured enough to fit two or three dives in before lunch, free enough to spend an afternoon doing absolutely nothing but watching the tide. Here is what a typical day looks like.</p>
+<h2 id="s1">5:45 AM — Sunrise and Breakfast</h2>
+<p>The kitchen opens at 5:45am for early risers who prefer a light breakfast before a first dive. Full breakfast — Filipino or continental — is served from 6:30am. The beachfront tables face east and the sunrise over Batangas Bay is genuinely one of the most beautiful moments of any stay here.</p>
+<h2 id="s2">7:30 AM — First Dive</h2>
+<p>Our first boat departs at 7:30am for a morning reef dive. Typical sites for the first dive are Kirby's Rock (wall dive, 20–28 m) or Twin Rocks (reef, 8–22 m), depending on current conditions. Boat ride to most sites is 10–20 minutes. Surface interval snacks — crackers, fresh fruit, calamansi juice — are waiting on the banca when you surface.</p>
+<h2 id="s3">10:00 AM — Second Dive</h2>
+<p>The second dive is typically a macro dive at a shallower site: Secret Bay, Ligaya's Garden, or one of the nearshore boulders accessible by shore entry. Back at the resort by midday, rinse gear, cameras into the freshwater station, and lunch on the terrace.</p>
+<h2 id="s4">2:00 PM — Afternoon at Leisure</h2>
+<p>Some guests arrange a third dive. Others take a slow snorkel off the jetty — our resident hawksbill turtle feeds on the sea grass patch at about 80 metres from shore most afternoons. The hammock area on the garden side of the resort is ideal for nothing in particular.</p>
+<h2 id="s5">5:30 PM — Sunset and Evening</h2>
+<p>The bar opens at 5:30pm with a small snack menu and cold drinks. Dinner is served from 7pm on the beachfront terrace — a set menu built around the day's market catch with a la carte additions. On Saturdays, the BBQ replaces the standard dinner service.</p>`
+},
+{
+  id:16, cat:'dive-guide', catLabel:'Dive Guide',
+  title:'Kirby\'s Rock: Everything You Need to Know About Anilao\'s Icon',
+  excerpt:'A seamount rising from 30 metres to just 3 metres below the surface — Anilao\'s most celebrated dive site.',
+  date:'2026-01-20', dateLabel:'January 20, 2026', read:'7 min read',
+  bg:'linear-gradient(135deg,#061a2e 0%,#0c3660 60%,#165090 100%)', icon:'⚓',
+  img:'images/Nature%20Folder/bigeye%20trevally%20(Caranx%20sexfasciatus).jpg',
+  content:`<p class="ap-lead">If Anilao has a flagship dive site, it is Kirby's Rock. The seamount's combination of dramatic topography, rich invertebrate life, and regular pelagic visitors makes it the site that divers plan entire trips around — and the site most likely to produce a memory they will describe to friends for years.</p>
+<h2 id="s1">Site Overview</h2>
+<p>Kirby's Rock is a submerged seamount located approximately 15 minutes by banca from the Anilao shoreline. The main structure rises from a sand plateau at 30 metres to just 3 metres below the surface, with secondary walls and swim-throughs extending along a 60-metre length. The site is exposed to open-ocean currents, which is both its greatest asset (nutrients, visibility, marine life) and its primary hazard.</p>
+<h2 id="s2">Marine Life by Depth</h2>
+<ul><li><strong>3 – 10 m (summit):</strong> Dense school of glassfish, juvenile fusiliers, long-nose hawkfish on sea fan tips, resident titan triggerfish defending a nest in March–May.</li><li><strong>10 – 18 m (upper wall):</strong> Black coral trees hosting colonies of Dendronephthya soft coral; hairy squat lobsters; regular nudibranch activity on the southeast face.</li><li><strong>18 – 30 m (base):</strong> Giant trevally and schooling bigeye trevally patrol this depth band; occasional thresher shark sightings reported October–March; sea fans up to 2 metres diameter.</li></ul>
+<h2 id="s3">Currents and Planning</h2>
+<p>The current at Kirby's Rock runs strongly on a flooding (incoming) tide and can exceed 2 knots at its peak. The best dive window is the last two hours of the ebb tide, when flow slows to 0.5–1 knot and visibility tends to be at its clearest. Our dive desk checks tide tables daily and adjusts boat departure times accordingly — trust the guide's read on conditions.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Level</div><div class="ic-val">Advanced</div></div><div class="info-cell"><div class="ic-label">Best season</div><div class="ic-val">March – June</div></div><div class="info-cell"><div class="ic-label">Boat ride</div><div class="ic-val">~15 min</div></div></div>
+<div class="tip-box"><p><strong>Safety note:</strong> An SMB is mandatory at Kirby's Rock. If separated from the group on the drift, surface deploy your SMB and await pick-up — do not attempt to swim against the current.</p></div>`
+},
+{
+  id:17, cat:'photography', catLabel:'Photography',
+  title:'Best Camera Settings for Macro Photography in Philippine Waters',
+  excerpt:'Anilao\'s subjects demand specific macro technique. Our guide covers aperture, shutter speed, and strobe placement.',
+  date:'2026-01-15', dateLabel:'January 15, 2026', read:'8 min read',
+  bg:'linear-gradient(135deg,#080820 0%,#181848 60%,#262660 100%)', icon:'🔭',
+  img:'images/Nature%20Folder/Mimic%20octopus%20(Thaumoctopus%20mimicus).jpg',
+  content:`<p class="ap-lead">Macro photography in Batangas waters requires a specific set of technical decisions that differ from tropical reef wide-angle shooting or temperate-water work. The combination of warm, particulate-heavy water and extremely small subjects creates a unique set of challenges — and once you understand how to solve them, remarkable images follow.</p>
+<h2 id="s1">Aperture and Depth of Field</h2>
+<p>At true macro range (1:1 reproduction ratio), depth of field at f/8 is less than 2mm. For a 2cm subject like a pygmy seahorse, you need f/16 to f/22 to ensure the entire animal is in focus. The trade-off is increased diffraction at very small apertures — f/22 on a crop sensor may show diffraction softness, so test your specific system and find the practical limit.</p>
+<h2 id="s2">Shutter Speed</h2>
+<p>Sync speed for most housed systems is 1/160 – 1/250 second. Use 1/200s as your default. Higher shutter speeds allow you to shoot in stronger ambient light without overexposure, and they freeze subject movement (flabellina nudibranchs move faster than they look). In low-light muck conditions at Secret Bay, 1/160s is often the maximum usable.</p>
+<h2 id="s3">Strobe Placement for Particulate Water</h2>
+<p>Backscatter — the bright white dots caused by strobe light reflecting off suspended particles — is Anilao's greatest image quality challenge. The solution is arm geometry: position your strobe(s) as far from the lens axis as possible, angled so light enters the frame from the side rather than straight on. A 45-degree side position for a single strobe, or two strobes at 9 o'clock and 3 o'clock for dual setups, dramatically reduces backscatter.</p>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Aperture</div><div class="ic-val">f/16 – f/22</div></div><div class="info-cell"><div class="ic-label">Shutter</div><div class="ic-val">1/160 – 1/200</div></div><div class="info-cell"><div class="ic-label">ISO</div><div class="ic-val">100 – 400</div></div></div>
+<h2 id="s4">Focus Technique</h2>
+<p>At extreme macro, autofocus often struggles. Switch to single-point AF and place the focus point directly on the subject's eye — if the eye is sharp, the image works. For very small subjects (under 5mm), many experienced macro photographers switch to manual focus and rock gently back and forth until sharp.</p>
+<div class="tip-box"><p><strong>Post-processing:</strong> Shoot RAW. Batangas water has a strong green cast at depth — a custom white balance set on a grey slate before each dive dramatically reduces editing time.</p></div>`
+},
+{
+  id:18, cat:'travel-tips', catLabel:'Travel Tips',
+  title:'Anilao on a Budget: How Much Does a Dive Trip Actually Cost?',
+  excerpt:'Accommodation, dive packages, meals, and transport — we break down the real cost of a Batangas dive holiday.',
+  date:'2026-01-10', dateLabel:'January 10, 2026', read:'5 min read',
+  bg:'linear-gradient(135deg,#1a0835 0%,#322060 60%,#4a2e80 100%)', icon:'💰',
+  img:'images/Nature%20Folder/Harlequin%20shrimp%20(Hymenocera%20picta).jpg',
+  content:`<p class="ap-lead">Anilao has a reputation as an expensive dive destination — partly justified, partly not. The cost of a dive trip here spans a very wide range depending on accommodation choice, dive volume, and how much you eat and drink at the resort. Here is an honest breakdown for 2026.</p>
+<h2 id="s1">Budget Traveller (₱2,500–3,500/night)</h2>
+<p>Several guesthouses in Anilao offer basic fan rooms with shared bathrooms at ₱800–1,200/night. Dive packages at budget dive operations run ₱1,200–1,800 per day for two guided dives with tank and weight. Total all-in daily cost for accommodation, two dives, and simple meals: approximately ₱2,500–3,500.</p>
+<h2 id="s2">Mid-Range (₱4,500–7,000/night)</h2>
+<p>Air-conditioned ensuite rooms at established Anilao dive resorts typically run ₱2,000–3,500/night. Paired with a full dive package (3 dives/day, equipment, guide) at ₱2,500–3,200/day, plus meals at ₱800–1,500/day, the daily all-in figure sits at ₱5,300–8,200.</p>
+<h2 id="s3">Casa Escondida (Premium Inclusive)</h2>
+<p>Our packages start at ₱7,500 per person per night for a standard double room including breakfast and three guided dives per day with all equipment. For guests bringing their own gear, the package rate is lower. The value calculation includes unlimited use of kayaks, snorkel equipment, and our freshwater camera station — items that add up quickly as individual costs at other resorts.</p>
+<h2 id="s4">Total Trip Estimate: 3 Nights</h2>
+<div class="info-grid"><div class="info-cell"><div class="ic-label">Budget</div><div class="ic-val">₱12,000–18,000</div></div><div class="info-cell"><div class="ic-label">Mid-range</div><div class="ic-val">₱20,000–30,000</div></div><div class="info-cell"><div class="ic-label">Premium</div><div class="ic-val">₱28,000–38,000</div></div></div>
+<div class="tip-box"><p><strong>Cost-saving tip:</strong> Travel mid-week (Monday to Thursday check-in) and avoid Philippine public holidays. Accommodation rates at most Anilao resorts drop 15–25% outside weekends, and dive boats are significantly less crowded.</p></div>`
+},
+{
+  id:19, cat:'marine-life', catLabel:'Marine Life',
+  title:'Whale Sharks Near Batangas: When and Where to Look',
+  excerpt:'Whale sharks are periodically sighted at dive sites in the Batangas–Quezon corridor.',
+  date:'2026-01-05', dateLabel:'January 5, 2026', read:'6 min read',
+  bg:'linear-gradient(135deg,#062918 0%,#0c4a38 60%,#186050 100%)', icon:'🦈',
+  img:'images/Nature%20Folder/sea%20turtle%20(2).jpg',
+  content:`<p class="ap-lead">Whale sharks (Rhincodon typus) are the world's largest fish — reaching up to 12 metres and feeding exclusively on plankton. While Donsol and Oslob in the Philippines are the most publicised whale shark sites, sightings in the Batangas–Quezon corridor are more common than most divers realise, particularly at deeper sites during March–May upwelling season.</p>
+<h2 id="s1">Where Sightings Cluster</h2>
+<p>The most consistent Batangas-area sightings occur at deep sites along the southern Verde Island Passage — particularly at the seamounts between Anilao and Maricaban Island. Kirby's Rock, Cathedral, and the deeper sections of Sombrero Island (a short banca ride east of Anilao) have produced the most documented sightings. Sightings are almost always at depth (20–35 m) rather than at the surface.</p>
+<h2 id="s2">Seasonal Patterns</h2>
+<p>The primary Batangas whale shark season correlates with the Amihan (northeast monsoon) upwelling from January through May. Cold, nutrient-rich water pulled to the surface creates plankton blooms that attract filter feeders. Sightings peak in March and April, with February and May as secondary windows.</p>
+<h2 id="s3">Responsible Viewing Guidelines</h2>
+<ul><li>Maintain a minimum distance of 3 metres from the body and 4 metres from the tail. No exceptions.</li><li>No touching, riding, or blocking the animal's path.</li><li>No flash photography — turn off your strobe and shoot in ambient light.</li><li>Limit interaction time to 10 minutes per group to minimise disturbance.</li><li>If you encounter a whale shark at Anilao, report it to the dive desk — we log all sightings and share data with the WWF Philippines whale shark monitoring programme.</li></ul>
+<div class="tip-box"><p><strong>Managed encounter sites:</strong> For a guaranteed whale shark experience under structured conditions, Donsol (Sorsogon) and Oslob (Cebu) offer regulated seasonal encounters. Both are a short flight from Manila or Batangas.</p></div>`
+},
+{
+  id:20, cat:'news', catLabel:'News & Events',
+  title:'Casa Escondida\'s New Dive Deck and Equipment Fleet — Open for 2026',
+  excerpt:'Our expanded dive deck accommodates 40 divers simultaneously with a dedicated camera rinse and charging station.',
+  date:'2025-12-28', dateLabel:'December 28, 2025', read:'3 min read',
+  bg:'linear-gradient(135deg,#280a0a 0%,#4a1818 60%,#6a2020 100%)', icon:'🏗️',
+  img:'images/Nature%20Folder/Wunderpus%20octopus%20(Wunderpus%20photogenicus).jpg',
+  content:`<p class="ap-lead">After eight months of planning and four months of construction, Casa Escondida's new dive operations facility opened in January 2026. The expanded infrastructure significantly increases our daily dive capacity while improving the experience for underwater photographers and multiple-dive-per-day divers.</p>
+<h2 id="s1">The New Dive Deck</h2>
+<p>The expanded deck stretches 18 metres along the beachfront and accommodates 40 divers simultaneously with individual gear stations. Each station includes a dedicated hook rail for BCDs and wetsuits, a numbered tank rack, and a personal equipment tray. Three steel entry ladders reduce congestion during post-dive entries, and the deck surface is non-slip rubberised coating throughout.</p>
+<h2 id="s2">Updated Equipment Fleet</h2>
+<ul><li><strong>15 new aluminium tanks</strong> (12-litre, standard A-clamp valve) bringing total capacity to 45 tanks.</li><li><strong>8 Scubapro Hydros Pro BCD sets</strong> in sizes XS–XL, including 4 women's-cut options.</li><li><strong>10 Scubapro MK25 EVO regulator sets</strong> with dive computers pre-paired.</li><li><strong>6 full 5mm wetsuits</strong> added to the rental inventory for the cooler-water months.</li></ul>
+<h2 id="s3">Camera Facilities</h2>
+<p>The new camera area is a separate enclosed room adjacent to the main deck, with 12 individual freshwater rinse trays, a filtered freshwater supply system, a drain rack, padded storage shelves, and eight 240V outlets for overnight battery charging. A secondary salt-water rinse trough is provided for immediate post-dive rinsing before full freshwater immersion.</p>
+<div class="tip-box"><p><strong>Nitrox now available:</strong> Our new on-site compressor delivers both 21% and 32% nitrox fills. Pre-book nitrox at check-in — current rate is ₱250 per fill for resort guests with their own analysed gear.</p></div>`
+}
+];
+
+/* ────────────────────────────────────────
+   CATEGORY COLOURS
+   ──────────────────────────────────────── */
+const CAT_COLOURS = {
+  'dive-guide':'#4dc2e8','marine-life':'#4de8a0','travel-tips':'#c8a4f0',
+  'resort-life':'#f0b84d','conservation':'#4de8c8','dive-tips':'#7ab8e8',
+  'news':'#e88a4d','photography':'#b4a4e8'
+};
+
+/* ────────────────────────────────────────
+   ROUTING — read ?id= from URL
+   ──────────────────────────────────────── */
+function getParam(name){
+  return new URLSearchParams(window.location.search).get(name);
+}
+
+const postId = parseInt(getParam('id'), 10);
+const post = ALL_POSTS.find(p => p.id === postId);
+
+/* ────────────────────────────────────────
+   RENDER ARTICLE
+   ──────────────────────────────────────── */
+function renderArticle(){
+  if (!post) {
+    document.getElementById('articleHero').innerHTML = '';
+    document.getElementById('articleBody').innerHTML = `<div class="ap-notfound">
+      <div class="ap-notfound-icon">🔍</div>
+      <h2>Article not found</h2>
+      <p>This article doesn't exist or has been moved.</p>
+      <a href="blog.html">← Back to Blog</a>
+    </div>`;
+    document.getElementById('articleSidebar').innerHTML = '';
+    return;
+  }
+
+  /* Page meta + SEO */
+  const BASE = 'https://technextmarketing.github.io/casa-escondida-anilao/';
+  const postUrl = BASE + 'blog-post.html?id=' + post.id;
+  const postImg = BASE + post.img;
+  document.getElementById('pageTitle').textContent = post.title + ' | Casa Escondida Anilao';
+  document.getElementById('pageMeta').content = post.excerpt;
+  document.getElementById('pageCanonical').href = postUrl;
+  document.getElementById('pageKeywords').content = post.catLabel + ', Anilao diving, Batangas diving, Casa Escondida Anilao, Philippines dive resort';
+  document.getElementById('ogTitle').content = post.title + ' | Casa Escondida Anilao';
+  document.getElementById('ogDesc').content = post.excerpt;
+  document.getElementById('ogImage').content = postImg;
+  document.getElementById('ogUrl').content = postUrl;
+  document.getElementById('twTitle').content = post.title;
+  document.getElementById('twImage').content = postImg;
+  document.getElementById('jsonLd').textContent = JSON.stringify({
+    '@context':'https://schema.org','@type':'BlogPosting',
+    headline: post.title, description: post.excerpt,
+    image: postImg, datePublished: post.date, dateModified: post.date,
+    author: {'@type':'Organization','name':'Casa Escondida Anilao Resort & Dive Center'},
+    publisher: {'@type':'Organization','name':'Casa Escondida Anilao',
+      logo: {'@type':'ImageObject','url': BASE + 'images/Logo/logo-color.png'}},
+    url: postUrl, mainEntityOfPage: {'@type':'WebPage','@id': postUrl},
+    keywords: post.catLabel + ', Anilao diving, Batangas, Philippines, macro diving, Casa Escondida'
+  });
+
+  const colour = CAT_COLOURS[post.cat] || '#4dc2e8';
+
+  /* Hero */
+  document.getElementById('articleHero').innerHTML = `
+    <div class="ap-hero" style="padding-top:4rem;">
+      <div class="ap-hero-bg"><img src="${post.img}" alt="${post.title}" loading="eager" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
+      <div class="ap-hero-overlay"></div>
+      <div class="ap-hero-content">
+        <div class="ap-breadcrumb">
+          <a href="blog.html">Blog</a>
+          <span>›</span>
+          <span style="color:rgba(255,255,255,.5)">${post.catLabel}</span>
+        </div>
+        <span class="ap-hero-cat" style="background:${colour}22;color:${colour};border:1px solid ${colour}44;">${post.catLabel}</span>
+        <h1 class="ap-hero-title">${post.title}</h1>
+        <div class="ap-hero-meta">
+          <span>${post.dateLabel}</span>
+          <span class="dot">·</span>
+          <span>${post.read}</span>
+          <span class="dot">·</span>
+          <span>Casa Escondida</span>
+        </div>
+      </div>
+    </div>`;
+
+  /* Parse H2s for TOC */
+  const tempDiv = document.createElement('div');
+  tempDiv.innerHTML = post.content;
+  const headings = Array.from(tempDiv.querySelectorAll('h2'));
+  const tocItems = headings.map(h => `<li><a href="#${h.id}">${h.textContent}</a></li>`).join('');
+
+  /* Article body */
+  document.getElementById('articleBody').innerHTML = `
+    <div>${post.content}</div>
+    <div style="margin-top:3rem;padding-top:1.5rem;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;">
+      <a href="blog.html" style="font-size:.78rem;color:var(--accent);text-decoration:none;letter-spacing:.08em;">← Back to All Posts</a>
+      <span style="font-size:.72rem;color:var(--text3);">Published ${post.dateLabel}</span>
+    </div>`;
+
+  /* Sidebar */
+  document.getElementById('articleSidebar').innerHTML = `
+    <div class="ap-toc">
+      <div class="ap-toc-title">In this article</div>
+      <ul class="ap-toc-list">${tocItems}</ul>
+    </div>
+    <div class="ap-cta">
+      <div class="ap-cta-title">Ready to dive Anilao?</div>
+      <p class="ap-cta-body">Casa Escondida offers PADI courses, guided reef dives, and comfortable ocean-side rooms in Mabini, Batangas.</p>
+      <a href="index.html#booking" class="ap-cta-btn">Book Your Stay</a>
+    </div>`;
+
+  /* TOC scroll spy */
+  const tocLinks = document.querySelectorAll('.ap-toc-list a');
+  if (tocLinks.length) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          tocLinks.forEach(l => l.classList.remove('active'));
+          const active = document.querySelector(`.ap-toc-list a[href="#${e.target.id}"]`);
+          if (active) active.classList.add('active');
+        }
+      });
+    }, { rootMargin: '-20% 0px -70% 0px' });
+    headings.forEach(h => {
+      const el = document.getElementById(h.id);
+      if (el) observer.observe(el);
+    });
+  }
+
+  /* Related posts */
+  const related = ALL_POSTS.filter(p => p.id !== post.id && p.cat === post.cat).slice(0, 3);
+  const fill = ALL_POSTS.filter(p => p.id !== post.id && !related.includes(p));
+  while (related.length < 3 && fill.length) related.push(fill.shift());
+
+  if (related.length) {
+    document.getElementById('relatedSection').innerHTML = `<div class="ap-related">
+      <h3 class="ap-related-title">More to Read</h3>
+      <p class="ap-related-sub">Continue exploring Anilao diving and resort life</p>
+      <div class="ap-related-grid">
+        ${related.map(r => `<a href="blog-post.html?id=${r.id}" class="ap-rel-card">
+          <div class="ap-rel-thumb">
+            <img src="${r.img}" alt="${r.title}" loading="lazy" style="display:block;width:100%;height:100%;object-fit:cover;">
+          </div>
+          <div class="ap-rel-body">
+            <div class="ap-rel-cat">${r.catLabel}</div>
+            <div class="ap-rel-title">${r.title}</div>
+            <div class="ap-rel-date">${r.dateLabel} · ${r.read}</div>
+          </div>
+        </a>`).join('')}
+      </div>
+    </div>`;
+  }
+}
+
+renderArticle();
+
+/* ── Theme Toggle ── */
+const html = document.documentElement;
+const syncThemeUI = () => {
+  const n = html.getAttribute('data-theme') === 'night';
+  document.getElementById('icon-moon').style.display = n ? 'block' : 'none';
+  document.getElementById('icon-sun').style.display  = n ? 'none'  : 'block';
+  document.getElementById('themeLabel').textContent = n ? 'Night' : 'Day';
+};
+syncThemeUI();
+document.getElementById('themeBtn').addEventListener('click', () => {
+  const next = html.getAttribute('data-theme') === 'night' ? 'day' : 'night';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('ce-theme', next);
+  syncThemeUI();
+});
+matchMedia('(prefers-color-scheme:dark)').addEventListener('change', e => {
+  if (!localStorage.getItem('ce-theme')) { html.setAttribute('data-theme', e.matches ? 'night' : 'day'); syncThemeUI(); }
+});
+
+/* ── Mobile Nav ── */
+const hamburger = document.getElementById('navHamburger');
+const mobileNav = document.getElementById('mobileNav');
+hamburger.addEventListener('click', () => {
+  const open = mobileNav.classList.toggle('open');
+  mobileNav.style.display = open ? 'flex' : 'none';
+  hamburger.setAttribute('aria-expanded', open);
+});
+
+/* ── Navbar scroll ── */
+const nav = document.getElementById('nav');
+window.addEventListener('scroll', () => {
+  const m = window.innerWidth <= 768;
+  nav.style.padding = window.scrollY > 40 ? (m ? '.5rem 1.5rem' : '.5rem 4rem') : (m ? '1rem 1.5rem' : '.75rem 4rem');
+}, { passive: true });
+</script>
+
+<script>
+(function(){
+  var bar = document.getElementById('pg-bar');
+  if (!bar) return;
+  document.querySelectorAll('a[href]').forEach(function(a){
+    var h = a.getAttribute('href') || '';
+    if (!h.startsWith('#') && !h.startsWith('http') && !h.startsWith('mailto:') && !a.target && !a.classList.contains('nav-logo')){
+      a.addEventListener('click', function(){ bar.style.width='70%'; bar.style.opacity='1'; });
+    }
+  });
+  window.addEventListener('pageshow', function(){ bar.classList.add('done'); });
+})();
+</script>
+
+</body>
+</html>

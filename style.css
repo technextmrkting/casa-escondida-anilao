@@ -13,7 +13,7 @@
       --accent:#4dc2e8;--accent-d:#2e9fc4;--accent-g:rgba(77,194,232,0.14);
       --gold:#e8c56a;--nav-bg:rgba(4,8,15,0.92);
       background-image:linear-gradient(rgba(4,8,15,0.82),rgba(4,8,15,0.82)),url('images/background/594413266_1405022098297117_5892045775093709556_n.jpg');
-      background-size:cover;background-attachment:fixed;background-position:center;
+      background-size:cover;background-attachment:scroll;background-position:center;
       background-color:#04080f;
     }
     [data-theme="night"] body{background:transparent;}
@@ -27,7 +27,13 @@
     }
     *,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
     html{scroll-behavior:smooth;}
-    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);transition:background .5s,color .5s;min-height:100vh;min-height:100dvh;height:100dvh;}
+    body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--text);transition:background .5s,color .5s;min-height:100vh;min-height:100dvh;}
+    .c{max-width:1200px;margin:0 auto;padding:0 4rem;}
+
+    /* ── Page progress bar ── */
+    #pg-bar{position:fixed;top:0;left:0;height:2px;width:0;background:var(--accent);z-index:10001;transition:width .25s ease,opacity .4s ease;pointer-events:none;opacity:1;}
+    #pg-bar.done{width:100%;opacity:0;}
+
 
     /* ── NAV ── */
     #nav{position:fixed;inset:0 0 auto 0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:.75rem 4rem;background:var(--nav-bg);backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);border-bottom:1px solid var(--border);transition:all .4s;}
@@ -68,9 +74,11 @@
     .mobile-nav-divider{width:40px;height:1px;background:var(--border);margin:.3rem 0;}
 
     @media(max-width:768px){
-      #nav{padding:1rem 1.5rem;}
+      #nav{padding:1rem 1.5rem;transition:none;}
       .nav-links,.nav-right .btn-book{display:none;}
       .nav-hamburger{display:flex;}
+      .c{padding:0 1.5rem;}
+      .r-footer{padding:1.5rem;}
     }
 
 /* ── FOOTER ── */
@@ -105,30 +113,22 @@
     .foot-legal a{font-size:.72rem;color:var(--text3);text-decoration:none;transition:color .3s;}
     .foot-legal a:hover{color:var(--text);}
     @media(max-width:900px){
-      .foot-grid{grid-template-columns:1fr;gap:3rem;}
-      .foot-col-links{grid-template-columns:repeat(3,1fr);}
+      .foot-grid{grid-template-columns:1fr 1.5fr;gap:2rem;}
+      .foot-col-links{grid-template-columns:1fr;gap:1.5rem;}
+      .foot-desc{max-width:none;}
       .site-footer .c,.foot-bottom{padding-left:1.5rem;padding-right:1.5rem;}
       .foot-bottom{flex-direction:column;gap:.8rem;text-align:center;}
     }
-    @media(max-width:560px){
-      .foot-col-links{grid-template-columns:repeat(2,1fr);gap:1.5rem;}
+    @media(max-width:768px){
+      footer.site-footer{padding:2.5rem 0 1.5rem;}
+      .foot-logo{font-size:1.1rem;}
+      .foot-grid{margin-bottom:2rem;}
     }
-    @media(max-width:380px){
-      .foot-col-links{grid-template-columns:1fr;gap:1.5rem;}
+    @media(max-width:480px){
+      .foot-grid{grid-template-columns:1fr 1.2fr;gap:1rem;}
+      .foot-desc{font-size:.75rem;line-height:1.6;}
     }
 
-    /* ── Language selector ── */
-    .lang-sel{position:relative;}
-    .lang-btn{display:flex;align-items:center;gap:0.35rem;background:transparent;border:1px solid var(--border2);border-radius:20px;padding:0.28rem 0.65rem;color:var(--text);cursor:pointer;font-size:0.68rem;letter-spacing:0.1em;text-transform:uppercase;font-family:'DM Sans',sans-serif;transition:border-color .2s,color .2s;}
-    .lang-btn:hover{border-color:var(--accent);color:var(--accent);}
-    .lang-drop{position:absolute;top:calc(100% + 8px);right:0;background:var(--nav-bg);border:1px solid var(--border2);border-radius:10px;overflow:hidden;min-width:148px;z-index:10000;list-style:none;display:none;flex-direction:column;box-shadow:0 8px 28px rgba(0,0,0,0.28);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);}
-    .lang-drop.open{display:flex;}
-    .lang-opt{padding:0.6rem 1rem;cursor:pointer;font-size:0.8rem;color:var(--text);transition:background .15s,color .15s;}
-    .lang-opt:hover{background:var(--border);color:var(--accent);}
-    .lang-opt.active{color:var(--accent);font-weight:600;}
-    #google_translate_element{display:none;}
-    .goog-te-banner-frame,.skiptranslate{display:none!important;}
-    body{top:0!important;}
 
     /* ── Night ambient orbs ── */
     .orb-layer{position:fixed;inset:0;pointer-events:none;z-index:9;overflow:hidden;}
