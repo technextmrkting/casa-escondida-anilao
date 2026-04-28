@@ -372,6 +372,13 @@
     /* Scrolled state: keep the button filled in all themes */
     #nav.scrolled .btn-nav-cta { background:var(--accent); color:#fff; }
 
+    /* ── Google Translate: hide banner bar, prevent body offset ── */
+    #google_translate_element { position:fixed; left:-9999px; top:-9999px; opacity:0; pointer-events:none; }
+    iframe.goog-te-banner-frame { display:none !important; }
+    .goog-te-balloon-frame { display:none !important; }
+    #goog-gt-tt { display:none !important; }
+    body { top:0 !important; }
+
     /* Hamburger: clean up focus ring after mouse/touch click while keeping keyboard ring */
     .nav-hamburger:focus { outline: none; }
     .nav-hamburger:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; border-radius: 6px; }
@@ -2042,6 +2049,7 @@
         <div class="toggle-track"><div class="toggle-thumb"></div></div>
         <span id="themeLabel" style="font-size:0.68rem;letter-spacing:0.1em">Night</span>
       </button>
+
       <a href="#booking" class="btn-nav-cta">Book Now</a>
       <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-expanded="false" aria-controls="mobileNav">
         <span></span><span></span><span></span>
@@ -3253,5 +3261,40 @@
 
 
 <script src="chat-widget.js"></script>
+
+<!-- ── Auto-translate based on browser/system language ── -->
+<div id="google_translate_element"></div>
+<script>
+  function googleTranslateElementInit() {
+    new google.translate.TranslateElement({
+      pageLanguage: 'en',
+      autoDisplay: false
+    }, 'google_translate_element');
+  }
+
+  (function () {
+    /* Detect browser language */
+    var nav = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+
+    /* Skip if already English */
+    if (nav === 'en' || nav.indexOf('en-') === 0) return;
+
+    /* Map browser codes → Google Translate codes */
+    var gt;
+    if      (nav === 'zh-tw' || nav === 'zh-hk') gt = 'zh-TW';
+    else if (nav.indexOf('zh') === 0)             gt = 'zh-CN';
+    else if (nav === 'fil')                       gt = 'tl';
+    else                                          gt = nav.split('-')[0];
+
+    /* Set googtrans cookie so widget auto-translates on load */
+    var exp = new Date(); exp.setFullYear(exp.getFullYear() + 1);
+    var val = '/en/' + gt;
+    var cookie = 'googtrans=' + val + '; expires=' + exp.toUTCString() + '; path=/';
+    document.cookie = cookie;
+    document.cookie = cookie + '; domain=' + location.hostname;
+    document.cookie = cookie + '; domain=.' + location.hostname;
+  })();
+</script>
+<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
